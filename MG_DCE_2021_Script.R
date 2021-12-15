@@ -7,13 +7,15 @@
 ### 1. LOAD packages and objects ----
 
 #install.packages("idefix")
+#install.packages("support.CEs")
 library(idefix) # package used to create an efficient design
 load('d.RData')
+library(support.CEs)
 
 ### 2. Set numer of attributes and levels ----
 
 set.seed(123)
-levels <- c(3,3,3,3,5) # create a vector with each element as an attribute 
+levels <- c(4,3,3,3,4) # create a vector with each element as an attribute 
 coding <-c("E","E","E","E","E") # the type of coding that we are going to use in each attribute
                                 # using effects coding in our case 
 
@@ -33,7 +35,7 @@ Profiles (lvls = levels, coding = coding) # see the different alternatives from 
 ## 4. Generate design with no priors ----
 
 # Calculate number of priors needed: 
-(3+3+3+3+5)-5
+(4+3+3+3+4)-5
 priors <- c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) # specifying vector with prior coefficients
 
 # simulation procedure where 500 random draws are obtained from a normal distribution 
@@ -62,10 +64,10 @@ design # show the best design
 
 ### 6. ---- Decode the design set ---- 
 
-lvls <- list(c("Poor", "Moyenne", "Excellente"), c("None", "25%", "50%"),
-             c("Highly congested", "Moderatly congested", "Not congested"), 
+lvls <- list(c("Poor", "Sufficient", "Good", "Excellent"), c("Not removed", "Removed in summer", "Removed all year long"),
+             c("Highly littered", "Moderatly litterd", "Clean"), 
              c("High Biodiversity", "Moderate biodiversity", "Low Biodiversity"),
-             c("0€", "5€", "10€", "25€", "40€"))
+             c("0€", "10€", "25€", "40€"))
 
 Dd <- Decode(des = d$design, lvl.names = lvls, n.alts = 2, coding = coding)
 
@@ -78,3 +80,18 @@ cs <- Profiles(lvls = c(3,3,3,3,5), coding = coding)
 
 D <- Modfed(cand.set = cs, n.sets = 12, n.alts = 2, par.draws = sim)
 
+### L^ma design ---- 
+
+attribute.names <- list(Waterquality = c("Poor", "Sufficient", "Good", "Excellent"),
+                      Posidonia = c("Removed during summer", "removed all year long", "Not removed"), 
+                      Biodiversity = c("High biodiversity", "Average biodiveristy", "Low biodiversity"),
+                      Litter = c("Highly", "Moderatly", "Not littered"),
+                      Cost = c("0", "5", "10","25", "40"))
+
+LMA.design <- Lma.design(attribute.names = attribute.names, 
+           nalternatives = 2, nblocks = 1, row.renames = TRUE, 
+           seed = NULL)
+
+
+questionnaire(choice.experiment.design = LMA.design) 
+              
