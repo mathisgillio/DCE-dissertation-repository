@@ -49,7 +49,7 @@ sim <- MASS::mvrnorm(n = 500, mu = priors, Sigma = s)
 
 # 5. Create output with d-efficient design: ----
 
-d <- CEA(lvls = levels, coding = coding, n.alts = 2, n.sets = 12, par.draws = sim,
+d <- CEA(lvls = levels, coding = coding, n.alts = 2, n.sets = 16, par.draws = sim,
          best = TRUE) 
 
 
@@ -64,9 +64,10 @@ design # show the best design
 
 ### 6. ---- Decode the design set ---- 
 
-lvls <- list(c("Poor", "Sufficient", "Good", "Excellent"), c("Not removed", "Removed in summer", "Removed all year long"),
-             c("Highly littered", "Moderatly litterd", "Clean"), 
-             c("High Biodiversity", "Moderate biodiversity", "Low Biodiversity"),
+lvls <- list(c("Insuffisante", "Tolérable", "Bonne", "Excellente"),
+             c("Déchets enlevés", "Déchets et herbes marines mortes enlevés", "Déchets et herbes laissés sur la plage"),
+             c("Très congestionée", "Moyennent congestionée", "Peu congestioné"), 
+             c("Biodiversité élévée", "Biodiversité moyenne", "Pas de biodiversité"),
              c("0€", "10€", "25€", "40€"))
 
 Dd <- Decode(des = d$design, lvl.names = lvls, n.alts = 2, coding = coding)
