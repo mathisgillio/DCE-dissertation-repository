@@ -9,7 +9,7 @@
 #install.packages("idefix")
 #install.packages("support.CEs")
 library(idefix) # package used to create an efficient design
-load('d.RData')
+load('Script/d.RData')
 library(support.CEs)
 
 ### 2. Set numer of attributes and levels ----
