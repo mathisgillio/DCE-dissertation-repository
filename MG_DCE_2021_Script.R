@@ -42,15 +42,21 @@ priors <- c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) # specifying vector with prior coef
 # with mean equal to the priors specified
 
 s <- diag(length(priors))
-sim <- MASS::mvrnorm(n = 500, mu = priors, Sigma = s)
+sim <- MASS::mvrnorm(n = 1000, mu = priors, Sigma = s)
 
 # Create a list for the coefficients: 
 #sim <- list(sim[, 1:12])
 
 # 5. Create output with d-efficient design: ----
 
-d <- CEA(lvls = levels, coding = coding, n.alts = 2, n.sets = 16, par.draws = sim,
+d <- CEA(lvls = levels, coding = coding, n.alts = 2, n.sets = 14, par.draws = sim,
          best = TRUE) 
+
+d16 <- CEA(lvls = levels, coding = coding, n.alts = 2, n.sets = 16, par.draws = sim,
+           best = TRUE) 
+
+d12 <- CEA(lvls = levels, coding = coding, n.alts = 2, n.sets = 12, par.draws = sim,
+           best = TRUE) 
 
 
 save.image(file='d.RData')
@@ -62,6 +68,12 @@ dir()
 design <- d$design # create best design object 
 design # show the best design 
 
+design16 <- d16$design
+design16
+
+design12 <- d12$design
+design12
+
 ### 6. ---- Decode the design set ---- 
 
 lvls <- list(c("Insuffisante", "Tolérable", "Excellente"),
@@ -72,7 +84,15 @@ lvls <- list(c("Insuffisante", "Tolérable", "Excellente"),
 
 Dd <- Decode(des = d$design, lvl.names = lvls, n.alts = 2, coding = coding)
 
+Dd16 <- Decode(des = d16$design, lvl.names = lvls, n.alts = 2, coding = coding)
+
+Dd12 <- Decode(des = d12$design, lvl.names = lvls, n.alts = 2, coding = coding)
+
 Dd # visualize the decoded choice set
+
+Dd16
+
+Dd12
 
 
 ### 'DB' efficient design: takes a really long time ---- 
