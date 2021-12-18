@@ -15,7 +15,7 @@ library(support.CEs)
 ### 2. Set numer of attributes and levels ----
 
 set.seed(123)
-levels <- c(4,3,3,3,4) # create a vector with each element as an attribute 
+levels <- c(3,3,3,3,4) # create a vector with each element as an attribute 
 coding <-c("E","E","E","E","E") # the type of coding that we are going to use in each attribute
                                 # using effects coding in our case 
 
@@ -35,8 +35,8 @@ Profiles (lvls = levels, coding = coding) # see the different alternatives from 
 ## 4. Generate design with no priors ----
 
 # Calculate number of priors needed: 
-(4+3+3+3+4)-5
-priors <- c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) # specifying vector with prior coefficients
+(3+3+3+3+4)-5
+priors <- c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) # specifying vector with prior coefficients
 
 # simulation procedure where 500 random draws are obtained from a normal distribution 
 # with mean equal to the priors specified
