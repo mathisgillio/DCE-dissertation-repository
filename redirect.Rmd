@@ -1,8 +1,0 @@
----
-title: "redirect"
-output: html_document
----
-<script type="text/javascript">
-  var pageArr = ["https://www.youtube.com/watch?v=cfxs_WxswWg", "https://www.youtube.com/watch?v=hxp07UVZs7o"]; 
-  document.location.href = pageArr[Math.ceil(Math.random()*2)-1];
-    </script>
