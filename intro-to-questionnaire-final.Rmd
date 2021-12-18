@@ -62,7 +62,7 @@ La biodiversité d'un environnement est caractérisée par le nombre d'éspèces
 
 Merci d'avoir pris le temps de lire cette introduction, vous allez maintenant être redirigé vers le questionnaire
  
-<button id="exit" onclick="document.location=’redirect.Rhtml’">Go to survey!</button> 
+<button id="exit" onclick="document.location=’redirect.html’">Go to survey!</button> 
 <script> 
 $(document).ready(function() { 
 $("#exit").prop("disabled", true); 
