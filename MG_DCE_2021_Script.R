@@ -24,7 +24,7 @@ coding <-c("E","E","E","E","E") # the type of coding that we are going to use in
 
 Profiles (lvls = levels, coding = coding) # see the different alternatives from all attributes
                                           # and levels combination
-(3^4)*5
+(3^4)*4
 
 
 ### Generate a D-efficent design (use Fedorov modified algorithm in idefix package)
@@ -64,8 +64,8 @@ design # show the best design
 
 ### 6. ---- Decode the design set ---- 
 
-lvls <- list(c("Insuffisante", "Tolérable", "Bonne", "Excellente"),
-             c("Déchets enlevés", "Déchets et herbes marines mortes enlevés", "Déchets et herbes laissés sur la plage"),
+lvls <- list(c("Insuffisante", "Tolérable", "Excellente"),
+             c("Déchets enlevés", "Déchets et algues enlevés", "Déchets et algues laissés sur la plage"),
              c("Très congestionée", "Moyennent congestionée", "Peu congestioné"), 
              c("Biodiversité élévée", "Biodiversité moyenne", "Pas de biodiversité"),
              c("0€", "10€", "25€", "40€"))
