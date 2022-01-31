@@ -2,7 +2,7 @@
 ### Purpose: This repository was created to generate an efficient choice set
 ### Name: Mathis Gillio
 
-# This script was written using the methodology from Treats et al. (2020)
+# This script was written using the methodology from Pérez-Troncoso (2020)
 
 ### 1. LOAD packages and objects ----
 
