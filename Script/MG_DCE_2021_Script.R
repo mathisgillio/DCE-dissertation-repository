@@ -72,6 +72,20 @@ dir()
 design <- d$design
 design
 
+write.table(design, 'design.txt', col.names=NA)
+
+truedesign <- read.table("design.txt")
+truedesignmatrix <- as.matrix(truedesign)
+
+colnames(truedesignmatrix) <- c("Var11", "Var12", "Var21", "Var22", "Var31", "Var32", 
+                                "Var41", "Var42", "Var51", "Var52", "Var53")
+rownames(truedesignmatrix) <- c("set1.alt1", "set1.alt2", "set2.alt1", "set2.alt2", 
+                                "set3.alt1", "set3.alt2", "set4.alt1", "set4.alt2", 
+                                "set5.alt1", "set5.alt2", "set6.alt1", "set6.alt2", 
+                                "set7.alt1", "set7.alt2", "set8.alt1", "set8.alt2", 
+                                "set9.alt1", "set9.alt2", "set10.alt1", "set10.alt2", 
+                                "set11.alt1", "set11.alt2", "set12.alt1", "set12.alt2")
+
 ### 6. ---- Decode the design set ---- 
 
 lvls <- list(c("Insuffisante", "Tolérable", "Excellente"),
@@ -80,9 +94,11 @@ lvls <- list(c("Insuffisante", "Tolérable", "Excellente"),
              c("Biodiversité élévée", "Biodiversité moyenne", "Pas de biodiversité"),
              c("0€", "10€", "25€", "40€"))
 
-Dd <- Decode(des = d12$design, lvl.names = lvls, n.alts = 2, coding = coding)
+Dd <- Decode(des = d$design, lvl.names = lvls, n.alts = 2, coding = coding)
 
 Dd # visualize the decoded choice set
+
+
 
 # As previously mentioned, besides statistical efficiency other criteria such as
 # attribute level balance can be of importance too.
@@ -233,6 +249,8 @@ datablock2 <- cbind(datablock2,cs)
 
 datablock2 <- mutate(datablock2, choice = ifelse(value == "A" & alt == "1" | value== "B" & alt=="2", 1, 0))
 
+
+# Split the design matrix into the two blocks 
 
 
               
