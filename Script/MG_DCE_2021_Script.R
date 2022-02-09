@@ -58,7 +58,7 @@ sim <- MASS::mvrnorm(n = 1000, mu = priors, Sigma = s)
 
 # 5. Create output with d-efficient design: ----
 
-d12 <- CEA(lvls = levels, coding = coding, n.alts = 2, n.sets = 12, par.draws = sim,
+d <- CEA(lvls = levels, coding = coding, n.alts = 2, n.sets = 12, par.draws = sim,
            best = TRUE) 
 
 # n.alt gives you the number of alternative per choice set 
@@ -69,8 +69,8 @@ dir()
 
 # Choose the design with the lowest D-error from the list of design created from the CEA
 
-design12 <- d12$design
-design12
+design <- d$design
+design
 
 ### 6. ---- Decode the design set ---- 
 
@@ -80,9 +80,9 @@ lvls <- list(c("Insuffisante", "Tolérable", "Excellente"),
              c("Biodiversité élévée", "Biodiversité moyenne", "Pas de biodiversité"),
              c("0€", "10€", "25€", "40€"))
 
-Dd12 <- Decode(des = d12$design, lvl.names = lvls, n.alts = 2, coding = coding)
+Dd <- Decode(des = d12$design, lvl.names = lvls, n.alts = 2, coding = coding)
 
-Dd12 # visualize the decoded choice set
+Dd # visualize the decoded choice set
 
 # As previously mentioned, besides statistical efficiency other criteria such as
 # attribute level balance can be of importance too.
@@ -91,6 +91,10 @@ Dd12 # visualize the decoded choice set
 ### 7. Data Anlysis ----
 
 ## 7.a Reshape the data ---- 
+
+
+
+
 
 
               
