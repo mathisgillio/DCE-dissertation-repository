@@ -10,7 +10,11 @@
 #install.packages("support.CEs")
 library(idefix) # package used to create an efficient design
 library(support.CEs)
-load('Script/d.RData')
+load('d.RData')
+library(dplyr)
+library(tidyr)
+#install.packages("reshape2")
+library(reshape2)
 
 # The package support.CEs (Aizaki 2012) provides functions for generating orthogonal 
 # main-effect arrays, but does not support optimal designs for discrete choice models
@@ -72,7 +76,7 @@ dir()
 design <- d$design
 design
 
-write.table(design, 'design.txt', col.names=NA)
+#write.table(design, 'design.txt', col.names=NA)
 
 truedesign <- read.table("design.txt")
 truedesignmatrix <- as.matrix(truedesign)
@@ -106,11 +110,6 @@ Dd # visualize the decoded choice set
 
 ### 7. Data Anlysis ----
 
-library(dplyr)
-library(tidyr)
-#install.packages("reshape2")
-library(reshape2)
-
 datablock1 <- read.csv("Data/dce1.csv")
 datablock2 <- read.csv("Data/dce2.csv")
 
@@ -131,6 +130,7 @@ datablock1 <- datablock1  %>%
          ,"5"=Choix.5
          ,"6"=Choix.6)
   
+# personid length = 26
 
 datablock1$'1' <- as.character(datablock1$'1')
 datablock1$'2' <- as.character(datablock1$'2')
@@ -183,6 +183,7 @@ datablock1 <- cbind(datablock1,cs)
 
 datablock1 <- mutate(datablock1, choice = ifelse(value == "A" & alt == "1" | value== "B" & alt=="2", 1, 0))
 
+
 ## 7.a Reshape the data for block 2---- 
 
 datablock2 <- datablock2  %>% 
@@ -197,6 +198,7 @@ datablock2 <- datablock2  %>%
          ,"5"=Choix.5
          ,"6"=Choix.6)
 
+# personid lenght = 33
 
 datablock2$'1' <- as.character(datablock2$'1')
 datablock2$'2' <- as.character(datablock2$'2')
@@ -252,5 +254,27 @@ datablock2 <- mutate(datablock2, choice = ifelse(value == "A" & alt == "1" | val
 
 # Split the design matrix into the two blocks 
 
+as.data.frame(truedesignmatrix)
 
-              
+design1 <- truedesignmatrix[1:12, ]      
+design2 <- truedesignmatrix[13:24, ]
+
+as.matrix(design1)
+as.matrix(design2)
+
+# adapt the ‘design’ to the number of responses
+
+design1 <- design1[rep(seq_len(nrow(design1)), 26), ]
+design2 <-design2[rep(seq_len(nrow(design2)), 33), ]
+
+# merge responses and design
+
+final1 <- cbind(datablock1, design1)
+final2 <- cbind(datablock2, design2)
+
+final <- rbind(final1, final2)
+
+
+
+
+
