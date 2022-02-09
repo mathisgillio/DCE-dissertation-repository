@@ -9,8 +9,11 @@
 #install.packages("idefix")
 #install.packages("support.CEs")
 library(idefix) # package used to create an efficient design
-load('Script/d.RData')
 library(support.CEs)
+load('Script/d.RData')
+
+# The package support.CEs (Aizaki 2012) provides functions for generating orthogonal 
+# main-effect arrays, but does not support optimal designs for discrete choice models
 
 ### 2. Set numer of attributes and levels ----
 
@@ -19,6 +22,8 @@ levels <- c(3,3,3,3,4) # create a vector with each element as an attribute
 coding <-c("E","E","E","E","E") # the type of coding that we are going to use in each attribute
                                 # using effects coding in our case 
 
+# Attributes can be effects coded "E", dummy coded "D" or treated as a continuous 
+# variable "C". In this case all attributes will be effects coded.
 
 ### 3. Display the profiles ----
 
@@ -43,6 +48,10 @@ priors <- c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) # specifying vector with prior coef
 
 s <- diag(length(priors))
 sim <- MASS::mvrnorm(n = 1000, mu = priors, Sigma = s)
+
+# Since the computation time of generating a DB efficient design depends on the number 
+# of draws, we advise to generate designs with a sample such that the computation 
+# remains feasible.
 
 # Create a list for the coefficients: 
 #sim <- list(sim[, 1:12])
@@ -90,12 +99,15 @@ Dd12 <- Decode(des = d12$design, lvl.names = lvls, n.alts = 2, coding = coding)
 
 Dd # visualize the decoded choice set
 
+# As previously mentioned, besides statistical efficiency other criteria such as
+# attribute level balance can be of importance too.
+
 Dd16
 
 Dd12
 
 
-### 'DB' efficient design: takes a really long time ---- 
+### 'DB' efficient design: takes a really long time (using the Modfed function) ---- 
 
 cs <- Profiles(lvls = c(3,3,3,3,5), coding = coding)
 
@@ -115,4 +127,11 @@ LMA.design <- Lma.design(attribute.names = attribute.names,
 
 
 questionnaire(choice.experiment.design = LMA.design) 
+
+
+### 7. Data Anlysis ----
+
+## 7.a Reshape the data ---- 
+
+
               
