@@ -90,10 +90,148 @@ Dd # visualize the decoded choice set
 
 ### 7. Data Anlysis ----
 
-## 7.a Reshape the data ---- 
+library(dplyr)
+library(tidyr)
+#install.packages("reshape2")
+library(reshape2)
+
+datablock1 <- read.csv("Data/dce1.csv")
+datablock2 <- read.csv("Data/dce2.csv")
+
+str(datablock1)
+
+## 7.a Reshape the data for block 1 ---- 
+
+datablock1 <- datablock1  %>% 
+  select(-(1:2)) %>% # remove non-needed data
+  select(-(7:16)) %>% 
+  filter(!row_number() %in% c(2, 10, 29)) %>% 
+  mutate(personid = row_number()) %>% # create personid column
+  relocate(personid) %>% # move the new column to the front
+  rename("1"=Choix.1
+         ,"2"=Choix.2
+         ,"3"=Choix.3
+         ,"4"=Choix.4
+         ,"5"=Choix.5
+         ,"6"=Choix.6)
+  
+
+datablock1$'1' <- as.character(datablock1$'1')
+datablock1$'2' <- as.character(datablock1$'2')
+datablock1$'3' <- as.character(datablock1$'3')
+datablock1$'4' <- as.character(datablock1$'4')
+datablock1$'5' <- as.character(datablock1$'5')
+datablock1$'6' <- as.character(datablock1$'6')
+
+datablock1$'1'[datablock1$'1' == "Plage 1"] <- "A"
+datablock1$'1'[datablock1$'1' == "Plage 2"] <- "B"
+
+datablock1$'2'[datablock1$'2' == "Plage 1"] <- "A"
+datablock1$'2'[datablock1$'2' == "Plage 2"] <- "B"
+
+datablock1$'3'[datablock1$'3' == "Plage 1"] <- "A"
+datablock1$'3'[datablock1$'3' == "Plage 2"] <- "B"
+
+datablock1$'4'[datablock1$'4' == "Plage 1"] <- "A"
+datablock1$'4'[datablock1$'4' == "Plage 2"] <- "B"
+
+datablock1$'5'[datablock1$'5' == "Plage 1"] <- "A"
+datablock1$'5'[datablock1$'5' == "Plage 2"] <- "B"
+
+datablock1$'6'[datablock1$'6' == "Plage 1"] <- "A"
+datablock1$'6'[datablock1$'6' == "Plage 2"] <- "B"
+
+## Put the date in long format: 
+
+datablock1 <- pivot_longer(datablock1, cols = 2:7, names_to = "variable", values_to = "value")
 
 
+# Now we need a row per alternative: 
 
+datablock1 <-rbind(datablock1, datablock1)
+datablock1 <- datablock1[order(datablock1$personid, datablock1$variable),]
+
+# Create an alternative id
+
+x <- nrow(datablock1)/2
+alt <- rep(1:2, x)
+datablock1 <- cbind(datablock1, alt)
+
+
+cs <- rep(1:x, each = 2)
+cs <- sort(cs)
+datablock1 <- cbind(datablock1,cs)
+
+## Creating the choice variable that will take value 1 if the alternative in its row 
+#  is selected or 0 otherwise
+
+datablock1 <- mutate(datablock1, choice = ifelse(value == "A" & alt == "1" | value== "B" & alt=="2", 1, 0))
+
+## 7.a Reshape the data for block 2---- 
+
+datablock2 <- datablock2  %>% 
+  select(-(1:2)) %>% # remove non-needed data
+  select(-(7:16)) %>% 
+  mutate(personid = row_number()) %>% # create personid column
+  relocate(personid) %>% # move the new column to the front
+  rename("1"=Choix.1
+         ,"2"=Choix.2
+         ,"3"=Choix.3
+         ,"4"=Choix.4
+         ,"5"=Choix.5
+         ,"6"=Choix.6)
+
+
+datablock2$'1' <- as.character(datablock2$'1')
+datablock2$'2' <- as.character(datablock2$'2')
+datablock2$'3' <- as.character(datablock2$'3')
+datablock2$'4' <- as.character(datablock2$'4')
+datablock2$'5' <- as.character(datablock2$'5')
+datablock2$'6' <- as.character(datablock2$'6')
+
+datablock2$'1'[datablock2$'1' == "Plage 1"] <- "A"
+datablock2$'1'[datablock2$'1' == "Plage 2"] <- "B"
+
+datablock2$'2'[datablock2$'2' == "Plage 1"] <- "A"
+datablock2$'2'[datablock2$'2' == "Plage 2"] <- "B"
+
+datablock2$'3'[datablock2$'3' == "Plage 1"] <- "A"
+datablock2$'3'[datablock2$'3' == "Plage 2"] <- "B"
+
+datablock2$'4'[datablock2$'4' == "Plage 1"] <- "A"
+datablock2$'4'[datablock2$'4' == "Plage 2"] <- "B"
+
+datablock2$'5'[datablock2$'5' == "Plage 1"] <- "A"
+datablock2$'5'[datablock2$'5' == "Plage 2"] <- "B"
+
+datablock2$'6'[datablock2$'6' == "Plage 1"] <- "A"
+datablock2$'6'[datablock2$'6' == "Plage 2"] <- "B"
+
+## Put the date in long format: 
+
+datablock2 <- pivot_longer(datablock2, cols = 2:7, names_to = "variable", values_to = "value")
+
+
+# Now we need a row per alternative: 
+
+datablock2 <-rbind(datablock2, datablock2)
+datablock2 <- datablock2[order(datablock2$personid, datablock2$variable),]
+
+# Create an alternative id
+
+x <- nrow(datablock2)/2
+alt <- rep(1:2, x)
+datablock2 <- cbind(datablock2, alt)
+
+
+cs <- rep(1:x, each = 2)
+cs <- sort(cs)
+datablock2 <- cbind(datablock2,cs)
+
+## Creating the choice variable that will take value 1 if the alternative in its row 
+#  is selected or 0 otherwise
+
+datablock2 <- mutate(datablock2, choice = ifelse(value == "A" & alt == "1" | value== "B" & alt=="2", 1, 0))
 
 
 
