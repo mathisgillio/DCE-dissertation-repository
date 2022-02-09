@@ -23,7 +23,7 @@ coding <-c("E","E","E","E","E") # the type of coding that we are going to use in
                                 # using effects coding in our case 
 
 # Attributes can be effects coded "E", dummy coded "D" or treated as a continuous 
-# variable "C". In this case all attributes will be effects coded.
+# variable "C". Here, all attributes will be effects coded.
 
 ### 3. Display the profiles ----
 
@@ -34,7 +34,7 @@ Profiles (lvls = levels, coding = coding) # see the different alternatives from 
 
 ### Generate a D-efficent design (use Fedorov modified algorithm in idefix package)
 
-#By reducing D-error we are getting close to the principles of good DCE design: 
+# By reducing D-error we are getting close to the principles of good DCE design: 
 # orthogonality, level balance, minimal overlap, and utility balance
 
 ## 4. Generate design with no priors ----
@@ -43,7 +43,7 @@ Profiles (lvls = levels, coding = coding) # see the different alternatives from 
 (3+3+3+3+4)-5
 priors <- c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) # specifying vector with prior coefficients
 
-# simulation procedure where 500 random draws are obtained from a normal distribution 
+# simulation procedure where 1000 random draws are obtained from a normal distribution 
 # with mean equal to the priors specified
 
 s <- diag(length(priors))
@@ -58,27 +58,16 @@ sim <- MASS::mvrnorm(n = 1000, mu = priors, Sigma = s)
 
 # 5. Create output with d-efficient design: ----
 
-d <- CEA(lvls = levels, coding = coding, n.alts = 2, n.sets = 14, par.draws = sim,
-         best = TRUE) 
-
-d16 <- CEA(lvls = levels, coding = coding, n.alts = 2, n.sets = 16, par.draws = sim,
-           best = TRUE) 
-
 d12 <- CEA(lvls = levels, coding = coding, n.alts = 2, n.sets = 12, par.draws = sim,
            best = TRUE) 
-
-
-save.image(file='d.RData')
-dir()
 
 # n.alt gives you the number of alternative per choice set 
 # n.sets gives you the number of choice sets 
 
-design <- d$design # create best design object 
-design # show the best design 
+save.image(file='d.RData') # save the image so don't have to reload later
+dir()
 
-design16 <- d16$design
-design16
+# Choose the design with the lowest D-error from the list of design created from the CEA
 
 design12 <- d12$design
 design12
@@ -91,42 +80,12 @@ lvls <- list(c("Insuffisante", "Tolérable", "Excellente"),
              c("Biodiversité élévée", "Biodiversité moyenne", "Pas de biodiversité"),
              c("0€", "10€", "25€", "40€"))
 
-Dd <- Decode(des = d$design, lvl.names = lvls, n.alts = 2, coding = coding)
-
-Dd16 <- Decode(des = d16$design, lvl.names = lvls, n.alts = 2, coding = coding)
-
 Dd12 <- Decode(des = d12$design, lvl.names = lvls, n.alts = 2, coding = coding)
 
-Dd # visualize the decoded choice set
+Dd12 # visualize the decoded choice set
 
 # As previously mentioned, besides statistical efficiency other criteria such as
 # attribute level balance can be of importance too.
-
-Dd16
-
-Dd12
-
-
-### 'DB' efficient design: takes a really long time (using the Modfed function) ---- 
-
-cs <- Profiles(lvls = c(3,3,3,3,5), coding = coding)
-
-D <- Modfed(cand.set = cs, n.sets = 12, n.alts = 2, par.draws = sim)
-
-### L^ma design ---- 
-
-attribute.names <- list(Waterquality = c("Poor", "Sufficient", "Good", "Excellent"),
-                      Posidonia = c("Removed during summer", "removed all year long", "Not removed"), 
-                      Biodiversity = c("High biodiversity", "Average biodiveristy", "Low biodiversity"),
-                      Litter = c("Highly", "Moderatly", "Not littered"),
-                      Cost = c("0", "5", "10","25", "40"))
-
-LMA.design <- Lma.design(attribute.names = attribute.names, 
-           nalternatives = 2, nblocks = 1, row.renames = TRUE, 
-           seed = NULL)
-
-
-questionnaire(choice.experiment.design = LMA.design) 
 
 
 ### 7. Data Anlysis ----
