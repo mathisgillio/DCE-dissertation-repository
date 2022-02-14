@@ -76,6 +76,20 @@ dir()
 design <- d$design
 design
 
+### 6. ---- Decode the design set ---- 
+
+lvls <- list(c("Insuffisante", "Tolérable", "Excellente"),
+             c("Déchets enlevés", "Déchets et algues enlevés", "Déchets et algues laissés sur la plage"),
+             c("Très congestionée", "Moyennent congestionée", "Peu congestioné"), 
+             c("Biodiversité élévée", "Biodiversité moyenne", "Pas de biodiversité"),
+             c("0€", "10€", "25€", "40€"))
+
+Dd <- Decode(des = d$design, lvl.names = lvls, n.alts = 2, coding = coding)
+
+Dd # visualize the decoded choice set
+
+## Transform into a table to split the design matrix in two 
+
 #write.table(design, 'design.txt', col.names=NA)
 
 truedesign <- read.table("design.txt")
@@ -90,22 +104,6 @@ rownames(truedesignmatrix) <- c("set1.alt1", "set1.alt2", "set2.alt1", "set2.alt
                                 "set9.alt1", "set9.alt2", "set10.alt1", "set10.alt2", 
                                 "set11.alt1", "set11.alt2", "set12.alt1", "set12.alt2")
 
-### 6. ---- Decode the design set ---- 
-
-lvls <- list(c("Insuffisante", "Tolérable", "Excellente"),
-             c("Déchets enlevés", "Déchets et algues enlevés", "Déchets et algues laissés sur la plage"),
-             c("Très congestionée", "Moyennent congestionée", "Peu congestioné"), 
-             c("Biodiversité élévée", "Biodiversité moyenne", "Pas de biodiversité"),
-             c("0€", "10€", "25€", "40€"))
-
-Dd <- Decode(des = d$design, lvl.names = lvls, n.alts = 2, coding = coding)
-
-Dd # visualize the decoded choice set
-
-
-
-# As previously mentioned, besides statistical efficiency other criteria such as
-# attribute level balance can be of importance too.
 
 
 ### 7. Data Anlysis ----
@@ -274,7 +272,7 @@ final2 <- cbind(datablock2, design2)
 
 final <- rbind(final1, final2)
 
-
+write.csv(final,'finaldata.csv')
 
 
 
