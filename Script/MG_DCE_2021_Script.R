@@ -242,7 +242,7 @@ alt <- rep(1:2, x)
 datablock2 <- cbind(datablock2, alt)
 
 
-cs <- rep(1:x, each = 2)
+cs <- rep(157:354, each = 2)
 cs <- sort(cs)
 datablock2 <- cbind(datablock2,cs)
 
@@ -287,7 +287,55 @@ str(finaldata)
 
 finaldata$cs.personid <- paste(finaldata$cs, finaldata$personid, sep = "_")
 
+str(finaldata)
+
 finaldataclean <- dfidx(finaldata, choice = "choice", 
                         idx = list("cs.personid", "alt"), 
                         idnames = c("cs", "alt"))
+
+finaldata <- finaldata %>% 
+  mutate(Var11 = as.factor(Var11), 
+         Var12 = as.factor(Var12), 
+         Var21 = as.factor(Var21), 
+         Var22 = as.factor(Var22), 
+         Var31 = as.factor(Var31), 
+         Var32 = as.factor(Var32), 
+         Var41 = as.factor(Var41), 
+         Var42 = as.factor(Var42), 
+         Var51 = as.factor(Var51), 
+         Var52 = as.factor(Var52), 
+         Var53 = as.factor(Var53), 
+         )
+
+str(finaldataclean)
+head(finaldataclean, 5)
+
+## Error message: Error in mlogit(choice ~ Var11 + Var12 + Var21 + Var22 + Var31 + Var32 +  : 
+# no individual index
+
+multinomial_logit_model <- mlogit(choice ~ Var11 + Var12 + Var21 + Var22 + 
+                            Var31 + Var32 + Var41 + Var42 + Var51 + Var52 + Var53 | 0,
+                       finaldataclean,
+                       rpar = c(Var11 = "n", Var12 = "n", Var21 = "n", Var22 = "n",
+                              Var31 = "n", Var32 = "n", Var41 = "n", Var42 = "n", 
+                              Var51 = "n", Var52 = "n", Var53 = "n"), 
+                       R = 100,
+                       corrlation = TRUE,
+                       halton = NA)
+                  
+
+mixed_logit_model <- mlogit(choice ~ Var11 + Var12 + Var21 + Var22 + 
+                             Var31 + Var32 + Var41 + Var42 + Var51 + Var52 + Var53 | 0, 
+                           finaldataclean,
+                    rpar = c(Var11="n", Var12="n", Var21="n", Var22="n",
+                             Var31="n", Var32="n", Var41="n", Var42="n",
+                             Var51="n", Var52="n", Var53="n"),
+                    correlation = TRUE,
+                    halton = NA, 
+                    R = 100, 
+                    panel = TRUE)
+
+summary(multinomial_logit_model)
+
+
 
