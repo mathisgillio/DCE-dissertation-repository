@@ -118,6 +118,8 @@ TM5b <- dfidx(TravelMode, idx = 210, idnames = c("individual", "mode"),
               levels = c("air", "train", "bus", "car"))
 head(TM5b, 5) 
 
+str(TM5b)
+
 # Nesting structure for one of the index
 
 data("JapaneseFDI", package = "mlogit")
