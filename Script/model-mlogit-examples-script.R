@@ -82,14 +82,14 @@ head(TravelMode, 5)
 
 # the first two columns contain the index
 
-TM1 <- dfidx(TravelMode)
-head(TM1, 5)
+TM11 <- dfidx(TravelMode)
+head(TM11, 5)
 
 # explicitely indicate the two indexes using either a vector or a
 # list of two characters
 
-TM2 <- dfidx(TravelMode, idx = c("individual", "mode"))
-head(TM2, 5)
+TM22 <- dfidx(TravelMode, idx = c("individual", "mode"))
+head(TM22, 5)
 
 TM3 <- dfidx(TravelMode, idx = list("individual", "mode"))
 head(TM3, 5)
