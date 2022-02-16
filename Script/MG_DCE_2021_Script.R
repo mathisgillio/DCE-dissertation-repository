@@ -182,13 +182,15 @@ datablock1 <- cbind(datablock1,cs)
 datablock1 <- mutate(datablock1, choice = ifelse(value == "A" & alt == "1" | value== "B" & alt=="2", 1, 0))
 
 
-## 7.a Reshape the data for block 2---- 
+## 7.b Reshape the data for block 2---- 
 
 datablock2 <- datablock2  %>% 
   select(-(1:2)) %>% # remove non-needed data
   select(-(7:16)) %>% 
   mutate(personid = row_number()) %>% # create personid column
-  relocate(personid) %>% # move the new column to the front
+  select(-personid) %>% # move the new column to the front
+  mutate(personid = 27:59) %>% 
+  relocate(personid) %>% 
   rename("1"=Choix.1
          ,"2"=Choix.2
          ,"3"=Choix.3
@@ -249,6 +251,7 @@ datablock2 <- cbind(datablock2,cs)
 
 datablock2 <- mutate(datablock2, choice = ifelse(value == "A" & alt == "1" | value== "B" & alt=="2", 1, 0))
 
+### 7.c Combine the two blocks ---- 
 
 # Split the design matrix into the two blocks 
 
@@ -274,5 +277,17 @@ final <- rbind(final1, final2)
 
 write.csv(final,'finaldata.csv')
 
+### 7.d Transform the data to fit in mlogit 
 
+library(tidyverse)
+library(dplyr)
+
+finaldata <- read.csv("finaldata.csv")
+str(finaldata)
+
+finaldata$cs.personid <- paste(finaldata$cs, finaldata$personid, sep = "_")
+
+finaldataclean <- dfidx(finaldata, choice = "choice", 
+                        idx = list("cs.personid", "alt"), 
+                        idnames = c("cs", "alt"))
 
