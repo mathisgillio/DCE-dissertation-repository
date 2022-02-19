@@ -8,6 +8,8 @@
 
 #install.packages("idefix")
 #install.packages("support.CEs")
+#install.packages("survival")
+#install.packages("mlogit")
 library(idefix) # package used to create an efficient design
 library(support.CEs)
 load('d.RData')
@@ -15,6 +17,8 @@ library(dplyr)
 library(tidyr)
 #install.packages("reshape2")
 library(reshape2)
+library(survival)
+library(mlogit)
 
 # The package support.CEs (Aizaki 2012) provides functions for generating orthogonal 
 # main-effect arrays, but does not support optimal designs for discrete choice models
@@ -76,7 +80,7 @@ dir()
 design <- d$design
 design
 
-### 6. ---- Decode the design set ---- 
+### 6. Decode the design set ---- 
 
 lvls <- list(c("Insuffisante", "Tolérable", "Excellente"),
              c("Déchets enlevés", "Déchets et algues enlevés", "Déchets et algues laissés sur la plage"),
@@ -106,7 +110,7 @@ rownames(truedesignmatrix) <- c("set1.alt1", "set1.alt2", "set2.alt1", "set2.alt
 
 
 
-### 7. Data Anlysis ----
+### 7. Data cleaning ----
 
 datablock1 <- read.csv("Data/dce1.csv")
 datablock2 <- read.csv("Data/dce2.csv")
@@ -277,7 +281,7 @@ final <- rbind(final1, final2)
 
 write.csv(final,'finaldata.csv')
 
-### 7.d Transform the data to fit in mlogit 
+### 7.d Transform the data to fit in mlogit ---- 
 
 library(tidyverse)
 library(dplyr)
@@ -292,6 +296,7 @@ str(finaldata)
 finaldataclean <- dfidx(finaldata, choice = "choice", 
                         idx = list("cs.personid", "alt"), 
                         idnames = c("cs", "alt"))
+head(finaldataclean, 5)
 
 finaldata <- finaldata %>% 
   mutate(Var11 = as.factor(Var11), 
@@ -310,8 +315,17 @@ finaldata <- finaldata %>%
 str(finaldataclean)
 head(finaldataclean, 5)
 
+### 8. Data analysis ---- 
+
 ## Error message: Error in mlogit(choice ~ Var11 + Var12 + Var21 + Var22 + Var31 + Var32 +  : 
 # no individual index
+
+
+conditional_logit_model <- clogit(choice ~ Var11 + Var12 + Var21 + Var22 + 
+                                    Var31 + Var32 + Var41 + Var42 + Var51 + Var52 
+                                    + Var53 + strata(cs), data = finaldataclean)
+
+conditional_logit_model
 
 multinomial_logit_model <- mlogit(choice ~ Var11 + Var12 + Var21 + Var22 + 
                             Var31 + Var32 + Var41 + Var42 + Var51 + Var52 + Var53 | 0,
@@ -322,7 +336,16 @@ multinomial_logit_model <- mlogit(choice ~ Var11 + Var12 + Var21 + Var22 +
                        R = 100,
                        corrlation = TRUE,
                        halton = NA)
-                  
+
+multinomial_logit_model
+summary(multinomial_logit_model)
+
+stargazer(multinomial_logit_model, type="text", out="multi.htm")
+
+library(lme4)
+
+mixed.lmer <- lmer(choice ~ Var11 + Var12 + Var21 + Var22 + 
+                     Var31 + Var32 + Var41 + Var42 + Var51 + Var52 + Var53, data = finaldataclean)
 
 mixed_logit_model <- mlogit(choice ~ Var11 + Var12 + Var21 + Var22 + 
                              Var31 + Var32 + Var41 + Var42 + Var51 + Var52 + Var53 | 0, 
@@ -335,7 +358,6 @@ mixed_logit_model <- mlogit(choice ~ Var11 + Var12 + Var21 + Var22 +
                     R = 100, 
                     panel = TRUE)
 
-summary(multinomial_logit_model)
 
 
 
