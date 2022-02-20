@@ -317,15 +317,15 @@ head(finaldataclean, 5)
 
 ### 8. Data analysis ---- 
 
-## Error message: Error in mlogit(choice ~ Var11 + Var12 + Var21 + Var22 + Var31 + Var32 +  : 
-# no individual index
 
+## 8.a CLM model ---- 
 
 conditional_logit_model <- clogit(choice ~ Var11 + Var12 + Var21 + Var22 + 
                                     Var31 + Var32 + Var41 + Var42 + Var51 + Var52 
                                     + Var53 + strata(cs), data = finaldataclean)
-
 conditional_logit_model
+
+## 8.b MNL model ---- 
 
 multinomial_logit_model <- mlogit(choice ~ Var11 + Var12 + Var21 + Var22 + 
                             Var31 + Var32 + Var41 + Var42 + Var51 + Var52 + Var53 | 0,
@@ -342,10 +342,31 @@ summary(multinomial_logit_model)
 
 stargazer(multinomial_logit_model, type="text", out="multi.htm")
 
-library(lme4)
+## 8.c Mixed-effect model ---- 
+
+library(lme4) 
+library(stargazer)
 
 mixed.lmer <- lmer(choice ~ Var11 + Var12 + Var21 + Var22 + 
-                     Var31 + Var32 + Var41 + Var42 + Var51 + Var52 + Var53, data = finaldataclean)
+                     Var31 + Var32 + Var41 + Var42 + Var51 + Var52 + Var53 + 
+                     (1|personid), data = finaldata)
+
+summary(mixed.lmer)
+
+## Look at plot to check assumptions 
+
+plot(mixed.lmer)
+qqnorm(resid(mixed.lmer))
+qqline(resid(mixed.lmer))
+
+## Save the outputs of the model as a table 
+
+stargazer(mixed.lmer, type = "text",
+          digits = 3,
+          star.cutoffs = c(0.05, 0.01, 0.001),
+          digit.separator = "")
+
+# 8.d XLM model ---- 
 
 mixed_logit_model <- mlogit(choice ~ Var11 + Var12 + Var21 + Var22 + 
                              Var31 + Var32 + Var41 + Var42 + Var51 + Var52 + Var53 | 0, 
