@@ -339,7 +339,7 @@ summary(multinomial_logit_model_1)
 summary(multinomial_logit_model_2)
 summary(multinomial_logit_model_3)
 
-stargazer(multinomial_logit_model, type="text", out="multi.htm")
+stargazer(multinomial_logit_model_2, type="text", out="multi.htm")
 
 ## 8.c Mixed-effect model ---- 
 
@@ -367,9 +367,14 @@ stargazer(mixed.lmer, type = "text",
 
 # 8.d XLM model ---- 
 
+finaldatacleanxlm <- mlogit.data(finaldata, choice = "choice", shape = "long", 
+                                 alt.var = "alt", idx = c("personid", "id"))
+
+head(finaldatacleanxlm, 5)
+
 mixed_logit_model <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
                               cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 | 0, 
-                           finaldataclean,
+                           finaldatacleanxlm,
                            rpar = c(wat1 = "n", wat2 = "n", det1 = "n", det2 = "n",
                                     cong1 = "n", cong2 = "n", bio1 = "n", bio2 = "n", 
                                     pri1 = "n", pri2 = "n", pri3 = "n"),
@@ -377,6 +382,18 @@ mixed_logit_model <- mlogit(choice ~ wat1 + wat2 + det1 + det2 +
                     halton = NA, 
                     R = 100, 
                     panel = TRUE)
+
+mixed_logit_model <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
+                              cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 | -1 | 0, 
+                            finaldataclean,
+                            rpar = c(wat1 = "n", wat2 = "n", det1 = "n", det2 = "n",
+                                     cong1 = "n", cong2 = "n", bio1 = "n", bio2 = "n", 
+                                     pri1 = "n", pri2 = "n", pri3 = "n"),
+                            halton = NA, 
+                            R = 100, 
+                            print.level = 0,
+                            panel = TRUE)
+
 
 
 
