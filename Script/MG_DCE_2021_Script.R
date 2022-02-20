@@ -99,8 +99,8 @@ Dd # visualize the decoded choice set
 truedesign <- read.table("design.txt")
 truedesignmatrix <- as.matrix(truedesign)
 
-colnames(truedesignmatrix) <- c("Var11", "Var12", "Var21", "Var22", "Var31", "Var32", 
-                                "Var41", "Var42", "Var51", "Var52", "Var53")
+colnames(truedesignmatrix) <- c("wat1", "wat2", "det1", "det2", "cong1", "cong2", 
+                                "bio1", "bio2", "pri1", "pri2", "pri3")
 rownames(truedesignmatrix) <- c("set1.alt1", "set1.alt2", "set2.alt1", "set2.alt2", 
                                 "set3.alt1", "set3.alt2", "set4.alt1", "set4.alt2", 
                                 "set5.alt1", "set5.alt2", "set6.alt1", "set6.alt2", 
@@ -285,6 +285,8 @@ write.csv(final,'finaldata.csv')
 
 library(tidyverse)
 library(dplyr)
+library(mlogit)
+library(lmtest)
 
 finaldata <- read.csv("finaldata.csv")
 str(finaldata)
@@ -293,52 +295,49 @@ finaldata$cs.personid <- paste(finaldata$cs, finaldata$personid, sep = "_")
 
 str(finaldata)
 
-finaldataclean <- dfidx(finaldata, choice = "choice", 
-                        idx = list("cs.personid", "alt"), 
-                        idnames = c("cs", "alt"))
-head(finaldataclean, 5)
-
+finaldata$id <- 1:nrow(finaldata)
 finaldata <- finaldata %>% 
-  mutate(Var11 = as.factor(Var11), 
-         Var12 = as.factor(Var12), 
-         Var21 = as.factor(Var21), 
-         Var22 = as.factor(Var22), 
-         Var31 = as.factor(Var31), 
-         Var32 = as.factor(Var32), 
-         Var41 = as.factor(Var41), 
-         Var42 = as.factor(Var42), 
-         Var51 = as.factor(Var51), 
-         Var52 = as.factor(Var52), 
-         Var53 = as.factor(Var53), 
-         )
+  mutate(choice = as.logical(choice))
+finaldataclean <- dfidx(finaldata, choice = "choice", idx = list("id", "personid"), 
+                        idnames = c("id", "personid"))
 
-str(finaldataclean)
 head(finaldataclean, 5)
+str(finaldataclean)
 
 ### 8. Data analysis ---- 
 
 
 ## 8.a CLM model ---- 
 
-conditional_logit_model <- clogit(choice ~ Var11 + Var12 + Var21 + Var22 + 
-                                    Var31 + Var32 + Var41 + Var42 + Var51 + Var52 
-                                    + Var53 + strata(cs), data = finaldataclean)
+conditional_logit_model <- clogit(choice ~ wat1 + wat2 + det1 + det2 + 
+                                    cong1 + cong2 + bio1 + bio2 + pri1 + pri2 
+                                  + pri3 + strata(cs), data = finaldata)
 conditional_logit_model
 
 ## 8.b MNL model ---- 
 
-multinomial_logit_model <- mlogit(choice ~ Var11 + Var12 + Var21 + Var22 + 
-                            Var31 + Var32 + Var41 + Var42 + Var51 + Var52 + Var53 | 0,
+multinomial_logit_model_1 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
+                                    cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 | 0,
+                                  finaldataclean) 
+
+multinomial_logit_model_2 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
+                                      cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3,
+                                    finaldataclean) 
+
+
+multinomial_logit_model_3 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
+                            cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 | 0,
                        finaldataclean,
-                       rpar = c(Var11 = "n", Var12 = "n", Var21 = "n", Var22 = "n",
-                              Var31 = "n", Var32 = "n", Var41 = "n", Var42 = "n", 
-                              Var51 = "n", Var52 = "n", Var53 = "n"), 
+                       rpar = c(wat1 = "n", wat2 = "n", det1 = "n", det2 = "n",
+                              cong1 = "n", cong2 = "n", bio1 = "n", bio2 = "n", 
+                              pri1 = "n", pri2 = "n", pri3 = "n"), 
                        R = 100,
-                       corrlation = TRUE,
+                       correlation = TRUE,
                        halton = NA)
 
-multinomial_logit_model
-summary(multinomial_logit_model)
+summary(multinomial_logit_model_1)
+summary(multinomial_logit_model_2)
+summary(multinomial_logit_model_3)
 
 stargazer(multinomial_logit_model, type="text", out="multi.htm")
 
@@ -347,8 +346,8 @@ stargazer(multinomial_logit_model, type="text", out="multi.htm")
 library(lme4) 
 library(stargazer)
 
-mixed.lmer <- lmer(choice ~ Var11 + Var12 + Var21 + Var22 + 
-                     Var31 + Var32 + Var41 + Var42 + Var51 + Var52 + Var53 + 
+mixed.lmer <- lmer(choice ~ wat1 + wat2 + det1 + det2 + 
+                     cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 + 
                      (1|personid), data = finaldata)
 
 summary(mixed.lmer)
@@ -368,12 +367,12 @@ stargazer(mixed.lmer, type = "text",
 
 # 8.d XLM model ---- 
 
-mixed_logit_model <- mlogit(choice ~ Var11 + Var12 + Var21 + Var22 + 
-                             Var31 + Var32 + Var41 + Var42 + Var51 + Var52 + Var53 | 0, 
+mixed_logit_model <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
+                              cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 | 0, 
                            finaldataclean,
-                    rpar = c(Var11="n", Var12="n", Var21="n", Var22="n",
-                             Var31="n", Var32="n", Var41="n", Var42="n",
-                             Var51="n", Var52="n", Var53="n"),
+                           rpar = c(wat1 = "n", wat2 = "n", det1 = "n", det2 = "n",
+                                    cong1 = "n", cong2 = "n", bio1 = "n", bio2 = "n", 
+                                    pri1 = "n", pri2 = "n", pri3 = "n"),
                     correlation = TRUE,
                     halton = NA, 
                     R = 100, 
