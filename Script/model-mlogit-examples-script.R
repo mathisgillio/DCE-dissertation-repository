@@ -194,3 +194,11 @@ Elec.mxl <- mlogit(choice ~ pf + cl + loc + wk + tod + seas | 0, Electr,
                    rpar=c(pf = 'n', cl = 'n', loc = 'n', wk = 'n', 
                           tod = 'n', seas = 'n'), 
                    R = 100, halton = NA, panel = TRUE)
+
+# OTHER 
+
+library("mlogit")
+data("Heating", package = "mlogit")
+H <- dfidx(Heating, choice = "depvar", varying = c(3:12))
+m <- mlogit(depvar ~ ic + oc | 0, H)
+summary(m)
