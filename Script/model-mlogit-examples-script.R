@@ -180,3 +180,17 @@ summary(marg_loc)
 cl_by_pf = rpar(my_mixed_logit, "cl", norm = "pf")
 summary(cl_by_pf)
 
+## OTHER EXAMPLE: 
+
+library("mlogit")
+data("Electricity", package = "mlogit")
+Electricity$chid <- 1:nrow(Electricity)
+Electr <- dfidx(Electricity, idx = list(c("chid", "id")),
+                choice = "choice", varying = 3:26, sep = "")
+
+head(Electr, 5)
+
+Elec.mxl <- mlogit(choice ~ pf + cl + loc + wk + tod + seas | 0, Electr, 
+                   rpar=c(pf = 'n', cl = 'n', loc = 'n', wk = 'n', 
+                          tod = 'n', seas = 'n'), 
+                   R = 100, halton = NA, panel = TRUE)
