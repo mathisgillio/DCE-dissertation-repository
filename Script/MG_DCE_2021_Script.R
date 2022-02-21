@@ -322,6 +322,9 @@ head(finaldataclean, 5) # check the indexes created
 
 #### 8. Data analysis ---- 
 
+# The missing coeffecients (wat3, det3, cong3, bio3 and pri4) can be calculated as 
+# the negative sum of the other coefficients in the attributes 
+
 ### 8.a CLM model ---- 
 
 conditional_logit_model <- clogit(choice ~ wat1 + wat2 + det1 + det2 + 
