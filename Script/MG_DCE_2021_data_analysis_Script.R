@@ -106,7 +106,7 @@ stargazer(mixed.lmer, type = "text",
           digit.separator = "")
 
 
-### 2.d XLM model ---- 
+### 2.d XLM model ---- (comes out with an error)
 
 ## Create mlogit data for XLM model (depricated function)
 
