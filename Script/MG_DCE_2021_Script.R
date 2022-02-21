@@ -1,54 +1,43 @@
-### Title: DCE script 
-### Purpose: This repository was created to generate an efficient choice set
-### Name: Mathis Gillio
+################################################################################
+##                         EES 4th year Disseration                           ##
+##            Generate and efficient design and analysis for a DCE            ##
+##              Using the methodology from Pérez-Troncoso (2020)              ##
+##                      Date: 10-December-2021                                ##
+##                            Written by:                                     ##
+##              Mathis Gillio (s1843841@ed.ac.uk)                             ##
+################################################################################
 
-# This script was written using the methodology from Pérez-Troncoso (2020)
-
-### 1. LOAD packages and objects ----
+### 1. Install and load packages ----
 
 #install.packages("idefix")
 #install.packages("support.CEs")
 #install.packages("survival")
 #install.packages("mlogit")
+#install.packages("reshape2")
+
 library(idefix) # package used to create an efficient design
 library(support.CEs)
-load('d.RData')
 library(dplyr)
 library(tidyr)
-#install.packages("reshape2")
 library(reshape2)
-library(survival)
-library(mlogit)
 
-# The package support.CEs (Aizaki 2012) provides functions for generating orthogonal 
-# main-effect arrays, but does not support optimal designs for discrete choice models
+load('d.RData') # load the design for more efficient script 
 
 ### 2. Set numer of attributes and levels ----
 
 set.seed(123)
 levels <- c(3,3,3,3,4) # create a vector with each element as an attribute 
-coding <-c("E","E","E","E","E") # the type of coding that we are going to use in each attribute
-                                # using effects coding in our case 
-
-# Attributes can be effects coded "E", dummy coded "D" or treated as a continuous 
-# variable "C". Here, all attributes will be effects coded.
+coding <-c("E","E","E","E","E") # the type of coding that we are going to use in each 
+                                # attribut (effects coding in our case) 
 
 ### 3. Display the profiles ----
 
-Profiles (lvls = levels, coding = coding) # see the different alternatives from all attributes
-                                          # and levels combination
-(3^4)*4
-
-
-### Generate a D-efficent design (use Fedorov modified algorithm in idefix package)
-
-# By reducing D-error we are getting close to the principles of good DCE design: 
-# orthogonality, level balance, minimal overlap, and utility balance
+Profiles (lvls = levels, coding = coding) # see the different alternatives from all 
+                                          # attributes and levels combination
 
 ## 4. Generate design with no priors ----
 
-# Calculate number of priors needed: 
-(3+3+3+3+4)-5
+(3+3+3+3+4)-5 # Calculate number of priors needed
 priors <- c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) # specifying vector with prior coefficients
 
 # simulation procedure where 1000 random draws are obtained from a normal distribution 
@@ -57,12 +46,6 @@ priors <- c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) # specifying vector with prior coef
 s <- diag(length(priors))
 sim <- MASS::mvrnorm(n = 1000, mu = priors, Sigma = s)
 
-# Since the computation time of generating a DB efficient design depends on the number 
-# of draws, we advise to generate designs with a sample such that the computation 
-# remains feasible.
-
-# Create a list for the coefficients: 
-#sim <- list(sim[, 1:12])
 
 # 5. Create output with d-efficient design: ----
 
@@ -73,12 +56,13 @@ d <- CEA(lvls = levels, coding = coding, n.alts = 2, n.sets = 12, par.draws = si
 # n.sets gives you the number of choice sets 
 
 save.image(file='d.RData') # save the image so don't have to reload later
-dir()
 
 # Choose the design with the lowest D-error from the list of design created from the CEA
 
 design <- d$design
-design
+design # final design with lowest D-error 
+
+#write.table(design, 'design.txt', col.names=NA) # save the design 
 
 ### 6. Decode the design set ---- 
 
@@ -86,53 +70,36 @@ lvls <- list(c("Insuffisante", "Tolérable", "Excellente"),
              c("Déchets enlevés", "Déchets et algues enlevés", "Déchets et algues laissés sur la plage"),
              c("Très congestionée", "Moyennent congestionée", "Peu congestioné"), 
              c("Biodiversité élévée", "Biodiversité moyenne", "Pas de biodiversité"),
-             c("0€", "10€", "25€", "40€"))
+             c("0€", "10€", "25€", "40€")) # specify names of attirbute levels to be decoded
 
 Dd <- Decode(des = d$design, lvl.names = lvls, n.alts = 2, coding = coding)
 
 Dd # visualize the decoded choice set
 
-## Transform into a table to split the design matrix in two 
-
-#write.table(design, 'design.txt', col.names=NA)
-
-truedesign <- read.table("design.txt")
-truedesignmatrix <- as.matrix(truedesign)
-
-colnames(truedesignmatrix) <- c("wat1", "wat2", "det1", "det2", "cong1", "cong2", 
-                                "bio1", "bio2", "pri1", "pri2", "pri3")
-rownames(truedesignmatrix) <- c("set1.alt1", "set1.alt2", "set2.alt1", "set2.alt2", 
-                                "set3.alt1", "set3.alt2", "set4.alt1", "set4.alt2", 
-                                "set5.alt1", "set5.alt2", "set6.alt1", "set6.alt2", 
-                                "set7.alt1", "set7.alt2", "set8.alt1", "set8.alt2", 
-                                "set9.alt1", "set9.alt2", "set10.alt1", "set10.alt2", 
-                                "set11.alt1", "set11.alt2", "set12.alt1", "set12.alt2")
-
-
 
 ### 7. Data cleaning ----
 
-datablock1 <- read.csv("Data/dce1.csv")
+datablock1 <- read.csv("Data/dce1.csv") # load the responses from Google Survey 
 datablock2 <- read.csv("Data/dce2.csv")
 
-str(datablock1)
+str(datablock1) # look at the structure of the data loaded 
 
 ## 7.a Reshape the data for block 1 ---- 
 
 datablock1 <- datablock1  %>% 
-  select(-(1:2)) %>% # remove non-needed data
-  select(-(7:16)) %>% 
-  filter(!row_number() %in% c(2, 10, 29)) %>% 
+  select(-(1:2)) %>% # remove non-needed data (date stamp)
+  select(-(7:16)) %>% # remove socio-economic data and follow-up questions 
+  filter(!row_number() %in% c(2, 10, 29)) %>% # remove rows with uncomplete data 
   mutate(personid = row_number()) %>% # create personid column
   relocate(personid) %>% # move the new column to the front
-  rename("1"=Choix.1
-         ,"2"=Choix.2
-         ,"3"=Choix.3
-         ,"4"=Choix.4
-         ,"5"=Choix.5
-         ,"6"=Choix.6)
+  rename("1" = Choix.1 
+         ,"2" = Choix.2
+         ,"3" = Choix.3
+         ,"4" = Choix.4
+         ,"5" = Choix.5
+         ,"6" = Choix.6) # rename columns back to English 
   
-# personid length = 26
+## Change columns titles to character values 
 
 datablock1$'1' <- as.character(datablock1$'1')
 datablock1$'2' <- as.character(datablock1$'2')
@@ -140,6 +107,8 @@ datablock1$'3' <- as.character(datablock1$'3')
 datablock1$'4' <- as.character(datablock1$'4')
 datablock1$'5' <- as.character(datablock1$'5')
 datablock1$'6' <- as.character(datablock1$'6')
+
+## Change the choice people made between beaches to a more readable output 
 
 datablock1$'1'[datablock1$'1' == "Plage 1"] <- "A"
 datablock1$'1'[datablock1$'1' == "Plage 2"] <- "B"
@@ -159,22 +128,23 @@ datablock1$'5'[datablock1$'5' == "Plage 2"] <- "B"
 datablock1$'6'[datablock1$'6' == "Plage 1"] <- "A"
 datablock1$'6'[datablock1$'6' == "Plage 2"] <- "B"
 
-## Put the date in long format: 
+## Put the date in long format
 
-datablock1 <- pivot_longer(datablock1, cols = 2:7, names_to = "variable", values_to = "value")
+datablock1 <- pivot_longer(datablock1, cols = 2:7, names_to = "variable", 
+                           values_to = "value")
 
+# Add a row per alternative: 
 
-# Now we need a row per alternative: 
-
-datablock1 <-rbind(datablock1, datablock1)
+datablock1 <-rbind(datablock1, datablock1) # bind the data set twice 
 datablock1 <- datablock1[order(datablock1$personid, datablock1$variable),]
 
 # Create an alternative id
 
 x <- nrow(datablock1)/2
-alt <- rep(1:2, x)
-datablock1 <- cbind(datablock1, alt)
+alt <- rep(1:2, x) # define the alternative (beach 1 or beach 2)
+datablock1 <- cbind(datablock1, alt) # add to the data set 
 
+# Create a choice set column 
 
 cs <- rep(1:x, each = 2)
 cs <- sort(cs)
@@ -183,10 +153,11 @@ datablock1 <- cbind(datablock1,cs)
 ## Creating the choice variable that will take value 1 if the alternative in its row 
 #  is selected or 0 otherwise
 
-datablock1 <- mutate(datablock1, choice = ifelse(value == "A" & alt == "1" | value== "B" & alt=="2", 1, 0))
+datablock1 <- mutate(datablock1, 
+                     choice = ifelse(value == "A" & alt == "1" | value== "B" & alt=="2",
+                                     1, 0))
 
-
-## 7.b Reshape the data for block 2---- 
+## 7.b Reshape the data for block 2 ---- 
 
 datablock2 <- datablock2  %>% 
   select(-(1:2)) %>% # remove non-needed data
@@ -202,7 +173,7 @@ datablock2 <- datablock2  %>%
          ,"5"=Choix.5
          ,"6"=Choix.6)
 
-# personid lenght = 33
+## Change columns titles to character values 
 
 datablock2$'1' <- as.character(datablock2$'1')
 datablock2$'2' <- as.character(datablock2$'2')
@@ -210,6 +181,8 @@ datablock2$'3' <- as.character(datablock2$'3')
 datablock2$'4' <- as.character(datablock2$'4')
 datablock2$'5' <- as.character(datablock2$'5')
 datablock2$'6' <- as.character(datablock2$'6')
+
+## Change the choice people made between beaches to a more readable output
 
 datablock2$'1'[datablock2$'1' == "Plage 1"] <- "A"
 datablock2$'1'[datablock2$'1' == "Plage 2"] <- "B"
@@ -231,20 +204,21 @@ datablock2$'6'[datablock2$'6' == "Plage 2"] <- "B"
 
 ## Put the date in long format: 
 
-datablock2 <- pivot_longer(datablock2, cols = 2:7, names_to = "variable", values_to = "value")
+datablock2 <- pivot_longer(datablock2, cols = 2:7, names_to = "variable", 
+                           values_to = "value")
 
-
-# Now we need a row per alternative: 
+# Add a row per alternative: 
 
 datablock2 <-rbind(datablock2, datablock2)
 datablock2 <- datablock2[order(datablock2$personid, datablock2$variable),]
 
-# Create an alternative id
+# Create an alternative id: 
 
 x <- nrow(datablock2)/2
 alt <- rep(1:2, x)
 datablock2 <- cbind(datablock2, alt)
 
+# Create a choice set column: 
 
 cs <- rep(157:354, each = 2)
 cs <- sort(cs)
@@ -253,72 +227,100 @@ datablock2 <- cbind(datablock2,cs)
 ## Creating the choice variable that will take value 1 if the alternative in its row 
 #  is selected or 0 otherwise
 
-datablock2 <- mutate(datablock2, choice = ifelse(value == "A" & alt == "1" | value== "B" & alt=="2", 1, 0))
+datablock2 <- mutate(datablock2, 
+                     choice = ifelse(value == "A" & alt == "1" | value== "B" & alt=="2",
+                                     1, 0))
 
 ### 7.c Combine the two blocks ---- 
 
-# Split the design matrix into the two blocks 
+## Split the design matrix into the two blocks 
 
-as.data.frame(truedesignmatrix)
+truedesign <- read.table("design.txt") # load the design matrix 
+truedesignmatrix <- as.matrix(truedesign) # transform to a matrix to change the titles 
+
+# Redefine the variables to make the output more readable 
+
+colnames(truedesignmatrix) <- c("wat1", "wat2", "det1", "det2", "cong1", "cong2", 
+                                "bio1", "bio2", "pri1", "pri2", "pri3")
+
+rownames(truedesignmatrix) <- c("set1.alt1", "set1.alt2", "set2.alt1", "set2.alt2", 
+                                "set3.alt1", "set3.alt2", "set4.alt1", "set4.alt2", 
+                                "set5.alt1", "set5.alt2", "set6.alt1", "set6.alt2", 
+                                "set7.alt1", "set7.alt2", "set8.alt1", "set8.alt2", 
+                                "set9.alt1", "set9.alt2", "set10.alt1", "set10.alt2", 
+                                "set11.alt1", "set11.alt2", "set12.alt1", "set12.alt2")
+
+as.data.frame(truedesignmatrix) # transform into a data frame to split it 
+
+## Split the design into two blocks 
 
 design1 <- truedesignmatrix[1:12, ]      
 design2 <- truedesignmatrix[13:24, ]
 
+# Transform back to matrix for analysis 
 as.matrix(design1)
 as.matrix(design2)
 
-# adapt the ‘design’ to the number of responses
+# Adapt the ‘design’ to the number of responses (26 for first block and 33 for second)
 
 design1 <- design1[rep(seq_len(nrow(design1)), 26), ]
 design2 <-design2[rep(seq_len(nrow(design2)), 33), ]
 
-# merge responses and design
+# Merge responses and design
 
 final1 <- cbind(datablock1, design1)
 final2 <- cbind(datablock2, design2)
 
 final <- rbind(final1, final2)
 
-write.csv(final,'finaldata.csv')
+write.csv(final,'finaldata.csv') # save final data for analysis 
 
-### 7.d Transform the data to fit in mlogit ---- 
+### 7.d Further transform the data to fit in mlogit ---- 
+
+## Load libraries 
 
 library(tidyverse)
 library(dplyr)
 library(mlogit)
+library(survival) # used for the clogit function 
+library(lme4) 
+library(stargazer)
 library(lmtest)
 
+## Load the data 
+
 finaldata <- read.csv("finaldata.csv")
-str(finaldata)
+
+## Create new columns for the indexes 
 
 finaldata$cs.personid <- paste(finaldata$cs, finaldata$personid, sep = "_")
-
-str(finaldata)
-
 finaldata$id <- 1:nrow(finaldata)
+
 finaldata <- finaldata %>% 
-  mutate(choice = as.logical(choice))
-finaldataclean <- dfidx(finaldata, choice = "choice", idx = list("id", "personid"), 
-                        idnames = c("id", "personid"))
+  mutate(choice = as.logical(choice)) # make the choice logical (TRUE/FALSE)
 
-head(finaldataclean, 5)
-str(finaldataclean)
+finaldataclean <- dfidx(finaldata, choice = "choice", idx = list("cs.personid", "alt"), 
+                        idnames = c("cs", "alt"))  # create the mlogit data 
 
-### 8. Data analysis ---- 
+head(finaldataclean, 5) # check the indexes created 
 
 
-## 8.a CLM model ---- 
+#### 8. Data analysis ---- 
+
+### 8.a CLM model ---- 
 
 conditional_logit_model <- clogit(choice ~ wat1 + wat2 + det1 + det2 + 
                                     cong1 + cong2 + bio1 + bio2 + pri1 + pri2 
                                   + pri3 + strata(cs), data = finaldata)
-conditional_logit_model
 
-## 8.b MNL model ---- 
+conditional_logit_model # gives the outputs of the model 
+
+### 8.b MNL model ---- 
 
 multinomial_logit_model_1 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
                                     cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 | 0,
                                   finaldataclean) 
+
 
 multinomial_logit_model_2 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
                                       cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3,
@@ -335,22 +337,24 @@ multinomial_logit_model_3 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 +
                        correlation = TRUE,
                        halton = NA)
 
+## Give summary of the model outputs 
+
 summary(multinomial_logit_model_1)
 summary(multinomial_logit_model_2)
 summary(multinomial_logit_model_3)
 
+# Save the output of the model in table 
+
 stargazer(multinomial_logit_model_2, type="text", out="multi.htm")
 
-## 8.c Mixed-effect model ---- 
 
-library(lme4) 
-library(stargazer)
+### 8.c Mixed-effect model ---- 
 
 mixed.lmer <- lmer(choice ~ wat1 + wat2 + det1 + det2 + 
                      cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 + 
                      (1|personid), data = finaldata)
 
-summary(mixed.lmer)
+summary(mixed.lmer) # gives summary of the model 
 
 ## Look at plot to check assumptions 
 
@@ -365,14 +369,17 @@ stargazer(mixed.lmer, type = "text",
           star.cutoffs = c(0.05, 0.01, 0.001),
           digit.separator = "")
 
-# 8.d XLM model ---- 
+
+### 8.d XLM model ---- 
+
+## Create mlogit data for XLM model (depricated function)
 
 finaldatacleanxlm <- mlogit.data(finaldata, choice = "choice", shape = "long", 
                                  alt.var = "alt", idx = c("personid", "id"))
 
-head(finaldatacleanxlm, 5)
+head(finaldatacleanxlm, 5) # check the indexes 
 
-mixed_logit_model <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
+mixed_logit_model_1 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
                               cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 | 0, 
                            finaldatacleanxlm,
                            rpar = c(wat1 = "n", wat2 = "n", det1 = "n", det2 = "n",
@@ -383,7 +390,7 @@ mixed_logit_model <- mlogit(choice ~ wat1 + wat2 + det1 + det2 +
                     R = 100, 
                     panel = TRUE)
 
-mixed_logit_model <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
+mixed_logit_model_2 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
                               cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 | -1 | 0, 
                             finaldataclean,
                             rpar = c(wat1 = "n", wat2 = "n", det1 = "n", det2 = "n",
