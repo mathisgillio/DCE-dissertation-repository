@@ -56,6 +56,8 @@ d <- CEA(lvls = levels, coding = coding, n.alts = 2, n.sets = 12, par.draws = si
 
 save.image(file = 'Data/d.RData') # save the image so don't have to reload later
 
+## IF loading d.RData: start the code here ---- 
+
 # Choose the design with the lowest D-error from the list of design created from the CEA
 
 design <- d$design
@@ -87,7 +89,7 @@ str(datablock1) # look at the structure of the data loaded
 
 datablock1 <- datablock1  %>% 
   select(-(1:2)) %>% # remove non-needed data (date stamp)
-  select(-(7:16)) %>% # remove socio-economic data and follow-up questions 
+  select(-(13:16)) %>% # remove socio-economic data and follow-up questions 
   filter(!row_number() %in% c(2, 10, 29)) %>% # remove rows with uncomplete data 
   mutate(personid = row_number()) %>% # create personid column
   relocate(personid) %>% # move the new column to the front
@@ -96,7 +98,14 @@ datablock1 <- datablock1  %>%
          ,"3" = Choix.3
          ,"4" = Choix.4
          ,"5" = Choix.5
-         ,"6" = Choix.6) # rename columns back to English 
+         ,"6" = Choix.6
+         , "gender" = Quel.est.votre.genre...
+         , "age" = Quel.est.votre.âge...
+         , "study_level" = Quel.est.votre.niveau.d.études..
+         , "children" = Avez.vous.des.enfants.de.moins.de.15.ans...
+         , "toursist_dependent" = Votre.principale.source.de.revenus.dépend.elle.de.la.présence.de.touristes.pendant.l.été.....
+         , "club_member" = Faites.vous.partie.d.un.club.ou.association.qui.organisent.des.activités.liées.à.la.préservation.de.l.environnement.....) 
+# rename columns back to English 
   
 ## Change columns titles to character values 
 
@@ -160,7 +169,7 @@ datablock1 <- mutate(datablock1,
 
 datablock2 <- datablock2  %>% 
   select(-(1:2)) %>% # remove non-needed data
-  select(-(7:16)) %>% 
+  select(-(13:16)) %>% 
   mutate(personid = row_number()) %>% # create personid column
   select(-personid) %>% # move the new column to the front
   mutate(personid = 27:59) %>% 
@@ -170,7 +179,14 @@ datablock2 <- datablock2  %>%
          ,"3"=Choix.3
          ,"4"=Choix.4
          ,"5"=Choix.5
-         ,"6"=Choix.6)
+         ,"6"=Choix.6
+         , "gender" = Quel.est.votre.genre..
+         , "age" = Quel.est.votre.âge..
+         , "study_level" = Quel.est.votre.niveau.d.études..
+         , "children" = Avez.vous.des.enfants.de.moins.de.15.ans..
+         , "toursist_dependent" = Votre.principale.source.de.revenus.dépend.elle.de.la.présence.de.touristes.pendant.l.été..
+         , "club_member" = Faites.vous.partie.d.un.club.ou.association.qui.organisent.des.activités.liées.à.la.préservation.de.l.environnement..) 
+# rename columns back to English 
 
 ## Change columns titles to character values 
 
