@@ -16,12 +16,11 @@
 #install.packages("reshape2")
 
 library(idefix) # package used to create an efficient design
-library(support.CEs)
 library(dplyr)
 library(tidyr)
 library(reshape2)
 
-load('d.RData') # load the design for more efficient script 
+load('Data/d.RData') # load the design for more efficient script 
 
 ### 2. Set numer of attributes and levels ----
 
@@ -55,7 +54,7 @@ d <- CEA(lvls = levels, coding = coding, n.alts = 2, n.sets = 12, par.draws = si
 # n.alt gives you the number of alternative per choice set 
 # n.sets gives you the number of choice sets 
 
-save.image(file='d.RData') # save the image so don't have to reload later
+save.image(file = 'Data/d.RData') # save the image so don't have to reload later
 
 # Choose the design with the lowest D-error from the list of design created from the CEA
 
@@ -235,7 +234,7 @@ datablock2 <- mutate(datablock2,
 
 ## Split the design matrix into the two blocks 
 
-truedesign <- read.table("design.txt") # load the design matrix 
+truedesign <- read.table("Data/design.txt") # load the design matrix 
 truedesignmatrix <- as.matrix(truedesign) # transform to a matrix to change the titles 
 
 # Redefine the variables to make the output more readable 
@@ -273,7 +272,7 @@ final2 <- cbind(datablock2, design2)
 
 final <- rbind(final1, final2)
 
-write.csv(final,'finaldata.csv') # save final data for analysis 
+write.csv(final,'Data/finaldata.csv') # save final data for analysis 
 
 ### 7.d Further transform the data to fit in mlogit ---- 
 
@@ -289,7 +288,7 @@ library(lmtest)
 
 ## Load the data 
 
-finaldata <- read.csv("finaldata.csv")
+finaldata <- read.csv("Data/finaldata.csv")
 
 ## Create new columns for the indexes 
 
