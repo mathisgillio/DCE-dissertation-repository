@@ -8,6 +8,7 @@
 
 ## 1. Load libraries ---- 
 
+install.packages("gmnl")
 library(tidyverse)
 library(dplyr)
 library(mlogit)
@@ -15,6 +16,7 @@ library(survival) # used for the clogit function
 library(lme4) 
 library(stargazer)
 library(lmtest)
+library(gmnl)
 
 ## 2. Load the data ---- 
 
@@ -136,5 +138,21 @@ mixed_logit_model_2 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 +
                               R = 100, 
                               print.level = 0,
                               panel = TRUE)
+
+### 2.e Latent class model 
+
+finaldatacleanxlm <- mlogit.data(finaldata, choice = "choice", shape = "long", 
+                                 alt.var = "alt", idx = c("personid", "id"))
+
+# Estimate a LC-MNL model with 3 classes
+
+lc <- gmnl(choice ~ wat1 + wat2 + det1 + det2 + 
+             cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 | 0 | 0 | 0 | 1 , 
+           data = finaldatacleanxlm,
+           model = 'lc', 
+           Q = 3,
+           method = "bfgs")
+
+
 
 
