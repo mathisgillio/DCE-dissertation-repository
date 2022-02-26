@@ -25,12 +25,12 @@ finaldata <- read.csv("Data/finaldata.csv")
 ## Create new columns for the indexes 
 
 finaldata$cs.personid <- paste(finaldata$cs, finaldata$personid, sep = "_")
-finaldata$id <- 1:nrow(finaldata)
+finaldata$index <- 1:nrow(finaldata)
 
 # Make the choice logical (TRUE/FALSE)
 
 finaldata <- finaldata %>% 
-  mutate(choice = as.logical(choice)) 
+  mutate(choice = as.logical(choice))
 
 # Create the data to be used in mlogit
 
@@ -115,17 +115,21 @@ stargazer(mixed.lmer, type = "text",
 finaldatacleanxlm <- mlogit.data(finaldata, choice = "choice", shape = "long", 
                                  alt.var = "alt", idx = c("personid", "id"))
 
-head(finaldatacleanxlm, 5) # check the indexes 
 
-mixed_logit_model_1 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
-                                cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 | 0, 
-                              finaldatacleanxlm,
+finaldatacleanxlm2 <- mlogit.data(finaldata, choice="choice", shape = "long", 
+                                  alt.var = "alt", idx = c("personid", "cs"))
+
+head(finaldatacleanxlm2, 5) # check the indexes 
+
+mixed_logit_model_1 <- mlogit(formula = choice ~ wat1 + wat2 + det1 + det2 + 
+                                cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 | -1 | 0, 
+                              finaldatacleanxlm2,
                               rpar = c(wat1 = "n", wat2 = "n", det1 = "n", det2 = "n",
                                        cong1 = "n", cong2 = "n", bio1 = "n", bio2 = "n", 
                                        pri1 = "n", pri2 = "n", pri3 = "n"),
-                              correlation = TRUE,
                               halton = NA, 
                               R = 100, 
+                              print.level = 0, 
                               panel = TRUE)
 
 mixed_logit_model_2 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
