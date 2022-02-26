@@ -64,6 +64,10 @@ multinomial_logit_model_2 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 +
                                       cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3,
                                     finaldataclean) 
 
+multinomial_logit_model_4 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
+                                      cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 | age,
+                                    finaldataclean) 
+
 
 multinomial_logit_model_3 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
                                       cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 | 0,
@@ -80,6 +84,7 @@ multinomial_logit_model_3 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 +
 summary(multinomial_logit_model_1)
 summary(multinomial_logit_model_2)
 summary(multinomial_logit_model_3)
+summary(multinomial_logit_model_4)
 
 # Save the output of the model in table 
 
@@ -90,7 +95,7 @@ stargazer(multinomial_logit_model_2, type="text", out="multi.htm")
 
 mixed.lmer <- lmer(choice ~ wat1 + wat2 + det1 + det2 + 
                      cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 + 
-                     (1|personid), data = finaldata)
+                     (1|age) + (1|gender) + (1|study_level), data = finaldata)
 
 summary(mixed.lmer) # gives summary of the model 
 
@@ -143,12 +148,28 @@ mixed_logit_model_2 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 +
                               print.level = 0,
                               panel = TRUE)
 
+finaldata$alt <- as.character(finaldata$alt)
+
+finaldatacleanxlm2 <- mlogit.data(finaldata, choice = "choice", shape = "long", 
+                                  alt.var = "alt", id.var = "index")
+
+gmnl(formula = choice ~ 0 + wat1 + wat2 + det1 + det2 + 
+       cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3, data = finaldatacleanxlm2,
+     model = "mixl", ranp = c(wat1 = "n", wat2 = "n", det1 = "n", det2 = "n",
+                              cong1 = "n", cong2 = "n", bio1 = "n", bio2 = "n", 
+                              pri1 = "n", pri2 = "n", pri3 = "n"), R = 100, haltons = NA,
+     panel = TRUE, bi = "mixl.bi", method = "bfgs")
+
 ### 2.e Latent class model 
 
 finaldatacleanxlm <- mlogit.data(finaldata, choice = "choice", shape = "long", 
                                  alt.var = "alt", idx = c("personid", "id"))
 
 # Estimate a LC-MNL model with 3 classes
+
+library(devtools)
+install_bitbucket("mauricio1986/gmnl")
+library(gmnl)
 
 lc <- gmnl(choice ~ wat1 + wat2 + det1 + det2 + 
              cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 | 0 | 0 | 0 | 1 , 
