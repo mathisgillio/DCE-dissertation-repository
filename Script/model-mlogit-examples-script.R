@@ -3,10 +3,10 @@
 
 ## Install packages: 
 
-install.packages("mlogit")
-install.packages("Ecdat")
-install.packages("AER")
-install.packages("dfidx")
+#install.packages("mlogit")
+#install.packages("Ecdat")
+#install.packages("AER")
+#install.packages("dfidx")
 library(mlogit)
 library(Ecdat)
 library(AER)
@@ -145,6 +145,8 @@ Electricity$index <- 1:nrow(Electricity)
 elec = dfidx(Electricity, idx = list(c("index", "id")),
              choice = "choice", varying = 3:26, sep = "")
 
+head(elec, 5)
+
 # We then estimate individual choice over electricity providers for
 # different cost and contract structures with a suppressed intercept
 
@@ -194,6 +196,8 @@ Elec.mxl <- mlogit(choice ~ pf + cl + loc + wk + tod + seas | 0, Electr,
                    rpar=c(pf = 'n', cl = 'n', loc = 'n', wk = 'n', 
                           tod = 'n', seas = 'n'), 
                    R = 100, halton = NA, panel = TRUE)
+
+summary(Elec.mxl)
 
 # OTHER 
 
