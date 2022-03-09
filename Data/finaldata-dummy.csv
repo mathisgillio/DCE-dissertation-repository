@@ -1,0 +1,709 @@
+"","personid","gender","age","study_level","children","toursist_dependent","club_member","variable","value","alt","cs","choice","water","detritus","congestion","biodiversity","price"
+"set1.alt1",1,"Femme","30 - 49 ans","License","Non","Non","Oui","1","A",1,1,1,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2",1,"Femme","30 - 49 ans","License","Non","Non","Oui","1","A",2,1,0,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1",1,"Femme","30 - 49 ans","License","Non","Non","Oui","2","A",1,2,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2",1,"Femme","30 - 49 ans","License","Non","Non","Oui","2","A",2,2,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1",1,"Femme","30 - 49 ans","License","Non","Non","Oui","3","B",1,3,0,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2",1,"Femme","30 - 49 ans","License","Non","Non","Oui","3","B",2,3,1,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1",1,"Femme","30 - 49 ans","License","Non","Non","Oui","4","A",1,4,1,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2",1,"Femme","30 - 49 ans","License","Non","Non","Oui","4","A",2,4,0,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1",1,"Femme","30 - 49 ans","License","Non","Non","Oui","5","A",1,5,1,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2",1,"Femme","30 - 49 ans","License","Non","Non","Oui","5","A",2,5,0,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1",1,"Femme","30 - 49 ans","License","Non","Non","Oui","6","B",1,6,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2",1,"Femme","30 - 49 ans","License","Non","Non","Oui","6","B",2,6,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.1",2,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","1","A",1,7,1,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.1",2,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","1","A",2,7,0,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.1",2,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","2","A",1,8,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.1",2,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","2","A",2,8,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.1",2,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","3","A",1,9,1,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.1",2,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","3","A",2,9,0,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.1",2,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","4","A",1,10,1,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.1",2,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","4","A",2,10,0,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.1",2,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","5","A",1,11,1,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.1",2,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","5","A",2,11,0,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.1",2,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","6","B",1,12,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.1",2,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","6","B",2,12,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.2",3,"Femme","18 - 29 ans","License","Non","Non","Non","1","B",1,13,0,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.2",3,"Femme","18 - 29 ans","License","Non","Non","Non","1","B",2,13,1,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.2",3,"Femme","18 - 29 ans","License","Non","Non","Non","2","A",1,14,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.2",3,"Femme","18 - 29 ans","License","Non","Non","Non","2","A",2,14,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.2",3,"Femme","18 - 29 ans","License","Non","Non","Non","3","B",1,15,0,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.2",3,"Femme","18 - 29 ans","License","Non","Non","Non","3","B",2,15,1,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.2",3,"Femme","18 - 29 ans","License","Non","Non","Non","4","B",1,16,0,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.2",3,"Femme","18 - 29 ans","License","Non","Non","Non","4","B",2,16,1,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.2",3,"Femme","18 - 29 ans","License","Non","Non","Non","5","B",1,17,0,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.2",3,"Femme","18 - 29 ans","License","Non","Non","Non","5","B",2,17,1,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.2",3,"Femme","18 - 29 ans","License","Non","Non","Non","6","B",1,18,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.2",3,"Femme","18 - 29 ans","License","Non","Non","Non","6","B",2,18,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.3",4,"Homme","18 - 29 ans","License","Non","Oui","Non","1","A",1,19,1,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.3",4,"Homme","18 - 29 ans","License","Non","Oui","Non","1","A",2,19,0,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.3",4,"Homme","18 - 29 ans","License","Non","Oui","Non","2","A",1,20,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.3",4,"Homme","18 - 29 ans","License","Non","Oui","Non","2","A",2,20,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.3",4,"Homme","18 - 29 ans","License","Non","Oui","Non","3","A",1,21,1,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.3",4,"Homme","18 - 29 ans","License","Non","Oui","Non","3","A",2,21,0,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.3",4,"Homme","18 - 29 ans","License","Non","Oui","Non","4","B",1,22,0,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.3",4,"Homme","18 - 29 ans","License","Non","Oui","Non","4","B",2,22,1,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.3",4,"Homme","18 - 29 ans","License","Non","Oui","Non","5","B",1,23,0,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.3",4,"Homme","18 - 29 ans","License","Non","Oui","Non","5","B",2,23,1,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.3",4,"Homme","18 - 29 ans","License","Non","Oui","Non","6","B",1,24,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.3",4,"Homme","18 - 29 ans","License","Non","Oui","Non","6","B",2,24,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.4",5,"Homme","50 - 64 ans","Master ou plus","Oui","Non","Non","1","A",1,25,1,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.4",5,"Homme","50 - 64 ans","Master ou plus","Oui","Non","Non","1","A",2,25,0,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.4",5,"Homme","50 - 64 ans","Master ou plus","Oui","Non","Non","2","A",1,26,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.4",5,"Homme","50 - 64 ans","Master ou plus","Oui","Non","Non","2","A",2,26,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.4",5,"Homme","50 - 64 ans","Master ou plus","Oui","Non","Non","3","B",1,27,0,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.4",5,"Homme","50 - 64 ans","Master ou plus","Oui","Non","Non","3","B",2,27,1,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.4",5,"Homme","50 - 64 ans","Master ou plus","Oui","Non","Non","4","A",1,28,1,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.4",5,"Homme","50 - 64 ans","Master ou plus","Oui","Non","Non","4","A",2,28,0,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.4",5,"Homme","50 - 64 ans","Master ou plus","Oui","Non","Non","5","B",1,29,0,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.4",5,"Homme","50 - 64 ans","Master ou plus","Oui","Non","Non","5","B",2,29,1,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.4",5,"Homme","50 - 64 ans","Master ou plus","Oui","Non","Non","6","B",1,30,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.4",5,"Homme","50 - 64 ans","Master ou plus","Oui","Non","Non","6","B",2,30,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.5",6,"Femme","30 - 49 ans","License","Non","Oui","Non","1","B",1,31,0,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.5",6,"Femme","30 - 49 ans","License","Non","Oui","Non","1","B",2,31,1,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.5",6,"Femme","30 - 49 ans","License","Non","Oui","Non","2","A",1,32,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.5",6,"Femme","30 - 49 ans","License","Non","Oui","Non","2","A",2,32,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.5",6,"Femme","30 - 49 ans","License","Non","Oui","Non","3","B",1,33,0,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.5",6,"Femme","30 - 49 ans","License","Non","Oui","Non","3","B",2,33,1,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.5",6,"Femme","30 - 49 ans","License","Non","Oui","Non","4","B",1,34,0,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.5",6,"Femme","30 - 49 ans","License","Non","Oui","Non","4","B",2,34,1,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.5",6,"Femme","30 - 49 ans","License","Non","Oui","Non","5","B",1,35,0,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.5",6,"Femme","30 - 49 ans","License","Non","Oui","Non","5","B",2,35,1,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.5",6,"Femme","30 - 49 ans","License","Non","Oui","Non","6","B",1,36,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.5",6,"Femme","30 - 49 ans","License","Non","Oui","Non","6","B",2,36,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.6",7,"Homme","30 - 49 ans","Apprentissage","Oui","Non","Non","1","A",1,37,1,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.6",7,"Homme","30 - 49 ans","Apprentissage","Oui","Non","Non","1","A",2,37,0,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.6",7,"Homme","30 - 49 ans","Apprentissage","Oui","Non","Non","2","A",1,38,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.6",7,"Homme","30 - 49 ans","Apprentissage","Oui","Non","Non","2","A",2,38,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.6",7,"Homme","30 - 49 ans","Apprentissage","Oui","Non","Non","3","B",1,39,0,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.6",7,"Homme","30 - 49 ans","Apprentissage","Oui","Non","Non","3","B",2,39,1,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.6",7,"Homme","30 - 49 ans","Apprentissage","Oui","Non","Non","4","A",1,40,1,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.6",7,"Homme","30 - 49 ans","Apprentissage","Oui","Non","Non","4","A",2,40,0,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.6",7,"Homme","30 - 49 ans","Apprentissage","Oui","Non","Non","5","B",1,41,0,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.6",7,"Homme","30 - 49 ans","Apprentissage","Oui","Non","Non","5","B",2,41,1,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.6",7,"Homme","30 - 49 ans","Apprentissage","Oui","Non","Non","6","B",1,42,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.6",7,"Homme","30 - 49 ans","Apprentissage","Oui","Non","Non","6","B",2,42,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.7",8,"Femme","30 - 49 ans","Baccalauréat","Oui","Non","Non","1","B",1,43,0,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.7",8,"Femme","30 - 49 ans","Baccalauréat","Oui","Non","Non","1","B",2,43,1,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.7",8,"Femme","30 - 49 ans","Baccalauréat","Oui","Non","Non","2","A",1,44,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.7",8,"Femme","30 - 49 ans","Baccalauréat","Oui","Non","Non","2","A",2,44,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.7",8,"Femme","30 - 49 ans","Baccalauréat","Oui","Non","Non","3","A",1,45,1,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.7",8,"Femme","30 - 49 ans","Baccalauréat","Oui","Non","Non","3","A",2,45,0,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.7",8,"Femme","30 - 49 ans","Baccalauréat","Oui","Non","Non","4","A",1,46,1,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.7",8,"Femme","30 - 49 ans","Baccalauréat","Oui","Non","Non","4","A",2,46,0,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.7",8,"Femme","30 - 49 ans","Baccalauréat","Oui","Non","Non","5","A",1,47,1,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.7",8,"Femme","30 - 49 ans","Baccalauréat","Oui","Non","Non","5","A",2,47,0,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.7",8,"Femme","30 - 49 ans","Baccalauréat","Oui","Non","Non","6","B",1,48,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.7",8,"Femme","30 - 49 ans","Baccalauréat","Oui","Non","Non","6","B",2,48,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.8",9,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","1","B",1,49,0,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.8",9,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","1","B",2,49,1,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.8",9,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","2","A",1,50,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.8",9,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","2","A",2,50,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.8",9,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","3","A",1,51,1,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.8",9,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","3","A",2,51,0,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.8",9,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","4","A",1,52,1,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.8",9,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","4","A",2,52,0,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.8",9,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","5","A",1,53,1,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.8",9,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","5","A",2,53,0,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.8",9,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","6","B",1,54,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.8",9,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","6","B",2,54,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.9",10,"Femme","30 - 49 ans","License","Non","Non","Non","1","B",1,55,0,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.9",10,"Femme","30 - 49 ans","License","Non","Non","Non","1","B",2,55,1,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.9",10,"Femme","30 - 49 ans","License","Non","Non","Non","2","A",1,56,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.9",10,"Femme","30 - 49 ans","License","Non","Non","Non","2","A",2,56,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.9",10,"Femme","30 - 49 ans","License","Non","Non","Non","3","A",1,57,1,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.9",10,"Femme","30 - 49 ans","License","Non","Non","Non","3","A",2,57,0,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.9",10,"Femme","30 - 49 ans","License","Non","Non","Non","4","A",1,58,1,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.9",10,"Femme","30 - 49 ans","License","Non","Non","Non","4","A",2,58,0,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.9",10,"Femme","30 - 49 ans","License","Non","Non","Non","5","A",1,59,1,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.9",10,"Femme","30 - 49 ans","License","Non","Non","Non","5","A",2,59,0,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.9",10,"Femme","30 - 49 ans","License","Non","Non","Non","6","A",1,60,1,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.9",10,"Femme","30 - 49 ans","License","Non","Non","Non","6","A",2,60,0,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.10",11,"Femme","50 - 64 ans","Baccalauréat","Non","Oui","Oui","1","A",1,61,1,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.10",11,"Femme","50 - 64 ans","Baccalauréat","Non","Oui","Oui","1","A",2,61,0,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.10",11,"Femme","50 - 64 ans","Baccalauréat","Non","Oui","Oui","2","A",1,62,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.10",11,"Femme","50 - 64 ans","Baccalauréat","Non","Oui","Oui","2","A",2,62,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.10",11,"Femme","50 - 64 ans","Baccalauréat","Non","Oui","Oui","3","A",1,63,1,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.10",11,"Femme","50 - 64 ans","Baccalauréat","Non","Oui","Oui","3","A",2,63,0,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.10",11,"Femme","50 - 64 ans","Baccalauréat","Non","Oui","Oui","4","A",1,64,1,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.10",11,"Femme","50 - 64 ans","Baccalauréat","Non","Oui","Oui","4","A",2,64,0,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.10",11,"Femme","50 - 64 ans","Baccalauréat","Non","Oui","Oui","5","A",1,65,1,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.10",11,"Femme","50 - 64 ans","Baccalauréat","Non","Oui","Oui","5","A",2,65,0,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.10",11,"Femme","50 - 64 ans","Baccalauréat","Non","Oui","Oui","6","A",1,66,1,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.10",11,"Femme","50 - 64 ans","Baccalauréat","Non","Oui","Oui","6","A",2,66,0,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.11",12,"Homme","30 - 49 ans","License","Non","Non","Oui","1","A",1,67,1,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.11",12,"Homme","30 - 49 ans","License","Non","Non","Oui","1","A",2,67,0,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.11",12,"Homme","30 - 49 ans","License","Non","Non","Oui","2","B",1,68,0,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.11",12,"Homme","30 - 49 ans","License","Non","Non","Oui","2","B",2,68,1,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.11",12,"Homme","30 - 49 ans","License","Non","Non","Oui","3","B",1,69,0,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.11",12,"Homme","30 - 49 ans","License","Non","Non","Oui","3","B",2,69,1,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.11",12,"Homme","30 - 49 ans","License","Non","Non","Oui","4","B",1,70,0,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.11",12,"Homme","30 - 49 ans","License","Non","Non","Oui","4","B",2,70,1,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.11",12,"Homme","30 - 49 ans","License","Non","Non","Oui","5","B",1,71,0,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.11",12,"Homme","30 - 49 ans","License","Non","Non","Oui","5","B",2,71,1,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.11",12,"Homme","30 - 49 ans","License","Non","Non","Oui","6","B",1,72,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.11",12,"Homme","30 - 49 ans","License","Non","Non","Oui","6","B",2,72,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.12",13,"Femme","50 - 64 ans","License","Non","Non","Non","1","A",1,73,1,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.12",13,"Femme","50 - 64 ans","License","Non","Non","Non","1","A",2,73,0,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.12",13,"Femme","50 - 64 ans","License","Non","Non","Non","2","A",1,74,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.12",13,"Femme","50 - 64 ans","License","Non","Non","Non","2","A",2,74,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.12",13,"Femme","50 - 64 ans","License","Non","Non","Non","3","A",1,75,1,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.12",13,"Femme","50 - 64 ans","License","Non","Non","Non","3","A",2,75,0,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.12",13,"Femme","50 - 64 ans","License","Non","Non","Non","4","B",1,76,0,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.12",13,"Femme","50 - 64 ans","License","Non","Non","Non","4","B",2,76,1,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.12",13,"Femme","50 - 64 ans","License","Non","Non","Non","5","A",1,77,1,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.12",13,"Femme","50 - 64 ans","License","Non","Non","Non","5","A",2,77,0,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.12",13,"Femme","50 - 64 ans","License","Non","Non","Non","6","A",1,78,1,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.12",13,"Femme","50 - 64 ans","License","Non","Non","Non","6","A",2,78,0,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.13",14,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","1","A",1,79,1,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.13",14,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","1","A",2,79,0,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.13",14,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","2","A",1,80,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.13",14,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","2","A",2,80,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.13",14,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","3","A",1,81,1,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.13",14,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","3","A",2,81,0,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.13",14,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","4","A",1,82,1,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.13",14,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","4","A",2,82,0,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.13",14,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","5","B",1,83,0,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.13",14,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","5","B",2,83,1,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.13",14,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","6","A",1,84,1,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.13",14,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","6","A",2,84,0,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.14",15,"Femme","30 - 49 ans","Baccalauréat","Non","Non","Non","1","A",1,85,1,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.14",15,"Femme","30 - 49 ans","Baccalauréat","Non","Non","Non","1","A",2,85,0,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.14",15,"Femme","30 - 49 ans","Baccalauréat","Non","Non","Non","2","A",1,86,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.14",15,"Femme","30 - 49 ans","Baccalauréat","Non","Non","Non","2","A",2,86,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.14",15,"Femme","30 - 49 ans","Baccalauréat","Non","Non","Non","3","A",1,87,1,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.14",15,"Femme","30 - 49 ans","Baccalauréat","Non","Non","Non","3","A",2,87,0,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.14",15,"Femme","30 - 49 ans","Baccalauréat","Non","Non","Non","4","B",1,88,0,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.14",15,"Femme","30 - 49 ans","Baccalauréat","Non","Non","Non","4","B",2,88,1,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.14",15,"Femme","30 - 49 ans","Baccalauréat","Non","Non","Non","5","A",1,89,1,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.14",15,"Femme","30 - 49 ans","Baccalauréat","Non","Non","Non","5","A",2,89,0,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.14",15,"Femme","30 - 49 ans","Baccalauréat","Non","Non","Non","6","B",1,90,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.14",15,"Femme","30 - 49 ans","Baccalauréat","Non","Non","Non","6","B",2,90,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.15",16,"Homme","18 - 29 ans","License","Non","Non","Non","1","A",1,91,1,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.15",16,"Homme","18 - 29 ans","License","Non","Non","Non","1","A",2,91,0,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.15",16,"Homme","18 - 29 ans","License","Non","Non","Non","2","A",1,92,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.15",16,"Homme","18 - 29 ans","License","Non","Non","Non","2","A",2,92,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.15",16,"Homme","18 - 29 ans","License","Non","Non","Non","3","B",1,93,0,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.15",16,"Homme","18 - 29 ans","License","Non","Non","Non","3","B",2,93,1,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.15",16,"Homme","18 - 29 ans","License","Non","Non","Non","4","A",1,94,1,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.15",16,"Homme","18 - 29 ans","License","Non","Non","Non","4","A",2,94,0,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.15",16,"Homme","18 - 29 ans","License","Non","Non","Non","5","B",1,95,0,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.15",16,"Homme","18 - 29 ans","License","Non","Non","Non","5","B",2,95,1,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.15",16,"Homme","18 - 29 ans","License","Non","Non","Non","6","B",1,96,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.15",16,"Homme","18 - 29 ans","License","Non","Non","Non","6","B",2,96,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.16",17,"Femme","30 - 49 ans","License","Non","Non","Non","1","A",1,97,1,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.16",17,"Femme","30 - 49 ans","License","Non","Non","Non","1","A",2,97,0,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.16",17,"Femme","30 - 49 ans","License","Non","Non","Non","2","A",1,98,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.16",17,"Femme","30 - 49 ans","License","Non","Non","Non","2","A",2,98,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.16",17,"Femme","30 - 49 ans","License","Non","Non","Non","3","A",1,99,1,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.16",17,"Femme","30 - 49 ans","License","Non","Non","Non","3","A",2,99,0,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.16",17,"Femme","30 - 49 ans","License","Non","Non","Non","4","A",1,100,1,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.16",17,"Femme","30 - 49 ans","License","Non","Non","Non","4","A",2,100,0,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.16",17,"Femme","30 - 49 ans","License","Non","Non","Non","5","B",1,101,0,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.16",17,"Femme","30 - 49 ans","License","Non","Non","Non","5","B",2,101,1,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.16",17,"Femme","30 - 49 ans","License","Non","Non","Non","6","B",1,102,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.16",17,"Femme","30 - 49 ans","License","Non","Non","Non","6","B",2,102,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.17",18,"Femme","30 - 49 ans","License","Oui","Non","Non","1","A",1,103,1,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.17",18,"Femme","30 - 49 ans","License","Oui","Non","Non","1","A",2,103,0,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.17",18,"Femme","30 - 49 ans","License","Oui","Non","Non","2","B",1,104,0,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.17",18,"Femme","30 - 49 ans","License","Oui","Non","Non","2","B",2,104,1,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.17",18,"Femme","30 - 49 ans","License","Oui","Non","Non","3","B",1,105,0,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.17",18,"Femme","30 - 49 ans","License","Oui","Non","Non","3","B",2,105,1,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.17",18,"Femme","30 - 49 ans","License","Oui","Non","Non","4","A",1,106,1,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.17",18,"Femme","30 - 49 ans","License","Oui","Non","Non","4","A",2,106,0,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.17",18,"Femme","30 - 49 ans","License","Oui","Non","Non","5","B",1,107,0,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.17",18,"Femme","30 - 49 ans","License","Oui","Non","Non","5","B",2,107,1,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.17",18,"Femme","30 - 49 ans","License","Oui","Non","Non","6","B",1,108,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.17",18,"Femme","30 - 49 ans","License","Oui","Non","Non","6","B",2,108,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.18",19,"Homme","50 - 64 ans","Baccalauréat","Oui","Non","Non","1","A",1,109,1,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.18",19,"Homme","50 - 64 ans","Baccalauréat","Oui","Non","Non","1","A",2,109,0,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.18",19,"Homme","50 - 64 ans","Baccalauréat","Oui","Non","Non","2","A",1,110,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.18",19,"Homme","50 - 64 ans","Baccalauréat","Oui","Non","Non","2","A",2,110,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.18",19,"Homme","50 - 64 ans","Baccalauréat","Oui","Non","Non","3","A",1,111,1,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.18",19,"Homme","50 - 64 ans","Baccalauréat","Oui","Non","Non","3","A",2,111,0,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.18",19,"Homme","50 - 64 ans","Baccalauréat","Oui","Non","Non","4","B",1,112,0,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.18",19,"Homme","50 - 64 ans","Baccalauréat","Oui","Non","Non","4","B",2,112,1,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.18",19,"Homme","50 - 64 ans","Baccalauréat","Oui","Non","Non","5","A",1,113,1,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.18",19,"Homme","50 - 64 ans","Baccalauréat","Oui","Non","Non","5","A",2,113,0,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.18",19,"Homme","50 - 64 ans","Baccalauréat","Oui","Non","Non","6","B",1,114,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.18",19,"Homme","50 - 64 ans","Baccalauréat","Oui","Non","Non","6","B",2,114,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.19",20,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","1","A",1,115,1,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.19",20,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","1","A",2,115,0,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.19",20,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","2","A",1,116,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.19",20,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","2","A",2,116,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.19",20,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","3","A",1,117,1,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.19",20,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","3","A",2,117,0,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.19",20,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","4","A",1,118,1,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.19",20,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","4","A",2,118,0,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.19",20,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","5","A",1,119,1,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.19",20,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","5","A",2,119,0,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.19",20,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","6","B",1,120,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.19",20,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","6","B",2,120,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.20",21,"Homme","30 - 49 ans","Master ou plus","Non","Non","Non","1","B",1,121,0,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.20",21,"Homme","30 - 49 ans","Master ou plus","Non","Non","Non","1","B",2,121,1,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.20",21,"Homme","30 - 49 ans","Master ou plus","Non","Non","Non","2","A",1,122,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.20",21,"Homme","30 - 49 ans","Master ou plus","Non","Non","Non","2","A",2,122,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.20",21,"Homme","30 - 49 ans","Master ou plus","Non","Non","Non","3","B",1,123,0,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.20",21,"Homme","30 - 49 ans","Master ou plus","Non","Non","Non","3","B",2,123,1,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.20",21,"Homme","30 - 49 ans","Master ou plus","Non","Non","Non","4","A",1,124,1,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.20",21,"Homme","30 - 49 ans","Master ou plus","Non","Non","Non","4","A",2,124,0,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.20",21,"Homme","30 - 49 ans","Master ou plus","Non","Non","Non","5","B",1,125,0,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.20",21,"Homme","30 - 49 ans","Master ou plus","Non","Non","Non","5","B",2,125,1,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.20",21,"Homme","30 - 49 ans","Master ou plus","Non","Non","Non","6","B",1,126,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.20",21,"Homme","30 - 49 ans","Master ou plus","Non","Non","Non","6","B",2,126,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.21",22,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","1","B",1,127,0,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.21",22,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","1","B",2,127,1,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.21",22,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","2","A",1,128,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.21",22,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","2","A",2,128,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.21",22,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","3","B",1,129,0,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.21",22,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","3","B",2,129,1,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.21",22,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","4","B",1,130,0,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.21",22,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","4","B",2,130,1,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.21",22,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","5","B",1,131,0,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.21",22,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","5","B",2,131,1,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.21",22,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","6","B",1,132,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.21",22,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","6","B",2,132,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.22",23,"Homme","30 - 49 ans","Baccalauréat","Non","Oui","Non","1","A",1,133,1,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.22",23,"Homme","30 - 49 ans","Baccalauréat","Non","Oui","Non","1","A",2,133,0,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.22",23,"Homme","30 - 49 ans","Baccalauréat","Non","Oui","Non","2","A",1,134,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.22",23,"Homme","30 - 49 ans","Baccalauréat","Non","Oui","Non","2","A",2,134,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.22",23,"Homme","30 - 49 ans","Baccalauréat","Non","Oui","Non","3","A",1,135,1,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.22",23,"Homme","30 - 49 ans","Baccalauréat","Non","Oui","Non","3","A",2,135,0,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.22",23,"Homme","30 - 49 ans","Baccalauréat","Non","Oui","Non","4","A",1,136,1,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.22",23,"Homme","30 - 49 ans","Baccalauréat","Non","Oui","Non","4","A",2,136,0,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.22",23,"Homme","30 - 49 ans","Baccalauréat","Non","Oui","Non","5","A",1,137,1,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.22",23,"Homme","30 - 49 ans","Baccalauréat","Non","Oui","Non","5","A",2,137,0,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.22",23,"Homme","30 - 49 ans","Baccalauréat","Non","Oui","Non","6","A",1,138,1,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.22",23,"Homme","30 - 49 ans","Baccalauréat","Non","Oui","Non","6","A",2,138,0,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.23",24,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","1","A",1,139,1,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.23",24,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","1","A",2,139,0,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.23",24,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","2","B",1,140,0,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.23",24,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","2","B",2,140,1,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.23",24,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","3","B",1,141,0,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.23",24,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","3","B",2,141,1,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.23",24,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","4","A",1,142,1,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.23",24,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","4","A",2,142,0,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.23",24,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","5","B",1,143,0,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.23",24,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","5","B",2,143,1,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.23",24,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","6","B",1,144,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.23",24,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","6","B",2,144,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.24",25,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","1","B",1,145,0,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.24",25,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","1","B",2,145,1,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.24",25,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","2","A",1,146,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.24",25,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","2","A",2,146,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.24",25,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","3","B",1,147,0,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.24",25,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","3","B",2,147,1,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.24",25,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","4","A",1,148,1,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.24",25,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","4","A",2,148,0,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.24",25,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","5","B",1,149,0,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.24",25,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","5","B",2,149,1,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.24",25,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","6","A",1,150,1,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.24",25,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","6","A",2,150,0,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set1.alt1.25",26,"Femme","66 + ans","Apprentissage","Non","Non","Non","1","A",1,151,1,"Excellent water","Garbage removed","Very crowded","Moderate biodiversity",25
+"set1.alt2.25",26,"Femme","66 + ans","Apprentissage","Non","Non","Non","1","A",2,151,0,"Insufficient water","Both removed","Crowded","High biodiversity",25
+"set2.alt1.25",26,"Femme","66 + ans","Apprentissage","Non","Non","Non","2","A",1,152,1,"Acceptable water","Both left","Very crowded","High biodiversity",10
+"set2.alt2.25",26,"Femme","66 + ans","Apprentissage","Non","Non","Non","2","A",2,152,0,"Insufficient water","Both left","Very crowded","No biodiversity",0
+"set3.alt1.25",26,"Femme","66 + ans","Apprentissage","Non","Non","Non","3","B",1,153,0,"Acceptable water","Both removed","Very crowded","Moderate biodiversity",40
+"set3.alt2.25",26,"Femme","66 + ans","Apprentissage","Non","Non","Non","3","B",2,153,1,"Insufficient water","Garbage removed","Crowded","Moderate biodiversity",10
+"set4.alt1.25",26,"Femme","66 + ans","Apprentissage","Non","Non","Non","4","A",1,154,1,"Acceptable water","Both removed","Very crowded","High biodiversity",25
+"set4.alt2.25",26,"Femme","66 + ans","Apprentissage","Non","Non","Non","4","A",2,154,0,"Acceptable water","Both left","Crowded","High biodiversity",10
+"set5.alt1.25",26,"Femme","66 + ans","Apprentissage","Non","Non","Non","5","B",1,155,0,"Acceptable water","Garbage removed","Very crowded","No biodiversity",25
+"set5.alt2.25",26,"Femme","66 + ans","Apprentissage","Non","Non","Non","5","B",2,155,1,"Insufficient water","Both removed","Very crowded","Moderate biodiversity",0
+"set6.alt1.25",26,"Femme","66 + ans","Apprentissage","Non","Non","Non","6","B",1,156,0,"Excellent water","Both left","Not crowded","Moderate biodiversity",25
+"set6.alt2.25",26,"Femme","66 + ans","Apprentissage","Non","Non","Non","6","B",2,156,1,"Excellent water","Garbage removed","Crowded","Moderate biodiversity",0
+"set7.alt1",27,"Femme","50 - 64 ans","Master ou plus","Oui","Non","Non","1","A",1,157,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2",27,"Femme","50 - 64 ans","Master ou plus","Oui","Non","Non","1","A",2,157,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1",27,"Femme","50 - 64 ans","Master ou plus","Oui","Non","Non","2","A",1,158,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2",27,"Femme","50 - 64 ans","Master ou plus","Oui","Non","Non","2","A",2,158,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1",27,"Femme","50 - 64 ans","Master ou plus","Oui","Non","Non","3","B",1,159,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2",27,"Femme","50 - 64 ans","Master ou plus","Oui","Non","Non","3","B",2,159,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1",27,"Femme","50 - 64 ans","Master ou plus","Oui","Non","Non","4","B",1,160,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2",27,"Femme","50 - 64 ans","Master ou plus","Oui","Non","Non","4","B",2,160,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1",27,"Femme","50 - 64 ans","Master ou plus","Oui","Non","Non","5","B",1,161,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2",27,"Femme","50 - 64 ans","Master ou plus","Oui","Non","Non","5","B",2,161,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1",27,"Femme","50 - 64 ans","Master ou plus","Oui","Non","Non","6","B",1,162,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2",27,"Femme","50 - 64 ans","Master ou plus","Oui","Non","Non","6","B",2,162,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.1",28,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","1","A",1,163,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.1",28,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","1","A",2,163,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.1",28,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","2","A",1,164,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.1",28,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","2","A",2,164,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.1",28,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","3","B",1,165,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.1",28,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","3","B",2,165,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.1",28,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","4","B",1,166,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.1",28,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","4","B",2,166,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.1",28,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","5","B",1,167,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.1",28,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","5","B",2,167,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.1",28,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","6","B",1,168,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.1",28,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","6","B",2,168,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.2",29,"Femme","30 - 49 ans","License","Non","Non","Oui","1","B",1,169,0,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.2",29,"Femme","30 - 49 ans","License","Non","Non","Oui","1","B",2,169,1,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.2",29,"Femme","30 - 49 ans","License","Non","Non","Oui","2","A",1,170,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.2",29,"Femme","30 - 49 ans","License","Non","Non","Oui","2","A",2,170,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.2",29,"Femme","30 - 49 ans","License","Non","Non","Oui","3","B",1,171,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.2",29,"Femme","30 - 49 ans","License","Non","Non","Oui","3","B",2,171,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.2",29,"Femme","30 - 49 ans","License","Non","Non","Oui","4","B",1,172,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.2",29,"Femme","30 - 49 ans","License","Non","Non","Oui","4","B",2,172,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.2",29,"Femme","30 - 49 ans","License","Non","Non","Oui","5","B",1,173,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.2",29,"Femme","30 - 49 ans","License","Non","Non","Oui","5","B",2,173,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.2",29,"Femme","30 - 49 ans","License","Non","Non","Oui","6","A",1,174,1,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.2",29,"Femme","30 - 49 ans","License","Non","Non","Oui","6","A",2,174,0,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.3",30,"Homme","65 + ans","Master ou plus","Non","Non","Non","1","A",1,175,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.3",30,"Homme","65 + ans","Master ou plus","Non","Non","Non","1","A",2,175,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.3",30,"Homme","65 + ans","Master ou plus","Non","Non","Non","2","A",1,176,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.3",30,"Homme","65 + ans","Master ou plus","Non","Non","Non","2","A",2,176,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.3",30,"Homme","65 + ans","Master ou plus","Non","Non","Non","3","B",1,177,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.3",30,"Homme","65 + ans","Master ou plus","Non","Non","Non","3","B",2,177,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.3",30,"Homme","65 + ans","Master ou plus","Non","Non","Non","4","B",1,178,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.3",30,"Homme","65 + ans","Master ou plus","Non","Non","Non","4","B",2,178,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.3",30,"Homme","65 + ans","Master ou plus","Non","Non","Non","5","A",1,179,1,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.3",30,"Homme","65 + ans","Master ou plus","Non","Non","Non","5","A",2,179,0,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.3",30,"Homme","65 + ans","Master ou plus","Non","Non","Non","6","B",1,180,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.3",30,"Homme","65 + ans","Master ou plus","Non","Non","Non","6","B",2,180,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.4",31,"Femme","30 - 49 ans","License","Non","Non","Oui","1","A",1,181,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.4",31,"Femme","30 - 49 ans","License","Non","Non","Oui","1","A",2,181,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.4",31,"Femme","30 - 49 ans","License","Non","Non","Oui","2","A",1,182,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.4",31,"Femme","30 - 49 ans","License","Non","Non","Oui","2","A",2,182,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.4",31,"Femme","30 - 49 ans","License","Non","Non","Oui","3","B",1,183,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.4",31,"Femme","30 - 49 ans","License","Non","Non","Oui","3","B",2,183,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.4",31,"Femme","30 - 49 ans","License","Non","Non","Oui","4","B",1,184,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.4",31,"Femme","30 - 49 ans","License","Non","Non","Oui","4","B",2,184,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.4",31,"Femme","30 - 49 ans","License","Non","Non","Oui","5","B",1,185,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.4",31,"Femme","30 - 49 ans","License","Non","Non","Oui","5","B",2,185,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.4",31,"Femme","30 - 49 ans","License","Non","Non","Oui","6","B",1,186,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.4",31,"Femme","30 - 49 ans","License","Non","Non","Oui","6","B",2,186,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.5",32,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","1","A",1,187,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.5",32,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","1","A",2,187,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.5",32,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","2","A",1,188,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.5",32,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","2","A",2,188,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.5",32,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","3","B",1,189,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.5",32,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","3","B",2,189,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.5",32,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","4","B",1,190,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.5",32,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","4","B",2,190,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.5",32,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","5","B",1,191,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.5",32,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","5","B",2,191,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.5",32,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","6","B",1,192,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.5",32,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","6","B",2,192,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.6",33,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","1","A",1,193,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.6",33,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","1","A",2,193,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.6",33,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","2","A",1,194,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.6",33,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","2","A",2,194,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.6",33,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","3","B",1,195,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.6",33,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","3","B",2,195,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.6",33,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","4","B",1,196,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.6",33,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","4","B",2,196,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.6",33,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","5","B",1,197,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.6",33,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","5","B",2,197,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.6",33,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","6","B",1,198,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.6",33,"Homme","18 - 29 ans","Master ou plus","Non","Non","Non","6","B",2,198,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.7",34,"Femme","65 + ans","Master ou plus","Oui","Non","Non","1","A",1,199,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.7",34,"Femme","65 + ans","Master ou plus","Oui","Non","Non","1","A",2,199,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.7",34,"Femme","65 + ans","Master ou plus","Oui","Non","Non","2","B",1,200,0,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.7",34,"Femme","65 + ans","Master ou plus","Oui","Non","Non","2","B",2,200,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.7",34,"Femme","65 + ans","Master ou plus","Oui","Non","Non","3","B",1,201,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.7",34,"Femme","65 + ans","Master ou plus","Oui","Non","Non","3","B",2,201,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.7",34,"Femme","65 + ans","Master ou plus","Oui","Non","Non","4","B",1,202,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.7",34,"Femme","65 + ans","Master ou plus","Oui","Non","Non","4","B",2,202,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.7",34,"Femme","65 + ans","Master ou plus","Oui","Non","Non","5","B",1,203,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.7",34,"Femme","65 + ans","Master ou plus","Oui","Non","Non","5","B",2,203,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.7",34,"Femme","65 + ans","Master ou plus","Oui","Non","Non","6","B",1,204,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.7",34,"Femme","65 + ans","Master ou plus","Oui","Non","Non","6","B",2,204,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.8",35,"Femme","30 - 49 ans","Apprentissage","Non","Non","Non","1","A",1,205,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.8",35,"Femme","30 - 49 ans","Apprentissage","Non","Non","Non","1","A",2,205,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.8",35,"Femme","30 - 49 ans","Apprentissage","Non","Non","Non","2","A",1,206,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.8",35,"Femme","30 - 49 ans","Apprentissage","Non","Non","Non","2","A",2,206,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.8",35,"Femme","30 - 49 ans","Apprentissage","Non","Non","Non","3","B",1,207,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.8",35,"Femme","30 - 49 ans","Apprentissage","Non","Non","Non","3","B",2,207,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.8",35,"Femme","30 - 49 ans","Apprentissage","Non","Non","Non","4","B",1,208,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.8",35,"Femme","30 - 49 ans","Apprentissage","Non","Non","Non","4","B",2,208,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.8",35,"Femme","30 - 49 ans","Apprentissage","Non","Non","Non","5","B",1,209,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.8",35,"Femme","30 - 49 ans","Apprentissage","Non","Non","Non","5","B",2,209,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.8",35,"Femme","30 - 49 ans","Apprentissage","Non","Non","Non","6","A",1,210,1,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.8",35,"Femme","30 - 49 ans","Apprentissage","Non","Non","Non","6","A",2,210,0,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.9",36,"Femme","30 - 49 ans","License","Oui","Non","Non","1","A",1,211,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.9",36,"Femme","30 - 49 ans","License","Oui","Non","Non","1","A",2,211,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.9",36,"Femme","30 - 49 ans","License","Oui","Non","Non","2","A",1,212,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.9",36,"Femme","30 - 49 ans","License","Oui","Non","Non","2","A",2,212,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.9",36,"Femme","30 - 49 ans","License","Oui","Non","Non","3","B",1,213,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.9",36,"Femme","30 - 49 ans","License","Oui","Non","Non","3","B",2,213,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.9",36,"Femme","30 - 49 ans","License","Oui","Non","Non","4","B",1,214,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.9",36,"Femme","30 - 49 ans","License","Oui","Non","Non","4","B",2,214,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.9",36,"Femme","30 - 49 ans","License","Oui","Non","Non","5","B",1,215,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.9",36,"Femme","30 - 49 ans","License","Oui","Non","Non","5","B",2,215,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.9",36,"Femme","30 - 49 ans","License","Oui","Non","Non","6","B",1,216,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.9",36,"Femme","30 - 49 ans","License","Oui","Non","Non","6","B",2,216,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.10",37,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","1","B",1,217,0,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.10",37,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","1","B",2,217,1,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.10",37,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","2","A",1,218,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.10",37,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","2","A",2,218,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.10",37,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","3","B",1,219,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.10",37,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","3","B",2,219,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.10",37,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","4","B",1,220,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.10",37,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","4","B",2,220,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.10",37,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","5","B",1,221,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.10",37,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","5","B",2,221,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.10",37,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","6","B",1,222,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.10",37,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","6","B",2,222,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.11",38,"Femme","18 - 29 ans","License","Non","Oui","Non","1","A",1,223,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.11",38,"Femme","18 - 29 ans","License","Non","Oui","Non","1","A",2,223,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.11",38,"Femme","18 - 29 ans","License","Non","Oui","Non","2","A",1,224,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.11",38,"Femme","18 - 29 ans","License","Non","Oui","Non","2","A",2,224,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.11",38,"Femme","18 - 29 ans","License","Non","Oui","Non","3","B",1,225,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.11",38,"Femme","18 - 29 ans","License","Non","Oui","Non","3","B",2,225,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.11",38,"Femme","18 - 29 ans","License","Non","Oui","Non","4","B",1,226,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.11",38,"Femme","18 - 29 ans","License","Non","Oui","Non","4","B",2,226,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.11",38,"Femme","18 - 29 ans","License","Non","Oui","Non","5","B",1,227,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.11",38,"Femme","18 - 29 ans","License","Non","Oui","Non","5","B",2,227,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.11",38,"Femme","18 - 29 ans","License","Non","Oui","Non","6","B",1,228,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.11",38,"Femme","18 - 29 ans","License","Non","Oui","Non","6","B",2,228,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.12",39,"Femme","30 - 49 ans","Master ou plus","Oui","Non","Non","1","A",1,229,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.12",39,"Femme","30 - 49 ans","Master ou plus","Oui","Non","Non","1","A",2,229,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.12",39,"Femme","30 - 49 ans","Master ou plus","Oui","Non","Non","2","A",1,230,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.12",39,"Femme","30 - 49 ans","Master ou plus","Oui","Non","Non","2","A",2,230,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.12",39,"Femme","30 - 49 ans","Master ou plus","Oui","Non","Non","3","B",1,231,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.12",39,"Femme","30 - 49 ans","Master ou plus","Oui","Non","Non","3","B",2,231,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.12",39,"Femme","30 - 49 ans","Master ou plus","Oui","Non","Non","4","B",1,232,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.12",39,"Femme","30 - 49 ans","Master ou plus","Oui","Non","Non","4","B",2,232,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.12",39,"Femme","30 - 49 ans","Master ou plus","Oui","Non","Non","5","B",1,233,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.12",39,"Femme","30 - 49 ans","Master ou plus","Oui","Non","Non","5","B",2,233,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.12",39,"Femme","30 - 49 ans","Master ou plus","Oui","Non","Non","6","B",1,234,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.12",39,"Femme","30 - 49 ans","Master ou plus","Oui","Non","Non","6","B",2,234,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.13",40,"Femme","65 + ans","License","Non","Non","Non","1","B",1,235,0,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.13",40,"Femme","65 + ans","License","Non","Non","Non","1","B",2,235,1,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.13",40,"Femme","65 + ans","License","Non","Non","Non","2","A",1,236,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.13",40,"Femme","65 + ans","License","Non","Non","Non","2","A",2,236,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.13",40,"Femme","65 + ans","License","Non","Non","Non","3","B",1,237,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.13",40,"Femme","65 + ans","License","Non","Non","Non","3","B",2,237,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.13",40,"Femme","65 + ans","License","Non","Non","Non","4","B",1,238,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.13",40,"Femme","65 + ans","License","Non","Non","Non","4","B",2,238,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.13",40,"Femme","65 + ans","License","Non","Non","Non","5","B",1,239,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.13",40,"Femme","65 + ans","License","Non","Non","Non","5","B",2,239,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.13",40,"Femme","65 + ans","License","Non","Non","Non","6","B",1,240,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.13",40,"Femme","65 + ans","License","Non","Non","Non","6","B",2,240,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.14",41,"Femme","65 + ans","Apprentissage","Non","Non","Non","1","B",1,241,0,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.14",41,"Femme","65 + ans","Apprentissage","Non","Non","Non","1","B",2,241,1,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.14",41,"Femme","65 + ans","Apprentissage","Non","Non","Non","2","A",1,242,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.14",41,"Femme","65 + ans","Apprentissage","Non","Non","Non","2","A",2,242,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.14",41,"Femme","65 + ans","Apprentissage","Non","Non","Non","3","A",1,243,1,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.14",41,"Femme","65 + ans","Apprentissage","Non","Non","Non","3","A",2,243,0,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.14",41,"Femme","65 + ans","Apprentissage","Non","Non","Non","4","B",1,244,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.14",41,"Femme","65 + ans","Apprentissage","Non","Non","Non","4","B",2,244,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.14",41,"Femme","65 + ans","Apprentissage","Non","Non","Non","5","B",1,245,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.14",41,"Femme","65 + ans","Apprentissage","Non","Non","Non","5","B",2,245,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.14",41,"Femme","65 + ans","Apprentissage","Non","Non","Non","6","B",1,246,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.14",41,"Femme","65 + ans","Apprentissage","Non","Non","Non","6","B",2,246,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.15",42,"Homme","50 - 64 ans","Apprentissage","Oui","Non","Non","1","A",1,247,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.15",42,"Homme","50 - 64 ans","Apprentissage","Oui","Non","Non","1","A",2,247,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.15",42,"Homme","50 - 64 ans","Apprentissage","Oui","Non","Non","2","A",1,248,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.15",42,"Homme","50 - 64 ans","Apprentissage","Oui","Non","Non","2","A",2,248,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.15",42,"Homme","50 - 64 ans","Apprentissage","Oui","Non","Non","3","B",1,249,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.15",42,"Homme","50 - 64 ans","Apprentissage","Oui","Non","Non","3","B",2,249,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.15",42,"Homme","50 - 64 ans","Apprentissage","Oui","Non","Non","4","B",1,250,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.15",42,"Homme","50 - 64 ans","Apprentissage","Oui","Non","Non","4","B",2,250,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.15",42,"Homme","50 - 64 ans","Apprentissage","Oui","Non","Non","5","B",1,251,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.15",42,"Homme","50 - 64 ans","Apprentissage","Oui","Non","Non","5","B",2,251,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.15",42,"Homme","50 - 64 ans","Apprentissage","Oui","Non","Non","6","B",1,252,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.15",42,"Homme","50 - 64 ans","Apprentissage","Oui","Non","Non","6","B",2,252,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.16",43,"Homme","30 - 49 ans","License","Non","Non","Non","1","B",1,253,0,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.16",43,"Homme","30 - 49 ans","License","Non","Non","Non","1","B",2,253,1,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.16",43,"Homme","30 - 49 ans","License","Non","Non","Non","2","A",1,254,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.16",43,"Homme","30 - 49 ans","License","Non","Non","Non","2","A",2,254,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.16",43,"Homme","30 - 49 ans","License","Non","Non","Non","3","B",1,255,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.16",43,"Homme","30 - 49 ans","License","Non","Non","Non","3","B",2,255,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.16",43,"Homme","30 - 49 ans","License","Non","Non","Non","4","B",1,256,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.16",43,"Homme","30 - 49 ans","License","Non","Non","Non","4","B",2,256,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.16",43,"Homme","30 - 49 ans","License","Non","Non","Non","5","B",1,257,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.16",43,"Homme","30 - 49 ans","License","Non","Non","Non","5","B",2,257,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.16",43,"Homme","30 - 49 ans","License","Non","Non","Non","6","B",1,258,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.16",43,"Homme","30 - 49 ans","License","Non","Non","Non","6","B",2,258,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.17",44,"Homme","18 - 29 ans","License","Non","Non","Non","1","B",1,259,0,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.17",44,"Homme","18 - 29 ans","License","Non","Non","Non","1","B",2,259,1,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.17",44,"Homme","18 - 29 ans","License","Non","Non","Non","2","A",1,260,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.17",44,"Homme","18 - 29 ans","License","Non","Non","Non","2","A",2,260,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.17",44,"Homme","18 - 29 ans","License","Non","Non","Non","3","B",1,261,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.17",44,"Homme","18 - 29 ans","License","Non","Non","Non","3","B",2,261,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.17",44,"Homme","18 - 29 ans","License","Non","Non","Non","4","B",1,262,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.17",44,"Homme","18 - 29 ans","License","Non","Non","Non","4","B",2,262,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.17",44,"Homme","18 - 29 ans","License","Non","Non","Non","5","B",1,263,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.17",44,"Homme","18 - 29 ans","License","Non","Non","Non","5","B",2,263,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.17",44,"Homme","18 - 29 ans","License","Non","Non","Non","6","B",1,264,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.17",44,"Homme","18 - 29 ans","License","Non","Non","Non","6","B",2,264,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.18",45,"Femme","30 - 49 ans","Master ou plus","Non","Non","Oui","1","A",1,265,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.18",45,"Femme","30 - 49 ans","Master ou plus","Non","Non","Oui","1","A",2,265,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.18",45,"Femme","30 - 49 ans","Master ou plus","Non","Non","Oui","2","A",1,266,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.18",45,"Femme","30 - 49 ans","Master ou plus","Non","Non","Oui","2","A",2,266,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.18",45,"Femme","30 - 49 ans","Master ou plus","Non","Non","Oui","3","B",1,267,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.18",45,"Femme","30 - 49 ans","Master ou plus","Non","Non","Oui","3","B",2,267,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.18",45,"Femme","30 - 49 ans","Master ou plus","Non","Non","Oui","4","B",1,268,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.18",45,"Femme","30 - 49 ans","Master ou plus","Non","Non","Oui","4","B",2,268,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.18",45,"Femme","30 - 49 ans","Master ou plus","Non","Non","Oui","5","B",1,269,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.18",45,"Femme","30 - 49 ans","Master ou plus","Non","Non","Oui","5","B",2,269,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.18",45,"Femme","30 - 49 ans","Master ou plus","Non","Non","Oui","6","B",1,270,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.18",45,"Femme","30 - 49 ans","Master ou plus","Non","Non","Oui","6","B",2,270,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.19",46,"Femme","18 - 29 ans","License","Non","Non","Non","1","A",1,271,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.19",46,"Femme","18 - 29 ans","License","Non","Non","Non","1","A",2,271,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.19",46,"Femme","18 - 29 ans","License","Non","Non","Non","2","A",1,272,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.19",46,"Femme","18 - 29 ans","License","Non","Non","Non","2","A",2,272,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.19",46,"Femme","18 - 29 ans","License","Non","Non","Non","3","A",1,273,1,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.19",46,"Femme","18 - 29 ans","License","Non","Non","Non","3","A",2,273,0,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.19",46,"Femme","18 - 29 ans","License","Non","Non","Non","4","B",1,274,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.19",46,"Femme","18 - 29 ans","License","Non","Non","Non","4","B",2,274,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.19",46,"Femme","18 - 29 ans","License","Non","Non","Non","5","B",1,275,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.19",46,"Femme","18 - 29 ans","License","Non","Non","Non","5","B",2,275,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.19",46,"Femme","18 - 29 ans","License","Non","Non","Non","6","B",1,276,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.19",46,"Femme","18 - 29 ans","License","Non","Non","Non","6","B",2,276,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.20",47,"Femme","18 - 29 ans","License","Non","Non","Non","1","A",1,277,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.20",47,"Femme","18 - 29 ans","License","Non","Non","Non","1","A",2,277,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.20",47,"Femme","18 - 29 ans","License","Non","Non","Non","2","A",1,278,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.20",47,"Femme","18 - 29 ans","License","Non","Non","Non","2","A",2,278,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.20",47,"Femme","18 - 29 ans","License","Non","Non","Non","3","B",1,279,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.20",47,"Femme","18 - 29 ans","License","Non","Non","Non","3","B",2,279,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.20",47,"Femme","18 - 29 ans","License","Non","Non","Non","4","B",1,280,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.20",47,"Femme","18 - 29 ans","License","Non","Non","Non","4","B",2,280,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.20",47,"Femme","18 - 29 ans","License","Non","Non","Non","5","B",1,281,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.20",47,"Femme","18 - 29 ans","License","Non","Non","Non","5","B",2,281,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.20",47,"Femme","18 - 29 ans","License","Non","Non","Non","6","B",1,282,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.20",47,"Femme","18 - 29 ans","License","Non","Non","Non","6","B",2,282,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.21",48,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","1","A",1,283,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.21",48,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","1","A",2,283,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.21",48,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","2","A",1,284,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.21",48,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","2","A",2,284,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.21",48,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","3","A",1,285,1,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.21",48,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","3","A",2,285,0,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.21",48,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","4","B",1,286,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.21",48,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","4","B",2,286,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.21",48,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","5","B",1,287,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.21",48,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","5","B",2,287,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.21",48,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","6","B",1,288,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.21",48,"Homme","30 - 49 ans","Master ou plus","Oui","Non","Non","6","B",2,288,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.22",49,"Femme","50 - 64 ans","Baccalauréat","Non","Non","Oui","1","A",1,289,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.22",49,"Femme","50 - 64 ans","Baccalauréat","Non","Non","Oui","1","A",2,289,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.22",49,"Femme","50 - 64 ans","Baccalauréat","Non","Non","Oui","2","A",1,290,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.22",49,"Femme","50 - 64 ans","Baccalauréat","Non","Non","Oui","2","A",2,290,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.22",49,"Femme","50 - 64 ans","Baccalauréat","Non","Non","Oui","3","B",1,291,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.22",49,"Femme","50 - 64 ans","Baccalauréat","Non","Non","Oui","3","B",2,291,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.22",49,"Femme","50 - 64 ans","Baccalauréat","Non","Non","Oui","4","B",1,292,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.22",49,"Femme","50 - 64 ans","Baccalauréat","Non","Non","Oui","4","B",2,292,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.22",49,"Femme","50 - 64 ans","Baccalauréat","Non","Non","Oui","5","B",1,293,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.22",49,"Femme","50 - 64 ans","Baccalauréat","Non","Non","Oui","5","B",2,293,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.22",49,"Femme","50 - 64 ans","Baccalauréat","Non","Non","Oui","6","B",1,294,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.22",49,"Femme","50 - 64 ans","Baccalauréat","Non","Non","Oui","6","B",2,294,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.23",50,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","1","A",1,295,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.23",50,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","1","A",2,295,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.23",50,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","2","A",1,296,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.23",50,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","2","A",2,296,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.23",50,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","3","B",1,297,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.23",50,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","3","B",2,297,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.23",50,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","4","B",1,298,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.23",50,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","4","B",2,298,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.23",50,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","5","B",1,299,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.23",50,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","5","B",2,299,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.23",50,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","6","B",1,300,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.23",50,"Femme","18 - 29 ans","Master ou plus","Non","Non","Non","6","B",2,300,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.24",51,"Homme","18 - 29 ans","Bachelor","Non","Non","Oui","1","A",1,301,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.24",51,"Homme","18 - 29 ans","Bachelor","Non","Non","Oui","1","A",2,301,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.24",51,"Homme","18 - 29 ans","Bachelor","Non","Non","Oui","2","A",1,302,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.24",51,"Homme","18 - 29 ans","Bachelor","Non","Non","Oui","2","A",2,302,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.24",51,"Homme","18 - 29 ans","Bachelor","Non","Non","Oui","3","B",1,303,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.24",51,"Homme","18 - 29 ans","Bachelor","Non","Non","Oui","3","B",2,303,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.24",51,"Homme","18 - 29 ans","Bachelor","Non","Non","Oui","4","B",1,304,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.24",51,"Homme","18 - 29 ans","Bachelor","Non","Non","Oui","4","B",2,304,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.24",51,"Homme","18 - 29 ans","Bachelor","Non","Non","Oui","5","B",1,305,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.24",51,"Homme","18 - 29 ans","Bachelor","Non","Non","Oui","5","B",2,305,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.24",51,"Homme","18 - 29 ans","Bachelor","Non","Non","Oui","6","B",1,306,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.24",51,"Homme","18 - 29 ans","Bachelor","Non","Non","Oui","6","B",2,306,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.25",52,"Femme","50 - 64 ans","Bachelor","Non","Non","Non","1","A",1,307,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.25",52,"Femme","50 - 64 ans","Bachelor","Non","Non","Non","1","A",2,307,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.25",52,"Femme","50 - 64 ans","Bachelor","Non","Non","Non","2","A",1,308,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.25",52,"Femme","50 - 64 ans","Bachelor","Non","Non","Non","2","A",2,308,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.25",52,"Femme","50 - 64 ans","Bachelor","Non","Non","Non","3","B",1,309,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.25",52,"Femme","50 - 64 ans","Bachelor","Non","Non","Non","3","B",2,309,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.25",52,"Femme","50 - 64 ans","Bachelor","Non","Non","Non","4","B",1,310,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.25",52,"Femme","50 - 64 ans","Bachelor","Non","Non","Non","4","B",2,310,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.25",52,"Femme","50 - 64 ans","Bachelor","Non","Non","Non","5","B",1,311,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.25",52,"Femme","50 - 64 ans","Bachelor","Non","Non","Non","5","B",2,311,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.25",52,"Femme","50 - 64 ans","Bachelor","Non","Non","Non","6","B",1,312,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.25",52,"Femme","50 - 64 ans","Bachelor","Non","Non","Non","6","B",2,312,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.26",53,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","1","A",1,313,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.26",53,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","1","A",2,313,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.26",53,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","2","A",1,314,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.26",53,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","2","A",2,314,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.26",53,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","3","B",1,315,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.26",53,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","3","B",2,315,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.26",53,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","4","B",1,316,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.26",53,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","4","B",2,316,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.26",53,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","5","B",1,317,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.26",53,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","5","B",2,317,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.26",53,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","6","A",1,318,1,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.26",53,"Femme","50 - 64 ans","Master ou plus","Non","Non","Non","6","A",2,318,0,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.27",54,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","1","A",1,319,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.27",54,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","1","A",2,319,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.27",54,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","2","A",1,320,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.27",54,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","2","A",2,320,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.27",54,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","3","B",1,321,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.27",54,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","3","B",2,321,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.27",54,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","4","A",1,322,1,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.27",54,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","4","A",2,322,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.27",54,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","5","A",1,323,1,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.27",54,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","5","A",2,323,0,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.27",54,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","6","B",1,324,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.27",54,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","6","B",2,324,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.28",55,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","1","A",1,325,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.28",55,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","1","A",2,325,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.28",55,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","2","A",1,326,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.28",55,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","2","A",2,326,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.28",55,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","3","B",1,327,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.28",55,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","3","B",2,327,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.28",55,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","4","A",1,328,1,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.28",55,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","4","A",2,328,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.28",55,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","5","A",1,329,1,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.28",55,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","5","A",2,329,0,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.28",55,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","6","B",1,330,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.28",55,"Homme","18 - 29 ans","Apprentissage","Non","Non","Non","6","B",2,330,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.29",56,"Femme","65 + ans","Master ou plus","Non","Non","Non","1","A",1,331,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.29",56,"Femme","65 + ans","Master ou plus","Non","Non","Non","1","A",2,331,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.29",56,"Femme","65 + ans","Master ou plus","Non","Non","Non","2","A",1,332,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.29",56,"Femme","65 + ans","Master ou plus","Non","Non","Non","2","A",2,332,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.29",56,"Femme","65 + ans","Master ou plus","Non","Non","Non","3","B",1,333,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.29",56,"Femme","65 + ans","Master ou plus","Non","Non","Non","3","B",2,333,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.29",56,"Femme","65 + ans","Master ou plus","Non","Non","Non","4","A",1,334,1,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.29",56,"Femme","65 + ans","Master ou plus","Non","Non","Non","4","A",2,334,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.29",56,"Femme","65 + ans","Master ou plus","Non","Non","Non","5","B",1,335,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.29",56,"Femme","65 + ans","Master ou plus","Non","Non","Non","5","B",2,335,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.29",56,"Femme","65 + ans","Master ou plus","Non","Non","Non","6","B",1,336,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.29",56,"Femme","65 + ans","Master ou plus","Non","Non","Non","6","B",2,336,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.30",57,"Femme","65 + ans","Bachelor","Non","Non","Oui","1","B",1,337,0,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.30",57,"Femme","65 + ans","Bachelor","Non","Non","Oui","1","B",2,337,1,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.30",57,"Femme","65 + ans","Bachelor","Non","Non","Oui","2","A",1,338,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.30",57,"Femme","65 + ans","Bachelor","Non","Non","Oui","2","A",2,338,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.30",57,"Femme","65 + ans","Bachelor","Non","Non","Oui","3","B",1,339,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.30",57,"Femme","65 + ans","Bachelor","Non","Non","Oui","3","B",2,339,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.30",57,"Femme","65 + ans","Bachelor","Non","Non","Oui","4","B",1,340,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.30",57,"Femme","65 + ans","Bachelor","Non","Non","Oui","4","B",2,340,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.30",57,"Femme","65 + ans","Bachelor","Non","Non","Oui","5","B",1,341,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.30",57,"Femme","65 + ans","Bachelor","Non","Non","Oui","5","B",2,341,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.30",57,"Femme","65 + ans","Bachelor","Non","Non","Oui","6","B",1,342,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.30",57,"Femme","65 + ans","Bachelor","Non","Non","Oui","6","B",2,342,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.31",58,"Homme","30 - 49 ans","Baccalauréat","Non","Non","Non","1","A",1,343,1,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.31",58,"Homme","30 - 49 ans","Baccalauréat","Non","Non","Non","1","A",2,343,0,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.31",58,"Homme","30 - 49 ans","Baccalauréat","Non","Non","Non","2","A",1,344,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.31",58,"Homme","30 - 49 ans","Baccalauréat","Non","Non","Non","2","A",2,344,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.31",58,"Homme","30 - 49 ans","Baccalauréat","Non","Non","Non","3","B",1,345,0,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.31",58,"Homme","30 - 49 ans","Baccalauréat","Non","Non","Non","3","B",2,345,1,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.31",58,"Homme","30 - 49 ans","Baccalauréat","Non","Non","Non","4","B",1,346,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.31",58,"Homme","30 - 49 ans","Baccalauréat","Non","Non","Non","4","B",2,346,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.31",58,"Homme","30 - 49 ans","Baccalauréat","Non","Non","Non","5","B",1,347,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.31",58,"Homme","30 - 49 ans","Baccalauréat","Non","Non","Non","5","B",2,347,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.31",58,"Homme","30 - 49 ans","Baccalauréat","Non","Non","Non","6","B",1,348,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.31",58,"Homme","30 - 49 ans","Baccalauréat","Non","Non","Non","6","B",2,348,1,"Excellent water","Both removed","Not crowded","High biodiversity",10
+"set7.alt1.32",59,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","1","B",1,349,0,"Acceptable water","Garbage removed","Not crowded","Moderate biodiversity",10
+"set7.alt2.32",59,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","1","B",2,349,1,"Acceptable water","Both left","Very crowded","High biodiversity",0
+"set8.alt1.32",59,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","2","A",1,350,1,"Acceptable water","Both removed","Not crowded","High biodiversity",0
+"set8.alt2.32",59,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","2","A",2,350,0,"Acceptable water","Both removed","Crowded","Moderate biodiversity",25
+"set9.alt1.32",59,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","3","A",1,351,1,"Acceptable water","Both left","Very crowded","Moderate biodiversity",10
+"set9.alt2.32",59,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","3","A",2,351,0,"Excellent water","Both left","Crowded","High biodiversity",25
+"set10.alt1.32",59,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","4","B",1,352,0,"Insufficient water","Both removed","Very crowded","High biodiversity",10
+"set10.alt2.32",59,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","4","B",2,352,1,"Acceptable water","Both removed","Crowded","Moderate biodiversity",0
+"set11.alt1.32",59,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","5","B",1,353,0,"Insufficient water","Garbage removed","Not crowded","No biodiversity",40
+"set11.alt2.32",59,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","5","B",2,353,1,"Acceptable water","Both removed","Not crowded","No biodiversity",0
+"set12.alt1.32",59,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","6","B",1,354,0,"Insufficient water","Garbage removed","Not crowded","Moderate biodiversity",25
+"set12.alt2.32",59,"Homme","18 - 29 ans","Baccalauréat","Non","Non","Non","6","B",2,354,1,"Excellent water","Both removed","Not crowded","High biodiversity",10

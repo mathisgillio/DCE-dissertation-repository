@@ -1,0 +1,24 @@
+"Excellent water" "Garbage removed" "Very crowded" "Moderate biodiversity" 25 
+"Insufficient water" "Both removed" "Crowded" "High biodiversity" 25 
+"Acceptable water" "Both left" "Very crowded" "High biodiversity" 10 
+"Insufficient water" "Both left" "Very crowded" "No biodiversity" 0 
+"Acceptable water" "Both removed" "Very crowded" "Moderate biodiversity" 40 
+"Insufficient water" "Garbage removed" "Crowded" "Moderate biodiversity" 10 
+"Acceptable water" "Both removed" "Very crowded" "High biodiversity" 25 
+"Acceptable water" "Both left" "Crowded" "High biodiversity" 10 
+"Acceptable water" "Garbage removed" "Very crowded" "No biodiversity" 25 
+"Insufficient water" "Both removed" "Very crowded" "Moderate biodiversity" 0 
+"Excellent water" "Both left" "Not crowded" "Moderate biodiversity" 25 
+"Excellent water" "Garbage removed" "Crowded" "Moderate biodiversity" 0 
+"Acceptable water" "Garbage removed" "Not crowded" "Moderate biodiversity" 10 
+"Acceptable water" "Both left" "Very crowded" "High biodiversity" 0 
+"Acceptable water" "Both removed" "Not crowded" "High biodiversity" 0 
+"Acceptable water" "Both removed" "Crowded" "Moderate biodiversity" 25 
+"Acceptable water" "Both left" "Very crowded" "Moderate biodiversity" 10 
+"Excellent water" "Both left" "Crowded" "High biodiversity" 25 
+"Insufficient water" "Both removed" "Very crowded" "High biodiversity" 10 
+"Acceptable water" "Both removed" "Crowded" "Moderate biodiversity" 0 
+"Insufficient water" "Garbage removed" "Not crowded" "No biodiversity" 40 
+"Acceptable water" "Both removed" "Not crowded" "No biodiversity" 0 
+"Insufficient water" "Garbage removed" "Not crowded" "Moderate biodiversity" 25 
+"Excellent water" "Both removed" "Not crowded" "High biodiversity" 10
