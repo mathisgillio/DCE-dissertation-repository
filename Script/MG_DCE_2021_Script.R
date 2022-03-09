@@ -374,33 +374,43 @@ summary(multinomial_logit_model_dummy2)
 stargazer(multinomial_logit_model_2, type="text", out="multi.htm")
 
 
+### 8.c Generalized Linear model ---- 
 
-### 8.c Mixed-effect model ---- 
+glm <- glm(choice ~ water + detritus + congestion + biodiversity
+         + price, family = binomial, data = finaldatadummy)
 
-lm <- lm(choice ~ water + detritus + congestion + biodiversity
-         + price, data = finaldatadummy)
+#add1(glm, ~ .^2, test = "Chisq")
 
-summary(lm)
-plot(lm)
+glm
+summary(glm)
+plot(glm)
 
-mixed.lmer <- lmer(choice ~ water + detritus + congestion + biodiversity
-                   + price + (1|personid), data = finaldatadummy) # no tendency to vary the intercept 
+# Look at the difference between the Null deviance (variability explained by a null model
+# and the Residual deviance: the amount of variability that remains after you’ve explained 
+# some away by your explanatory variable. 
 
-summary(mixed.lmer) # gives summary of the model 
+981.5 - 774.08
 
-# Look at plot to check assumptions 
+# The bigger the reduction in deviance, the better a job your model is doing at 
+# explaining a relationship.
 
-plot(mixed.lmer)
-qqnorm(resid(mixed.lmer))
-qqline(resid(mixed.lmer))
+pchisq(774.08, 698, lower.tail = FALSE) # p-value: the residual deviance is significant: 
+                                        # evidence against the model? 
+
+# The functions that can be used to extract results from the fit include: 
+
+#residuals() or resid(), for the deviance residuals
+#fitted() or fitted.values(), for the fitted values (estimated probabilities)
+#predict(), for the linear predictor (estimated logits)
+#coef() or coefficients(), for the coefficients 
+#deviance(), for the deviance
 
 # Save the outputs of the model as a table 
 
-stargazer(mixed.lmer, type = "text",
+stargazer(glm, type = "text",
           digits = 3,
           star.cutoffs = c(0.05, 0.01, 0.001),
           digit.separator = "")
-
 
 
 ### 8.d Mixed-effects logit model ----
