@@ -304,7 +304,7 @@ write.csv(final,'Data/finaldata.csv') # save final data for analysis
 
 ## Load the data 
 
-finaldata <- read.csv("Data/finaldata-dummy.csv")
+finaldatadummy <- read.csv("Data/finaldata-dummy.csv")
 
 ## Make price as numeric to estiamte WTP 
 
@@ -352,14 +352,22 @@ conditional_logit_model_dummy$loglik # a log-likelihood at zero and at convergen
 # Create the data to be used in mlogit
 
 finaldatadummyclean <- dfidx(finaldatadummy, choice = "choice",
-                             idx = list("cs.personid", "alt"), idnames = c("cs", "alt"))  
+                             idx = list("cs.personid", "alt"), idnames = c("cs", "alt")) 
 
 multinomial_logit_model_dummy <- mlogit(choice ~ water + detritus + congestion + biodiversity
                                         + price, finaldatadummyclean)  # 0 or -1 removes the intercept so just remove it 
 
+
+finaldatadummyclean2 <- mlogit.data(finaldatadummy, choice = "choice", shape = "long", 
+                                    alt.var = "alt", id = "personid")
+
+multinomial_logit_model_dummy2 <- mlogit(choice ~ water + detritus + congestion +
+                                           biodiversity + price, finaldatadummyclean2)
+
 # Give summary of the model outputs 
 
 summary(multinomial_logit_model_dummy)
+summary(multinomial_logit_model_dummy2)
 
 # Save the output of the model in table 
 
