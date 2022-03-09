@@ -186,6 +186,8 @@ summary(cl_by_pf)
 
 library("mlogit")
 data("Electricity", package = "mlogit")
+str(Electricity)
+
 Electricity$chid <- 1:nrow(Electricity)
 Electr <- dfidx(Electricity, idx = list(c("chid", "id")),
                 choice = "choice", varying = 3:26, sep = "")
