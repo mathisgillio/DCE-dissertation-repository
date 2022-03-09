@@ -377,8 +377,14 @@ stargazer(multinomial_logit_model_2, type="text", out="multi.htm")
 
 ### 8.c Mixed-effect model ---- 
 
+lm <- lm(choice ~ water + detritus + congestion + biodiversity
+         + price, data = finaldatadummy)
+
+summary(lm)
+plot(lm)
+
 mixed.lmer <- lmer(choice ~ water + detritus + congestion + biodiversity
-                   + price + (1|age) + (1|gender) + (1|study_level), data = finaldatadummy) # no tendency to vary the intercept 
+                   + price + (1|personid), data = finaldatadummy) # no tendency to vary the intercept 
 
 summary(mixed.lmer) # gives summary of the model 
 
