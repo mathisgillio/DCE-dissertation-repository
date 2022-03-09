@@ -63,7 +63,7 @@ save.image(file = 'Data/d.RData') # save the image so don't have to reload later
 design <- d$design
 design # final design with lowest D-error 
 
-#write.table(design, 'design.txt', col.names=NA) # save the design 
+#write.table(design, 'design1.txt', col.names=NA) # save the design 
 
 ### 6. Decode the design set ---- 
 
@@ -252,6 +252,9 @@ datablock2 <- mutate(datablock2,
 
 truedesign <- read.table("Data/design.txt") # load the design matrix 
 truedesignmatrix <- as.matrix(truedesign) # transform to a matrix to change the titles 
+
+str(truedesignmatrix)
+str(truedesign)
 
 # Redefine the variables to make the output more readable 
 
