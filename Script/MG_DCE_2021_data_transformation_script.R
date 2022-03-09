@@ -2,9 +2,7 @@
 ## Mathis Gillio 
 ## 09/03/2022
 
-
 ## 0. Load the librairies needed ---- 
-
 
 library(idefix) # package used to create an efficient design
 library(dplyr)
@@ -16,7 +14,7 @@ library(reshape2)
 datablock1 <- read.csv("Data/dce1.csv") # load the responses from Google Survey 
 datablock2 <- read.csv("Data/dce2.csv")
 
-## Clean data block 1
+## 2. Reshape the data for block 1 ---- 
 
 datablock1 <- datablock1  %>% 
   select(-(1:2)) %>% # remove non-needed data (date stamp)
@@ -96,7 +94,7 @@ datablock1 <- mutate(datablock1,
                      choice = ifelse(value == "A" & alt == "1" | value== "B" & alt=="2",
                                      1, 0))
 
-## 7.b Reshape the data for block 2 ---- 
+## 3. Reshape the data for block 2 ---- 
 
 datablock2 <- datablock2  %>% 
   select(-(1:2)) %>% # remove non-needed data
@@ -177,7 +175,7 @@ datablock2 <- mutate(datablock2,
                      choice = ifelse(value == "A" & alt == "1" | value== "B" & alt=="2",
                                      1, 0))
 
-### 7.c Combine the two blocks ---- 
+### 4. Combine the two blocks ---- 
 
 ## Split the design matrix into the two blocks 
 
@@ -224,6 +222,8 @@ finaldummy <- rbind(final11, final22)
 finaldummy$price <- as.numeric(as.character(finaldummy$price))
 
 str(finaldummy)
+
+### 5. Save final data ---- 
 
 write.csv(finaldummy,'Data/finaldata-dummy.csv') # save final data for analysis 
 
