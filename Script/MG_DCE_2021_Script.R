@@ -19,6 +19,13 @@ library(idefix) # package used to create an efficient design
 library(dplyr)
 library(tidyr)
 library(reshape2)
+library(tidyverse)
+library(mlogit)
+library(survival) # used for the clogit function 
+library(lme4) 
+library(stargazer)
+library(lmtest)
+library(gmnl)
 
 load('Data/d.RData') # load the design for more efficient script 
 
@@ -293,97 +300,87 @@ final <- rbind(final1, final2)
 
 write.csv(final,'Data/finaldata.csv') # save final data for analysis 
 
-### 7.d Further transform the data to fit in mlogit ---- 
-
-## Load libraries 
-
-library(tidyverse)
-library(dplyr)
-library(mlogit)
-library(survival) # used for the clogit function 
-library(lme4) 
-library(stargazer)
-library(lmtest)
+### 7.d Further transform the data for analysis ---- 
 
 ## Load the data 
 
-finaldata <- read.csv("Data/finaldata.csv")
+finaldata <- read.csv("Data/finaldata-dummy.csv")
+
+## Make price as numeric to estiamte WTP 
+
+finaldatadummy$price <- as.numeric(as.character(finaldatadummy$price))
 
 ## Create new columns for the indexes 
 
-finaldata$cs.personid <- paste(finaldata$cs, finaldata$personid, sep = "_")
-finaldata$id <- 1:nrow(finaldata)
+finaldatadummy$cs.personid <- paste(finaldatadummy$cs, finaldatadummy$personid, sep = "_")
+finaldatadummy$chid <- 1:nrow(finaldatadummy)
 
-finaldata <- finaldata %>% 
-  mutate(choice = as.logical(choice)) # make the choice logical (TRUE/FALSE)
+## Make the choice logical (TRUE/FALSE)
 
-finaldataclean <- dfidx(finaldata, choice = "choice", idx = list("cs.personid", "alt"), 
-                        idnames = c("cs", "alt"))  # create the mlogit data 
+finaldatadummy <- finaldatadummy %>% 
+  mutate(choice = as.logical(choice))
 
-head(finaldataclean, 5) # check the indexes created 
+## Change reference levels 
 
+levels(finaldatadummy$water)
+levels(finaldatadummy$water) <- c("Acceptable water","Excellent water","Insufficient water")
 
-#### 8. Data analysis ---- 
+levels(finaldatadummy$detritus)
+levels(finaldatadummy$detritus) <- c("Both removed","Both left","Garbage removed")
 
-# The missing coeffecients (wat3, det3, cong3, bio3 and pri4) can be calculated as 
-# the negative sum of the other coefficients in the attributes 
+levels(finaldatadummy$congestion)
+levels(finaldatadummy$congestion) <- c("Very crowded","Crowded","Not crowded")
 
-### 8.a CLM model ---- 
+levels(finaldatadummy$biodiversity)
+levels(finaldatadummy$biodiversity) <- c("Moderate biodiversity","High biodiversity","No biodiversity")
 
-conditional_logit_model <- clogit(choice ~ wat1 + wat2 + det1 + det2 + 
-                                    cong1 + cong2 + bio1 + bio2 + pri1 + pri2 
-                                  + pri3 + strata(cs), data = finaldata)
+### 8. Data analysis ---- 
 
-conditional_logit_model # gives the outputs of the model 
+## 8.a Conditional logit model ---- 
 
-### 8.b MNL model ---- 
+conditional_logit_model_dummy <- clogit(choice ~ water + detritus + congestion + biodiversity
+                                        + price + strata(cs), data = finaldatadummy)
 
-multinomial_logit_model_1 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
-                                    cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 | 0,
-                                  finaldataclean) 
+conditional_logit_model_dummy # gives the outputs of the model 
 
-
-multinomial_logit_model_2 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
-                                      cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3,
-                                    finaldataclean) 
+conditional_logit_model_dummy$loglik # a log-likelihood at zero and at convergence
 
 
-multinomial_logit_model_3 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
-                            cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 | 0,
-                       finaldataclean,
-                       rpar = c(wat1 = "n", wat2 = "n", det1 = "n", det2 = "n",
-                              cong1 = "n", cong2 = "n", bio1 = "n", bio2 = "n", 
-                              pri1 = "n", pri2 = "n", pri3 = "n"), 
-                       R = 100,
-                       correlation = TRUE,
-                       halton = NA)
 
-## Give summary of the model outputs 
+## 8.b Multinomial logit model ---- 
 
-summary(multinomial_logit_model_1)
-summary(multinomial_logit_model_2)
-summary(multinomial_logit_model_3)
+# Create the data to be used in mlogit
+
+finaldatadummyclean <- dfidx(finaldatadummy, choice = "choice",
+                             idx = list("cs.personid", "alt"), idnames = c("cs", "alt"))  
+
+multinomial_logit_model_dummy <- mlogit(choice ~ water + detritus + congestion + biodiversity
+                                        + price, finaldatadummyclean)  # 0 or -1 removes the intercept so just remove it 
+
+# Give summary of the model outputs 
+
+summary(multinomial_logit_model_dummy)
 
 # Save the output of the model in table 
 
 stargazer(multinomial_logit_model_2, type="text", out="multi.htm")
 
 
+
 ### 8.c Mixed-effect model ---- 
 
-mixed.lmer <- lmer(choice ~ wat1 + wat2 + det1 + det2 + 
-                     cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 + 
-                     (1|personid), data = finaldata)
+mixed.lmer <- lmer(choice ~ water + detritus + congestion + biodiversity
+                   + price + (1|age) + (1|gender) + (1|study_level), data = finaldatadummy) # no tendency to vary the intercept 
 
 summary(mixed.lmer) # gives summary of the model 
 
-## Look at plot to check assumptions 
+# Look at plot to check assumptions 
 
 plot(mixed.lmer)
 qqnorm(resid(mixed.lmer))
 qqline(resid(mixed.lmer))
 
-## Save the outputs of the model as a table 
+# Save the outputs of the model as a table 
 
 stargazer(mixed.lmer, type = "text",
           digits = 3,
@@ -391,38 +388,21 @@ stargazer(mixed.lmer, type = "text",
           digit.separator = "")
 
 
-### 8.d XLM model ---- 
 
-## Create mlogit data for XLM model (depricated function)
+### 8.d Mixed-effects logit model ----
 
-finaldatacleanxlm <- mlogit.data(finaldata, choice = "choice", shape = "long", 
-                                 alt.var = "alt", idx = c("personid", "id"))
+# Create mlogit data for XLM model
 
-head(finaldatacleanxlm, 5) # check the indexes 
-
-mixed_logit_model_1 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
-                              cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 | 0, 
-                           finaldatacleanxlm,
-                           rpar = c(wat1 = "n", wat2 = "n", det1 = "n", det2 = "n",
-                                    cong1 = "n", cong2 = "n", bio1 = "n", bio2 = "n", 
-                                    pri1 = "n", pri2 = "n", pri3 = "n"),
-                    correlation = TRUE,
-                    halton = NA, 
-                    R = 100, 
-                    panel = TRUE)
-
-mixed_logit_model_2 <- mlogit(choice ~ wat1 + wat2 + det1 + det2 + 
-                              cong1 + cong2 + bio1 + bio2 + pri1 + pri2 + pri3 | -1 | 0, 
-                            finaldataclean,
-                            rpar = c(wat1 = "n", wat2 = "n", det1 = "n", det2 = "n",
-                                     cong1 = "n", cong2 = "n", bio1 = "n", bio2 = "n", 
-                                     pri1 = "n", pri2 = "n", pri3 = "n"),
-                            halton = NA, 
-                            R = 100, 
-                            print.level = 0,
-                            panel = TRUE)
+finaldatadummycleanxlm <- mlogit.data(finaldatadummy, choice="choice", shape = "long", 
+                                       alt.var = "alt", idx = c("personid", "cs"))
 
 
-
-
+mixed_logit_model_dummy <- mlogit(choice ~ water + detritus + congestion + biodiversity 
+                                    + price, 
+                                    data = finaldatadummycleanxlm,
+                                    rpar = c(water = "n", detritus = "n",congestion = "n",
+                                             price = "n"),
+                                    halton = NA, 
+                                    R = 100, 
+                                    panel = TRUE)
 
