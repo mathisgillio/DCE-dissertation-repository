@@ -581,7 +581,8 @@ theme_diss <- function(){            # creating a new theme function
 
 france <- map_data("world") %>% # creating dataframe for coordinates of all countries
   rename("Countries" = "region")  %>%  # renaming "region" column to "Countries"
-  filter(Countries == "France")
+  filter(Countries == "France") %>% 
+  filter(is.na(subregion))
 
 antibes <- data.frame(
   long = c(7.10831),
@@ -589,10 +590,10 @@ antibes <- data.frame(
   stringsAsFactors = FALSE)  
 
 (francemap <- ggplot() + 
-  geom_polygon(data = france, aes(x=long, y = lat, group = group), fill = "azure3", color = "black") + 
+  geom_polygon(data = france, aes(x=long, y = lat, group = group), fill = "grey95", color = "black") + 
   coord_fixed(1.3) +
-  geom_point(data = antibes, aes(x = long, y = lat), color = "coral", size = 3) +
-  annotate("text", x = 8, y = 43.3, label = "Antibes") + 
+  geom_point(data = antibes, aes(x = long, y = lat), color = "coral", size = 9) +
+  annotate("text", x = 7.5, y = 42.8, label = "Antibes", size = 12) + 
   theme_diss() + 
     theme(axis.text.x      =   element_blank(),
           axis.text.y      =   element_blank(),
@@ -602,6 +603,10 @@ antibes <- data.frame(
           #panel.border     =   element_blank(),
           panel.grid.major =   element_blank(),
           panel.grid.minor =   element_blank()))
+
+ggsave(francemap, filename = "Pictures/france_map.png", width = 10, height = 3)
+
+
 
 
 
