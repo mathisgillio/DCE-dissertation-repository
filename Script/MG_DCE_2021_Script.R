@@ -310,64 +310,46 @@ finaldatadummy <- read.csv("Data/finaldata-dummy.csv")
 
 finaldatadummy$price <- as.numeric(as.character(finaldatadummy$price))
 
-## Create new columns for the indexes 
-
-finaldatadummy$cs.personid <- paste(finaldatadummy$cs, finaldatadummy$personid, sep = "_")
-finaldatadummy$chid <- 1:nrow(finaldatadummy)
-
-## Make the choice logical (TRUE/FALSE)
-
 finaldatadummy <- finaldatadummy %>% 
-  mutate(choice = as.logical(choice))
-
-## Change reference levels 
-
-levels(finaldatadummy$water)
-levels(finaldatadummy$water) <- c("Acceptable water","Excellent water","Insufficient water")
-
-levels(finaldatadummy$detritus)
-levels(finaldatadummy$detritus) <- c("Both removed","Both left","Garbage removed")
-
-levels(finaldatadummy$congestion)
-levels(finaldatadummy$congestion) <- c("Very crowded","Crowded","Not crowded")
-
-levels(finaldatadummy$biodiversity)
-levels(finaldatadummy$biodiversity) <- c("Moderate biodiversity","High biodiversity","No biodiversity")
+  # Create relevant ID variables from X
+  separate(col = `...1`, sep = "\\.", into = c("cs.new", "alt.new"), extra = "drop") %>%
+  # NB choice situation ID plus alternative ID must define unique data points
+  # without reference to person ID for dfidx to work, so combine to new index:
+  mutate(cs.new.person = paste0(cs.new, "_", personid) ) %>%
+  # Further data prep
+  mutate(
+    # Make the choice logical (TRUE/FALSE)
+    choice = as.logical(choice),
+    # Set baseline factor levels
+    water = factor(water, levels = c("Acceptable water","Excellent water","Insufficient water")),
+    detritus = factor(detritus, levels = c("Both removed","Both left","Garbage removed")),
+    congestion = factor(congestion, levels = c("Very crowded","Crowded","Not crowded")),
+    biodiversity = factor(biodiversity, levels = c("Moderate biodiversity","High biodiversity","No biodiversity"))
+  )
 
 ### 8. Data analysis ---- 
 
 ## 8.a Conditional logit model ---- 
 
-conditional_logit_model_dummy <- clogit(choice ~ water + detritus + congestion + biodiversity
+conditional_logit_model_dummy <- clogit(choice ~ 0 + water + detritus + congestion + biodiversity
                                         + price + strata(cs), data = finaldatadummy)
 
 conditional_logit_model_dummy # gives the outputs of the model 
 
 conditional_logit_model_dummy$loglik # a log-likelihood at zero and at convergence
 
-
-
 ## 8.b Multinomial logit model ---- 
 
 # Create the data to be used in mlogit
 
-finaldatadummyclean <- dfidx(finaldatadummy, choice = "choice",
-                             idx = list("cs.personid", "alt"), idnames = c("cs", "alt")) 
+mlogit_data <- mlogit.data(finaldatadummy, choice = "choice", shape = "long",
+                 alt.var = "alt.new", chid.var = "cs.new.person", id.var = "personid")
 
-multinomial_logit_model_dummy <- mlogit(choice ~ water + detritus + congestion + biodiversity
-                                        + price, finaldatadummyclean)  # 0 or -1 removes the intercept so just remove it 
-
-
-finaldatadummyclean2 <- mlogit.data(finaldatadummy, choice = "choice", shape = "long", 
-                                    alt.var = "alt", id = "personid")
-
-multinomial_logit_model_dummy2 <- mlogit(choice ~ water + detritus + congestion +
-                                           biodiversity + price, finaldatadummyclean2)
+mnl_model <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, mlogit_data)
 
 # Give summary of the model outputs 
 
-summary(multinomial_logit_model_dummy)
-summary(multinomial_logit_model_dummy2)
+summary(mnl_model)
 
 # Save the output of the model in table 
 
@@ -376,10 +358,8 @@ stargazer(multinomial_logit_model_2, type="text", out="multi.htm")
 
 ### 8.c Generalized Linear model ---- 
 
-glm <- glm(choice ~ water + detritus + congestion + biodiversity
+glm <- glm(choice ~ 0 + water + detritus + congestion + biodiversity
          + price, family = binomial, data = finaldatadummy)
-
-#add1(glm, ~ .^2, test = "Chisq")
 
 glm
 summary(glm)
@@ -417,18 +397,16 @@ stargazer(glm, type = "text",
 
 # Create mlogit data for XLM model
 
-finaldatadummycleanxlm <- mlogit.data(finaldatadummy, choice="choice", shape = "long", 
-                                       alt.var = "alt", idx = c("personid", "cs"))
 
+mixed_logit_model <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+                               rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n", 
+                                        "detritusBoth left" = "n", "detritusGarbage removed" = "n", 
+                                        "congestionCrowded" = "n", "congestionNot crowded" = "n", 
+                                        "biodiversityHigh biodiversity" = "n", "biodiversityNo biodiversity" = "n", 
+                                        "price" = "n"),
+                               panel = TRUE, R = 100, d)
 
-mixed_logit_model_dummy <- mlogit(choice ~ water + detritus + congestion + biodiversity 
-                                    + price, 
-                                    data = finaldatadummycleanxlm,
-                                    rpar = c(water = "n", detritus = "n",congestion = "n",
-                                             price = "n"),
-                                    halton = NA, 
-                                    R = 100, 
-                                    panel = TRUE)
+summary(mixed_logit_model)
 
 ### 9. Socio-economic and follow up questions ----  
 
