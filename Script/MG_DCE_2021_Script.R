@@ -26,6 +26,8 @@ library(lme4)
 library(stargazer)
 library(lmtest)
 library(gmnl)
+library(ggplot2)
+library(maps)
 
 load('Data/d.RData') # load the design for more efficient script 
 
