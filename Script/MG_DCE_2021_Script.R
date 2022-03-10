@@ -331,6 +331,7 @@ finaldatadummy <- finaldatadummy %>%
 
 ## 8.a Conditional logit model ---- 
 
+# NB Remove intercept since alternatives were unnamed
 conditional_logit_model_dummy <- clogit(choice ~ 0 + water + detritus + congestion + biodiversity
                                         + price + strata(cs), data = finaldatadummy)
 
@@ -397,16 +398,29 @@ stargazer(glm, type = "text",
 
 # Create mlogit data for XLM model
 
-
 mixed_logit_model <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
                                rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n", 
                                         "detritusBoth left" = "n", "detritusGarbage removed" = "n", 
                                         "congestionCrowded" = "n", "congestionNot crowded" = "n", 
                                         "biodiversityHigh biodiversity" = "n", "biodiversityNo biodiversity" = "n", 
                                         "price" = "n"),
-                               panel = TRUE, R = 100, d)
+                               panel = TRUE, R = 100, mlogit_data)
 
 summary(mixed_logit_model)
+
+### 8.e Latent class model ---- 
+
+library(devtools)
+install_bitbucket("mauricio1986/gmnl")
+library(gmnl)
+
+lc <- gmnl(choice ~ 0 + water + detritus + congestion + biodiversity + price | 0 | 0 | 0 | 1, 
+           data = mlogit_data,
+           model = 'lc', 
+           Q = 3,
+           method = "bfgs")
+
+summary(lc)
 
 ### 9. Socio-economic and follow up questions ----  
 
