@@ -430,7 +430,9 @@ mixed_logit_model_dummy <- mlogit(choice ~ water + detritus + congestion + biodi
                                     R = 100, 
                                     panel = TRUE)
 
-### 9. Socio-economic and follow up questions 
+### 9. Socio-economic and follow up questions ----  
+
+## 9.a Socio-economic ---- 
 
 summary(finaldatadummy$gender)
 408+300
@@ -492,6 +494,8 @@ summary(finaldatadummy$club_member)
 # percentage of people who depend on tourists as their main source of revenue: 85
 600*100/708
 
+## 9.b Follow-up questions ---- 
+
 datafollowup1 <- read.csv("Data/dce1.csv") # load the responses from Google Survey 
 datafollowup2 <- read.csv("Data/dce2.csv")
 
@@ -545,5 +549,60 @@ summary(finalfollowupdata$green_label)
 
 # percentage of people who would not benefit from green beach label: 19
 12*100/62
+
+### 10. Map of Antibes and location surveys ---- 
+
+library("tidyverse")           # For cleaning/wrangling data                    
+library("dplyr")               # For cleaning/wrangling data                 
+library("ggplot2")             # For plotting data                  
+library("sf")                  # For plotting map data              
+
+theme_set(theme_bw()) # setting default map background colors to black & white
+
+theme_diss <- function(){            # creating a new theme function
+  # define font, font sizes, text angle and alignment
+  theme(plot.title    = element_text(size = 20, 
+                                     face = "bold"),
+        plot.subtitle = element_text(size = 16, 
+                                     face = "plain"),
+        axis.title    = element_text(size = 15,
+                                     face = "bold"),
+        axis.text.x   = element_text(size = 12,
+                                     angle = 45,
+                                     vjust = 1,
+                                     hjust = 1, 
+                                     face = "bold"), 
+        axis.text.y   = element_text(size = 12, 
+                                     face = "bold"),
+        legend.position = "none",                                # remove legend
+        plot.margin = unit(c(0.5,0.5,0.5,0.5), units = , "cm"),  # create plot margins
+        panel.grid = element_blank())
+}
+
+france <- map_data("world") %>% # creating dataframe for coordinates of all countries
+  rename("Countries" = "region")  %>%  # renaming "region" column to "Countries"
+  filter(Countries == "France")
+
+antibes <- data.frame(
+  long = c(7.10831),
+  lat = c(43.58579),
+  stringsAsFactors = FALSE)  
+
+(francemap <- ggplot() + 
+  geom_polygon(data = france, aes(x=long, y = lat, group = group), fill = "azure3", color = "black") + 
+  coord_fixed(1.3) +
+  geom_point(data = antibes, aes(x = long, y = lat), color = "coral", size = 3) +
+  annotate("text", x = 8, y = 43.3, label = "Antibes") + 
+  theme_diss() + 
+    theme(axis.text.x      =   element_blank(),
+          axis.text.y      =   element_blank(),
+          axis.ticks       =   element_blank(),
+          axis.title.x     =   element_blank(),
+          axis.title.y     =   element_blank(),
+          #panel.border     =   element_blank(),
+          panel.grid.major =   element_blank(),
+          panel.grid.minor =   element_blank()))
+
+
 
 
