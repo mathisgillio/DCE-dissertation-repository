@@ -430,3 +430,65 @@ mixed_logit_model_dummy <- mlogit(choice ~ water + detritus + congestion + biodi
                                     R = 100, 
                                     panel = TRUE)
 
+### 9. Socio-economic and follow up questions 
+
+summary(finaldatadummy$gender)
+408+300
+
+# percentage of females: 58
+408*100/708
+# percentage of males: 42
+300*100/708
+
+summary(finaldatadummy$age)
+
+# percentage of 18-29: 35
+252*100/708
+
+# percentage of 30-49: 36
+252*100/708
+
+# percentage of 50-64: 17 
+120*100/708
+
+# percentage of 65+: 12
+84*100/708
+
+summary(finaldatadummy$study_level)
+
+# percentage of apprenticeship: 12
+84*100/708
+
+# percentage of highschool: 15
+108*100/708
+
+# percentage of bachelor: 37
+(36+228)*100/708
+
+# percentage of Master: 36
+252*100/708
+
+summary(finaldatadummy$children)
+
+# percentage of people with children under 15: 20
+144*100/708
+
+# percentage of people without children under 15: 80
+564*100/708
+
+summary(finaldatadummy$toursist_dependent)
+
+# percentage of people who depend on tourists as their main source of revenue: 8
+60*100/708
+
+# percentage of people who depend on tourists as their main source of revenue: 92
+648*100/708
+
+summary(finaldatadummy$club_member)
+
+# percentage of people who are part of a conservation group: 15
+108*100/708
+
+# percentage of people who depend on tourists as their main source of revenue: 85
+600*100/708
+
