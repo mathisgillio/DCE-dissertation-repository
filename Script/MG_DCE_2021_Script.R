@@ -492,3 +492,58 @@ summary(finaldatadummy$club_member)
 # percentage of people who depend on tourists as their main source of revenue: 85
 600*100/708
 
+datafollowup1 <- read.csv("Data/dce1.csv") # load the responses from Google Survey 
+datafollowup2 <- read.csv("Data/dce2.csv")
+
+str(datafollowup1)
+str(datafollowup2)
+
+datafollowup1 <- datafollowup1 %>% 
+  select(-(1:14)) %>% 
+  rename("environmnetal_awarness" = Avant.cette.étude..étiez.vous.conscient.des.dangers.environnementaux.auxquels.font.face.les.écosystèmes.littoraux....
+         , "natural_parc_awarness" = Connaissez.vous.l.existence.de.sites.naturels.protégés.sur.le.Cap.d.Antibes.et.îles.de.Lérins...
+         , "beach_access" = Accepteriez.vous.de.voir.votre.accès.aux.plages.limité.pendant.l.été.pour.limiter.la.pression.sur.l.environnement..l.accès.pourrait.par.exemple.prendre.la.forme.d.un.enregistrement.à.l.avance.....
+         , "green_label" = Pensez.vous.que.le.développement.d.un.label.vert.pourrait.mieux.vous.aider.à.faire.un.choix.quant.à.quelle.plage.choisir...)
+
+datafollowup2 <- datafollowup2 %>% 
+  select(-(1:14)) %>% 
+  rename("environmnetal_awarness" = Avant.cette.étude..étiez.vous.conscient.des.dangers.environnementaux.auxquels.font.face.les.écosystèmes.littoraux....
+         , "natural_parc_awarness" = Connaissez.vous.l.existence.de.sites.naturels.protégés.sur.le.Cap.d.Antibes.et.îles.de.Lérins..
+         , "beach_access" = Accepteriez.vous.de.voir.votre.accès.aux.plages.limité.pendant.l.été.pour.limiter.la.pression.sur.l.environnement..l.accès.pourrait.par.exemple.prendre.la.forme.d.un.enregistrement.à.l.avance...
+         , "green_label" = Pensez.vous.que.le.développement.d.un.label.vert.pourrait.mieux.vous.aider.à.faire.un.choix.quant.à.quelle.plage.choisir..)
+
+finalfollowupdata <- rbind(datafollowup1, datafollowup2)
+
+summary(finalfollowupdata$environmnetal_awarness)
+
+# percentage of people that were aware of conservation issues: 90
+56*100/62
+
+# percentage of people who depend on tourists as their main source of revenue: 10
+6*100/62
+
+summary(finalfollowupdata$natural_parc_awarness)
+
+# percentage of people that were aware of the existence of Natura 2000 parcs: 81
+50*100/62
+
+# percentage of people who depend on tourists as their main source of revenue: 19
+12*100/62
+
+summary(finalfollowupdata$beach_access)
+
+# percentage of people that would accept seeing their access to beach limited: 60
+37*100/62
+
+# percentage of people who would not accept seeing their access to beach limited: 40
+25*100/62
+
+summary(finalfollowupdata$green_label)
+
+# percentage of people that would benefit from green beach label: 81
+50*100/62
+
+# percentage of people who would not benefit from green beach label: 19
+12*100/62
+
+
