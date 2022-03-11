@@ -314,7 +314,7 @@ finaldatadummy$price <- as.numeric(as.character(finaldatadummy$price))
 
 finaldatadummy <- finaldatadummy %>% 
   # Create relevant ID variables from X
-  separate(col = `...1`, sep = "\\.", into = c("cs.new", "alt.new"), extra = "drop") %>%
+  separate(col = `X`, sep = "\\.", into = c("cs.new", "alt.new"), extra = "drop") %>%
   # NB choice situation ID plus alternative ID must define unique data points
   # without reference to person ID for dfidx to work, so combine to new index:
   mutate(cs.new.person = paste0(cs.new, "_", personid) ) %>%
@@ -356,7 +356,7 @@ summary(mnl_model)
 
 # Save the output of the model in table 
 
-stargazer(multinomial_logit_model_2, type="text", out="multi.htm")
+stargazer(mnl_model, type="text", out="multi.htm")
 
 
 ### 8.c Generalized Linear model ---- 
@@ -423,6 +423,35 @@ lc <- gmnl(choice ~ 0 + water + detritus + congestion + biodiversity + price | 0
            method = "bfgs")
 
 summary(lc)
+AIC(lc)
+BIC(lc)
+
+
+lc2 <- gmnl(choice ~ 0 + water + detritus + congestion + biodiversity + price| 0 | 0 | 0 | 1, 
+            data = mlogit_data, 
+            model = 'lc',
+            Q = 2, 
+            method = 'bfgs')
+
+summary(lc2)
+AIC(lc2)
+BIC(lc2)
+
+# Share of individuals in class 2: 37% class 1 (63%)
+exp(coef(lc2)["(class)2"]) / (exp(0) + exp(coef(lc2)["(class)2"]))
+
+# WTP 
+-coef(lc2)["class.1.waterExcellent water"] / coef(lc2)["class.1.price"] #28.3
+
+lc3 <- gmnl(choice ~ 0 + water + detritus + congestion + biodiversity + price| 0 | 0 | 0 | 1, 
+            data = mlogit_data, 
+            model = 'lc',
+            Q = 4, 
+            method = 'bfgs')
+
+summary(lc3)
+AIC(lc3)
+BIC(lc3)
 
 ### 9. Socio-economic and follow up questions ----  
 
