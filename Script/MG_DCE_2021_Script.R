@@ -341,6 +341,7 @@ conditional_logit_model_dummy # gives the outputs of the model
 
 conditional_logit_model_dummy$loglik # a log-likelihood at zero and at convergence
 
+
 ## 8.b Multinomial logit model ---- 
 
 # Create the data to be used in mlogit
@@ -348,16 +349,32 @@ conditional_logit_model_dummy$loglik # a log-likelihood at zero and at convergen
 mlogit_data <- mlogit.data(finaldatadummy, choice = "choice", shape = "long",
                  alt.var = "alt.new", chid.var = "cs.new.person", id.var = "personid")
 
-mnl_model <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, mlogit_data)
-
+mnl_model <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, data = mlogit_data)
+mnl_model_null <- mlogit(choice ~ 1, data = mlogit_data)
 # Give summary of the model outputs 
 
 summary(mnl_model)
+summary(mnl_model_null)
+
+1 - (-161.48/-243.54) # calcualtion of McFaden r-squared manually using null 
+                      # model log-likelihood: 0.34
+
+# 𝜌2 can be interpreted like: values from 0.2-0.4 indicate (in McFadden's words) excellent model fit
 
 # Save the output of the model in table 
 
-stargazer(mnl_model, type="text", out="multi.htm")
-
+stargazer(mnl_model, type = "text", title="Multinomial model regression Results",
+          digits = 3,
+          star.cutoffs = c(0.05, 0.01, 0.001),
+          digit.separator = "",
+          align=TRUE, dep.var.labels=c("Coefficients"),
+          single.row=TRUE,
+          covariate.labels=c("Excellent water quality","Insufficient water quality",
+                             "Garbage and algea left on the beach","Algea left on the beach",
+                             "Moderate congestion","Little congestion",
+                             "High biodiversity", "Low biodiversity", "Price"),
+          add.lines = list(c("McFaden R-squared", "0.34")),
+          out="mnl.html")
 
 ### 8.c Generalized Linear model ---- 
 
@@ -443,11 +460,7 @@ exp(coef(lc2)["(class)2"]) / (exp(0) + exp(coef(lc2)["(class)2"]))
 # WTP 
 -coef(lc2)["class.1.waterExcellent water"] / coef(lc2)["class.1.price"] #28.3
 
-lc3 <- gmnl(choice ~ 0 + water + detritus + congestion + biodiversity + price| 0 | 0 | 0 | 1, 
-            data = mlogit_data, 
-            model = 'lc',
-            Q = 4, 
-            method = 'bfgs')
+# Save output in table: 
 
 summary(lc3)
 AIC(lc3)
@@ -629,8 +642,21 @@ antibes <- data.frame(
 
 ggsave(francemap, filename = "Pictures/france_map.png", width = 10, height = 3)
 
+## Calculation of percentage of bathing water quality status of Antibes' beaches
+
+## In 2019: 
+
+# Insufficient: 2 (18%)
+# Sufficent: 3 (27%)
+# Good: 6 (54%)
 
 
+# In 2021: 
+
+# Insufficient: 3 (13%)
+# Sufficient: 7 (32%)
+# Good: 3 (13%)
+# Excellent: 9 (41%)
 
 
 
