@@ -95,6 +95,14 @@ finaldata$awarness <- as.factor(finaldata$awarness)
 finaldata <- finaldata %>% 
   mutate(awarness = factor(awarness, levels = c("Not aware","Aware")))
 
+finaldata$natura2000 <- as.character(finaldata$natura2000)
+finaldata$natura2000[finaldata$natura2000 == "Non"] <- "Not aware"
+finaldata$natura2000[finaldata$natura2000 == "Oui"] <- "Aware"
+finaldata$natura2000 <- as.factor(finaldata$natura2000)
+
+finaldata <- finaldata %>% 
+  mutate(natura2000 = factor(natura2000, levels = c("Not aware","Aware")))
+
 ## Plot some figures ---- 
 
 ### Awarness with age
