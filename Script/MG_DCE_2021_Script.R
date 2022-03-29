@@ -427,6 +427,19 @@ mixed_logit_model <- mlogit(choice ~ 0 + water + detritus + congestion + biodive
 
 summary(mixed_logit_model)
 
+stargazer(mixed_logit_model, type = "text", title="Mixed model regression Results",
+          digits = 3,
+          star.cutoffs = c(0.05, 0.01, 0.001), 
+          digit.separator = "", 
+          align=TRUE, dep.var.labels=c("Coefficients"), 
+          single.row=TRUE,
+          covariate.labels=c("Excellent water quality","Insufficient water quality",
+                             "Garbage and algea left on the beach","Algea left on the beach",
+                             "Moderate congestion","Little congestion",
+                             "High biodiversity", "Low biodiversity", "Price"),
+          add.lines = list(c("McFaden R-squared", "0.34")),
+          out="mnl.html")
+
 ### 8.e Latent class model ---- 
 
 library(devtools)
@@ -453,6 +466,7 @@ lc2 <- gmnl(choice ~ 0 + water + detritus + congestion + biodiversity + price| 0
 summary(lc2)
 AIC(lc2)
 BIC(lc2)
+
 
 # Share of individuals in class 2: 37% class 1 (63%)
 exp(coef(lc2)["(class)2"]) / (exp(0) + exp(coef(lc2)["(class)2"]))
