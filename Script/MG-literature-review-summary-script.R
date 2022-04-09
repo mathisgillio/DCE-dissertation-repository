@@ -26,9 +26,9 @@ str(litdata)
 theme_diss <- function(){            # creating a new theme function
   theme(plot.title = element_text(size = 20, face = "bold"),
         plot.subtitle = element_text(size = 16, face = "plain"),
-        axis.title = element_text(size = 25,
+        axis.title = element_text(size = 26,
                                   face = "bold"),
-        axis.text.x = element_text(size = 20,
+        axis.text.x = element_text(size = 22,
                                    vjust = 1,
                                    hjust = 1, face = "bold"), 
         axis.text.y = element_text(size = 22, face = "bold"),  # define font,
