@@ -9,12 +9,14 @@ library(tidyverse)
 library(ggplot2) 
 library(plyr)
 
+install.packages("xlsx")
 install.packages("tidytext")
 install.packages("R.utils")
 library(tidytext)
 library(R.utils)
 library(viridis)
 library (RColorBrewer) 
+library(xlsx)
 
 
 devtools::install_github("kassambara/ggpubr")
@@ -105,6 +107,8 @@ finaldata$natura2000 <- as.factor(finaldata$natura2000)
 finaldata <- finaldata %>% 
   mutate(natura2000 = factor(natura2000, levels = c("Not aware","Aware")))
 
+write.csv(finaldata, "Data/finaldatafollowup.csv")
+
 ## Plot some figures ---- 
 
 save_plot <- function(plot_name, # first put the plot object name
@@ -129,11 +133,17 @@ finaldata_awarness_age <- ddply(finaldata,.(age),
       function(x) with(x,
                        data.frame(100*round(table(awarness)/length(awarness),2))))
 
-(bar_plot_awarness_age <- ggplot(finaldata_awarness_age, aes(x = age, group = awarness, y = Freq, fill = awarness)) + 
-    geom_bar(position = position_dodge(), stat = "identity", colour = "black", aes(fill = awarness)) +
-    scale_fill_manual(values = c("#EDF8B1", "#7FCDBB")) +
+finaldata_awarness_age <- finaldata_awarness_age %>% 
+  filter(awarness == "Aware") 
+
+(bar_plot_awarness_age <- ggplot(finaldata_awarness_age, aes(x = age, y = Freq)) + 
+    geom_bar(position = position_dodge(), stat = "identity", colour = "black", fill = "#7FCDBB", width = 0.5) +
+    #scale_fill_manual(values = c("#EDF8B1", "#7FCDBB")) +
+    geom_errorbar(aes(ymin=Freq-2.99,
+                               ymax=Freq+2.99),
+                           width=.2, size =1) + 
     theme_bw() +
-    ylab("Percentage of awarness\n") +                             
+    ylab("Awarness of coastal envrionmental threats (in %)\n") +                             
     xlab("Age")  +
     scale_y_continuous(breaks = seq(0, 100, by = 10)) +
     theme(axis.text.x = element_text(size = 22, angle = 45, vjust = 1, hjust = 1),  # Angled labels, so text doesn't overlap
@@ -141,8 +151,8 @@ finaldata_awarness_age <- ddply(finaldata,.(age),
           axis.title = element_text(size = 25, face = "plain"),                      
           panel.grid = element_blank(), 
           legend.title = element_blank(),
-          legend.key.size = unit(1, 'cm'), #change legend key size
-          legend.text = element_text(size=20),
+          #legend.key.size = unit(1, 'cm'), #change legend key size
+          #legend.text = element_text(size=20),
           panel.grid.major.y = element_line(color = "grey",
                                             size = 0.5,
                                             linetype = 2),
@@ -158,20 +168,27 @@ finaldata_awarness_studylevel <- ddply(finaldata,.(study_level),
                            function(x) with(x,
                                             data.frame(100*round(table(awarness)/length(awarness),2))))
 
-(bar_plot_awarness_studylevel <- ggplot(finaldata_awarness_studylevel, aes(x = study_level, group = awarness, y = Freq, fill = awarness)) + 
-    geom_bar(position = position_dodge(), stat = "identity", colour = "black", aes(fill = awarness)) +
-    scale_fill_manual(values = c("#EDF8B1", "#7FCDBB")) +
+finaldata_awarness_studylevel <- finaldata_awarness_studylevel %>% 
+  filter(awarness == "Aware")
+
+(bar_plot_awarness_studylevel <- ggplot(finaldata_awarness_studylevel, aes(x = study_level, y = Freq)) + 
+    geom_bar(position = position_dodge(), stat = "identity", colour = "black", fill = "#7FCDBB", width = 0.5) +
+    #scale_fill_manual(values = c("#EDF8B1", "#7FCDBB")) +
+    geom_errorbar(aes(ymin=Freq-6.49,
+                      ymax=Freq+6.49),
+                  width=.2, size =1) + 
     theme_bw() +
-    ylab("Percentage of awarness\n") +                             
+    ylab("Awarness of coastal envrionmental threats (in %)\n") +                             
     xlab("Study level")  +
     scale_y_continuous(breaks = seq(0, 100, by = 10)) +
     theme(axis.text.x = element_text(size = 22, angle = 45, vjust = 1, hjust = 1),  # Angled labels, so text doesn't overlap
           axis.text.y = element_text(size = 22),
-          axis.title = element_text(size = 25, face = "plain"),                      
+          axis.title = element_text(size = 24, face = "plain"),                      
           panel.grid = element_blank(), 
           legend.title = element_blank(),
-          legend.key.size = unit(1, 'cm'), #change legend key size
-          legend.text = element_text(size=20),
+          #plot.margin = margin(t = 20, r = 0, b = 0, l = 0, unit = "pt"),
+          #legend.key.size = unit(1, 'cm'), #change legend key size
+          #legend.text = element_text(size=20),
           panel.grid.major.y = element_line(color = "grey",
                                             size = 0.5,
                                             linetype = 2),
@@ -179,7 +196,7 @@ finaldata_awarness_studylevel <- ddply(finaldata,.(study_level),
 )
 
 save_plot(bar_plot_awarness_studylevel, file_name = "Figures/bar-plot-awaraness-studylevel", width = 13, 
-          height = 8, dpi = 150)
+          height = 9, dpi = 150)
 
 ### Natura 2000 with age 
 
@@ -187,18 +204,24 @@ finaldata_natura_age <- ddply(finaldata,.(age),
                                 function(x) with(x,
                                                  data.frame(100*round(table(natura2000)/length(natura2000),2))))
 
-(bar_plot_natura_age <- ggplot(finaldata_natura_age, aes(x = age, group = natura2000, y = Freq, fill = natura2000)) + 
-    geom_bar(position = position_dodge(), stat = "identity", colour = "black", aes(fill = natura2000)) +
-    scale_fill_manual(values = c("#EDF8B1", "#7FCDBB")) +
+finaldata_natura_age <- finaldata_natura_age %>% 
+  filter(natura2000 == "Aware")
+
+(bar_plot_natura_age <- ggplot(finaldata_natura_age, aes(x = age, y = Freq)) + 
+    geom_bar(position = position_dodge(), stat = "identity", colour = "black", fill = "#EDF8B1", width = 0.5) +
+   # scale_fill_manual(values = c("#EDF8B1", "#7FCDBB")) +
+    geom_errorbar(aes(ymin=Freq-3.17,
+                      ymax=Freq+3.17),
+                  width=.2, size =1) + 
     theme_bw() +
-    ylab("Percentage of awarness of Natura 2000 sites\n") +                             
+    ylab("Awarness of Natura 2000 sites (in %)\n") +                             
     xlab("Age")  +
     scale_y_continuous(breaks = seq(0, 80, by = 10)) +
-    theme(axis.text.x = element_text(size = 12, angle = 45, vjust = 1, hjust = 1),  # Angled labels, so text doesn't overlap
-          axis.text.y = element_text(size = 12),
-          axis.title = element_text(size = 14, face = "plain"),                      
+    theme(axis.text.x = element_text(size = 22, angle = 45, vjust = 1, hjust = 1),  # Angled labels, so text doesn't overlap
+          axis.text.y = element_text(size = 22),
+          axis.title = element_text(size = 24, face = "plain"),                      
           panel.grid = element_blank(), 
-          legend.title = element_blank(),
+         # legend.title = element_blank(),
           panel.grid.major.y = element_line(color = "grey",
                                             size = 0.5,
                                             linetype = 2),
@@ -214,19 +237,24 @@ finaldata_natura_studylevel <- ddply(finaldata,.(study_level),
                                        function(x) with(x,
                                                         data.frame(100*round(table(natura2000)/length(natura2000),2))))
 
+finaldata_natura_studylevel <- finaldata_natura_studylevel %>% 
+  filter(natura2000 == "Aware")
 
-(bar_plot_natura_studylevel <- ggplot(finaldata_natura_studylevel, aes(x = study_level, group = natura2000, y = Freq, fill = natura2000)) + 
-    geom_bar(position = position_dodge(), stat = "identity", colour = "black", aes(fill = natura2000)) +
-    scale_fill_manual(values = c("#EDF8B1", "#7FCDBB")) +
+(bar_plot_natura_studylevel <- ggplot(finaldata_natura_studylevel, aes(x = study_level, y = Freq)) + 
+    geom_bar(position = position_dodge(), stat = "identity", colour = "black", fill = "#EDF8B1", width = 0.5) +
+   # scale_fill_manual(values = c("#EDF8B1", "#7FCDBB")) +
+    geom_errorbar(aes(ymin=Freq-2.02,
+                      ymax=Freq+2.02),
+                  width=.2, size =1) + 
     theme_bw() +
     ylab("Percentage of awarness of Natura 2000 sites\n") +                             
     xlab("Study level")  +
-    scale_y_continuous(breaks = seq(0, 80, by = 10)) +
-    theme(axis.text.x = element_text(size = 12, angle = 45, vjust = 1, hjust = 1),  # Angled labels, so text doesn't overlap
-          axis.text.y = element_text(size = 12),
-          axis.title = element_text(size = 14, face = "plain"),                      
+    scale_y_continuous(breaks = seq(0, 90, by = 10)) +
+    theme(axis.text.x = element_text(size = 22, angle = 45, vjust = 1, hjust = 1),  # Angled labels, so text doesn't overlap
+          axis.text.y = element_text(size = 22),
+          axis.title = element_text(size = 24, face = "plain"),                      
           panel.grid = element_blank(), 
-          legend.title = element_blank(),
+         # legend.title = element_blank(),
           panel.grid.major.y = element_line(color = "grey",
                                             size = 0.5,
                                             linetype = 2),
