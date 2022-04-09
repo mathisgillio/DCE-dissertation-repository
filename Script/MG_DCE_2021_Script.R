@@ -14,6 +14,7 @@
 #install.packages("survival")
 #install.packages("mlogit")
 #install.packages("reshape2")
+install.packages("stats")
 
 library(idefix) # package used to create an efficient design
 library(dplyr)
@@ -28,6 +29,8 @@ library(lmtest)
 library(gmnl)
 library(ggplot2)
 library(maps)
+library(AICcmodavg)
+library(stats)
 
 load('Data/d.RData') # load the design for more efficient script 
 
@@ -417,7 +420,7 @@ stargazer(glm, type = "text",
 
 # Create mlogit data for XLM model
 
-mixed_logit_model <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+mixed_logit_model_all <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
                                rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n", 
                                         "detritusBoth left" = "n", "detritusGarbage removed" = "n", 
                                         "congestionCrowded" = "n", "congestionNot crowded" = "n", 
@@ -425,9 +428,141 @@ mixed_logit_model <- mlogit(choice ~ 0 + water + detritus + congestion + biodive
                                         "price" = "n"),
                                panel = TRUE, R = 100, mlogit_data)
 
-summary(mixed_logit_model)
+mixed_logit_model_a <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+                                rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n", 
+                                         "detritusBoth left" = "n", "detritusGarbage removed" = "n", 
+                                         "congestionCrowded" = "n", "congestionNot crowded" = "n", 
+                                         "biodiversityHigh biodiversity" = "n",
+                                         "price" = "n"),
+                                panel = TRUE, R = 100, mlogit_data)
 
-stargazer(mixed_logit_model, type = "text", title="Mixed model regression Results",
+AIC(mixed_logit_model_a)
+summary(mixed_logit_model_a)
+
+mixed_logit_model_b <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+                              rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n", 
+                                       "detritusBoth left" = "n", "detritusGarbage removed" = "n", 
+                                       "congestionNot crowded" = "n", 
+                                       "biodiversityHigh biodiversity" = "n",
+                                       "price" = "n"),
+                              panel = TRUE, R = 100, mlogit_data)
+
+AIC(mixed_logit_model_b)
+summary(mixed_logit_model_b)
+
+mixed_logit_model_c <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+                              rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n", 
+                                      "detritusGarbage removed" = "n", 
+                                       "congestionNot crowded" = "n", 
+                                       "biodiversityHigh biodiversity" = "n",
+                                       "price" = "n"),
+                              panel = TRUE, R = 100, mlogit_data)
+
+AIC(mixed_logit_model_c)
+
+mixed_logit_model_d <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+                              rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n", 
+                                       "detritusBoth left" = "n", "detritusGarbage removed" = "n", 
+                                       "congestionNot crowded" = "n", 
+                                       "price" = "n"),
+                              panel = TRUE, R = 100, mlogit_data)
+
+AIC(mixed_logit_model_d)
+
+mixed_logit_model_e <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+                              rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n", 
+                                       "detritusBoth left" = "n", "detritusGarbage removed" = "n", 
+                               
+                                       "biodiversityHigh biodiversity" = "n",
+                                       "price" = "n"),
+                              panel = TRUE, R = 100, mlogit_data)
+AIC(mixed_logit_model_e)
+
+
+
+mixed_logit_model_1 <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+                              rpar = c("waterInsufficient water" = "n", 
+                                       "detritusBoth left" = "n", "detritusGarbage removed" = "n", 
+                                       "congestionCrowded" = "n", "congestionNot crowded" = "n", 
+                                       "biodiversityHigh biodiversity" = "n", "biodiversityNo biodiversity" = "n", 
+                                       "price" = "n"),
+                              panel = TRUE, R = 100, mlogit_data)
+
+mixed_logit_model_2 <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+                              rpar = c("waterInsufficient water" = "n", 
+                                       "detritusBoth left" = "n", "detritusGarbage removed" = "n", 
+                                       "congestionCrowded" = "n", 
+                                       "biodiversityHigh biodiversity" = "n", "biodiversityNo biodiversity" = "n", 
+                                       "price" = "n"),
+                              panel = TRUE, R = 100, mlogit_data)
+
+mixed_logit_model_3 <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+                              rpar = c("waterInsufficient water" = "n", 
+                                       "detritusBoth left" = "n",
+                                       "congestionCrowded" = "n", 
+                                       "biodiversityHigh biodiversity" = "n", "biodiversityNo biodiversity" = "n", 
+                                       "price" = "n"),
+                              panel = TRUE, R = 100, mlogit_data)
+
+mixed_logit_model_4 <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+                              rpar = c("waterInsufficient water" = "n", 
+                                       "detritusBoth left" = "n",
+                                       "congestionCrowded" = "n", 
+                                       "biodiversityHigh biodiversity" = "n", 
+                                       "price" = "n"),
+                              panel = TRUE, R = 100, mlogit_data)
+
+mixed_logit_model_5 <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+                              rpar = c("waterInsufficient water" = "n", 
+                                       "detritusBoth left" = "n",
+                                       "congestionCrowded" = "n", 
+                                       "price" = "n"),
+                              panel = TRUE, R = 100, mlogit_data)
+
+mixed_logit_model_6 <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+                              rpar = c("waterInsufficient water" = "n", 
+                                       "detritusBoth left" = "n",
+                                       "price" = "n"),
+                              panel = TRUE, R = 100, mlogit_data)
+
+mixed_logit_model_7 <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+                              rpar = c("waterInsufficient water" = "n", 
+                                       "price" = "n"),
+                              panel = TRUE, R = 100, mlogit_data)
+
+summary(mixed_logit_model_all)
+summary(mixed_logit_model_1)
+summary(mixed_logit_model_2)
+summary(mixed_logit_model_3)
+summary(mixed_logit_model_4)
+summary(mixed_logit_model_5)
+summary(mixed_logit_model_6)
+summary(mixed_logit_model_7)
+
+AIC(mixed_logit_model_all)
+AIC(mixed_logit_model_1)
+AIC(mixed_logit_model_2)
+AIC(mixed_logit_model_3)
+AIC(mixed_logit_model_4)
+AIC(mixed_logit_model_5)
+AIC(mixed_logit_model_6)
+AIC(mixed_logit_model_7)
+
+# Plot final model 
+
+mixed_logit_model_final <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+                              rpar = c("waterInsufficient water" = "n", 
+                                       "price" = "n"),
+                              panel = TRUE, R = 100, mlogit_data)
+
+summary(mixed_logit_model_final)
+
+model_null <- mlogit(choice ~ 1, data = mlogit_data)
+
+summary(model_null)
+
+
+stargazer(mixed_logit_model_final, type = "text", title="Mixed model regression Results",
           digits = 3,
           star.cutoffs = c(0.05, 0.01, 0.001), 
           digit.separator = "", 
@@ -436,10 +571,12 @@ stargazer(mixed_logit_model, type = "text", title="Mixed model regression Result
           covariate.labels=c("Excellent water quality","Insufficient water quality",
                              "Garbage and algea left on the beach","Algea left on the beach",
                              "Moderate congestion","Little congestion",
-                             "High biodiversity", "Low biodiversity", "Price"),
-          add.lines = list(c("McFaden R-squared", "0.34")),
+                             "High biodiversity", "Low biodiversity", "Price", "sd.Insufficient Water"),
+          add.lines = list(c("McFaden R-squared", "0.37")),
           out="mnl.html")
 
+1 - (-152.5/-243.54) # calcualtion of McFaden r-squared manually using null 
+# model log-likelihood: 0.37
 ### 8.e Latent class model ---- 
 
 library(devtools)
@@ -480,7 +617,7 @@ summary(lc3)
 AIC(lc3)
 BIC(lc3)
 
-### 9. Socio-economic and follow up questions ----  
+E### 9. Socio-economic and follow up questions ----  
 
 ## 9.a Socio-economic ---- 
 
