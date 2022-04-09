@@ -113,8 +113,8 @@ write.csv(finaldata, "Data/finaldatafollowup.csv")
 
 save_plot <- function(plot_name, # first put the plot object name
                       file_name = "plot",  #give it a title 
-                      width = 13, # set the width, heigh and dpi
-                      height = 8, 
+                      width = 14, # set the width, heigh and dpi
+                      height = 10, 
                       dpi = 150) {
   
   ggsave(
@@ -159,8 +159,7 @@ finaldata_awarness_age <- finaldata_awarness_age %>%
           plot.margin = unit(c(1,1,1,1), units = , "cm"))
 )
 
-save_plot(bar_plot_awarness_age, file_name = "Figures/bar-plot-awaraness-age", width = 13, 
-          height = 8, dpi = 150)
+save_plot(bar_plot_awarness_age, file_name = "Figures/bar-plot-awaraness-age")
 
 ## Awarness and study level 
 
@@ -195,8 +194,7 @@ finaldata_awarness_studylevel <- finaldata_awarness_studylevel %>%
           plot.margin = unit(c(1,1,1,1), units = , "cm"))
 )
 
-save_plot(bar_plot_awarness_studylevel, file_name = "Figures/bar-plot-awaraness-studylevel", width = 13, 
-          height = 9, dpi = 150)
+save_plot(bar_plot_awarness_studylevel, file_name = "Figures/bar-plot-awaraness-studylevel")
 
 ### Natura 2000 with age 
 
@@ -228,8 +226,7 @@ finaldata_natura_age <- finaldata_natura_age %>%
           plot.margin = unit(c(1,1,1,1), units = , "cm"))
 )
 
-save_plot(bar_plot_natura_age, file_name = "Figures/bar-plot-nature-age", width = 13, 
-          height = 8, dpi = 150)
+save_plot(bar_plot_natura_age, file_name = "Figures/bar-plot-nature-age")
 
 ### Natura 2000 with study level
 
@@ -247,7 +244,7 @@ finaldata_natura_studylevel <- finaldata_natura_studylevel %>%
                       ymax=Freq+2.02),
                   width=.2, size =1) + 
     theme_bw() +
-    ylab("Percentage of awarness of Natura 2000 sites\n") +                             
+    ylab("Percentage of awarness of Natura 2000 sites (in %)\n") +                             
     xlab("Study level")  +
     scale_y_continuous(breaks = seq(0, 90, by = 10)) +
     theme(axis.text.x = element_text(size = 22, angle = 45, vjust = 1, hjust = 1),  # Angled labels, so text doesn't overlap
@@ -261,8 +258,7 @@ finaldata_natura_studylevel <- finaldata_natura_studylevel %>%
           plot.margin = unit(c(1,1,1,1), units = , "cm"))
 )
 
-save_plot(bar_plot_natura_studylevel, file_name = "Figures/bar-plot-nature-studylevel", width = 13, 
-          height = 8, dpi = 150)
+save_plot(bar_plot_natura_studylevel, file_name = "Figures/bar-plot-nature-studylevel")
 
 ## Access group 
 
