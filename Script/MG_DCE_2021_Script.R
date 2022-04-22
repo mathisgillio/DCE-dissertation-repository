@@ -420,7 +420,7 @@ stargazer(glm, type = "text",
 
 # Create mlogit data for XLM model
 
-mixed_logit_model_all <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+m1 <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
                                rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n", 
                                         "detritusBoth left" = "n", "detritusGarbage removed" = "n", 
                                         "congestionCrowded" = "n", "congestionNot crowded" = "n", 
@@ -428,127 +428,159 @@ mixed_logit_model_all <- mlogit(choice ~ 0 + water + detritus + congestion + bio
                                         "price" = "n"),
                                panel = TRUE, R = 100, mlogit_data)
 
-mixed_logit_model_a <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
-                                rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n", 
-                                         "detritusBoth left" = "n", "detritusGarbage removed" = "n", 
-                                         "congestionCrowded" = "n", "congestionNot crowded" = "n", 
-                                         "biodiversityHigh biodiversity" = "n",
-                                         "price" = "n"),
-                                panel = TRUE, R = 100, mlogit_data)
+m1a <- update(m1, rpar = c("waterInsufficient water" = "n",
+                           "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                           "congestionCrowded" = "n", "congestionNot crowded" = "n",
+                           "biodiversityHigh biodiversity" = "n", "biodiversityNo biodiversity" = "n",
+                           "price" = "n"))
+m1b <- update(m1, rpar = c("waterExcellent water" = "n",
+                           "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                           "congestionCrowded" = "n", "congestionNot crowded" = "n",
+                           "biodiversityHigh biodiversity" = "n", "biodiversityNo biodiversity" = "n",
+                           "price" = "n"))
+m1c <- update(m1, rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                           "detritusGarbage removed" = "n",
+                           "congestionCrowded" = "n", "congestionNot crowded" = "n",
+                           "biodiversityHigh biodiversity" = "n", "biodiversityNo biodiversity" = "n",
+                           "price" = "n"))
+m1d <- update(m1, rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                           "detritusBoth left" = "n",
+                           "congestionCrowded" = "n", "congestionNot crowded" = "n",
+                           "biodiversityHigh biodiversity" = "n", "biodiversityNo biodiversity" = "n",
+                           "price" = "n"))
+m1e <- update(m1, rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                           "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                           "congestionNot crowded" = "n",
+                           "biodiversityHigh biodiversity" = "n", "biodiversityNo biodiversity" = "n",
+                           "price" = "n"))
+m1f <- update(m1, rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                           "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                           "congestionCrowded" = "n",
+                           "biodiversityHigh biodiversity" = "n", "biodiversityNo biodiversity" = "n",
+                           "price" = "n"))
+m1g <- update(m1, rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                           "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                           "congestionCrowded" = "n", "congestionNot crowded" = "n",
+                           "biodiversityNo biodiversity" = "n",
+                           "price" = "n"))
+m1h <- update(m1, rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                           "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                           "congestionCrowded" = "n", "congestionNot crowded" = "n",
+                           "biodiversityHigh biodiversity" = "n",
+                           "price" = "n"))
+m1i <- update(m1, rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                           "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                           "congestionCrowded" = "n", "congestionNot crowded" = "n",
+                           "biodiversityHigh biodiversity" = "n", "biodiversityNo biodiversity" = "n"))
 
-AIC(mixed_logit_model_a)
-summary(mixed_logit_model_a)
+AIC(m1, m1a, m1b, m1c, m1d, m1e, m1f, m1g, m1h, m1i) %>% arrange(AIC)
 
-mixed_logit_model_b <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
-                              rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n", 
-                                       "detritusBoth left" = "n", "detritusGarbage removed" = "n", 
-                                       "congestionNot crowded" = "n", 
-                                       "biodiversityHigh biodiversity" = "n",
-                                       "price" = "n"),
-                              panel = TRUE, R = 100, mlogit_data)
+m2 <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+             rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n", 
+                      "detritusBoth left" = "n", "detritusGarbage removed" = "n", 
+                      "congestionCrowded" = "n", "congestionNot crowded" = "n", 
+                      "biodiversityHigh biodiversity" = "n", 
+                      "price" = "n"),
+             panel = TRUE, R = 100, mlogit_data)
 
-AIC(mixed_logit_model_b)
-summary(mixed_logit_model_b)
+m2a <- update(m2, rpar = c("waterInsufficient water" = "n",
+                           "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                           "congestionCrowded" = "n", "congestionNot crowded" = "n",
+                           "biodiversityHigh biodiversity" = "n",
+                           "price" = "n"))
+m2b <- update(m2, rpar = c("waterExcellent water" = "n",
+                           "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                           "congestionCrowded" = "n", "congestionNot crowded" = "n",
+                           "biodiversityHigh biodiversity" = "n", 
+                           "price" = "n"))
+m2c <- update(m2, rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                           "detritusGarbage removed" = "n",
+                           "congestionCrowded" = "n", "congestionNot crowded" = "n",
+                           "biodiversityHigh biodiversity" = "n", 
+                           "price" = "n"))
+m2d <- update(m2, rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                           "detritusBoth left" = "n",
+                           "congestionCrowded" = "n", "congestionNot crowded" = "n",
+                           "biodiversityHigh biodiversity" = "n", 
+                           "price" = "n"))
+m2e <- update(m2, rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                           "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                           "congestionNot crowded" = "n",
+                           "biodiversityHigh biodiversity" = "n", 
+                           "price" = "n"))
+m2f <- update(m2, rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                           "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                           "congestionCrowded" = "n",
+                           "biodiversityHigh biodiversity" = "n", 
+                           "price" = "n"))
+m2g <- update(m2, rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                           "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                           "congestionCrowded" = "n", "congestionNot crowded" = "n",
+                           "price" = "n"))
+m2h <- update(m2, rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                           "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                           "congestionCrowded" = "n", "congestionNot crowded" = "n",
+                           "biodiversityHigh biodiversity" = "n"))
 
-mixed_logit_model_c <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
-                              rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n", 
-                                      "detritusGarbage removed" = "n", 
-                                       "congestionNot crowded" = "n", 
-                                       "biodiversityHigh biodiversity" = "n",
-                                       "price" = "n"),
-                              panel = TRUE, R = 100, mlogit_data)
+AIC(m2, m2a, m2b, m2c, m2d, m2e, m2f, m2g, m2h) %>% arrange(AIC)
 
-AIC(mixed_logit_model_c)
+m3 <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+             rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                      "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                      "congestionNot crowded" = "n",
+                      "biodiversityHigh biodiversity" = "n", 
+                      "price" = "n"),
+             panel = TRUE, R = 100, mlogit_data)
 
-mixed_logit_model_d <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
-                              rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n", 
-                                       "detritusBoth left" = "n", "detritusGarbage removed" = "n", 
-                                       "congestionNot crowded" = "n", 
-                                       "price" = "n"),
-                              panel = TRUE, R = 100, mlogit_data)
+m3a <- update(m3, rpar = c("waterInsufficient water" = "n",
+                           "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                           "congestionNot crowded" = "n",
+                           "biodiversityHigh biodiversity" = "n",
+                           "price" = "n"))
+summary(m3a)
+m3b <- update(m3, rpar = c("waterExcellent water" = "n",
+                           "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                           "congestionNot crowded" = "n",
+                           "biodiversityHigh biodiversity" = "n", 
+                           "price" = "n"))
+m3c <- update(m3, rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                           "detritusGarbage removed" = "n",
+                            "congestionNot crowded" = "n",
+                           "biodiversityHigh biodiversity" = "n", 
+                           "price" = "n"))
+m3d <- update(m3, rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                           "detritusBoth left" = "n",
+                            "congestionNot crowded" = "n",
+                           "biodiversityHigh biodiversity" = "n", 
+                           "price" = "n"))
+m3e <- update(m3, rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                           "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                           "biodiversityHigh biodiversity" = "n", 
+                           "price" = "n"))
+m3f <- update(m3, rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                           "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                           "congestionNot crowded" = "n",
+                           "price" = "n"))
 
-AIC(mixed_logit_model_d)
+m3g <- update(m3, rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n",
+                           "detritusBoth left" = "n", "detritusGarbage removed" = "n",
+                           "congestionNot crowded" = "n",
+                           "biodiversityHigh biodiversity" = "n"))
 
-mixed_logit_model_e <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
-                              rpar = c("waterExcellent water" = "n", "waterInsufficient water" = "n", 
-                                       "detritusBoth left" = "n", "detritusGarbage removed" = "n", 
-                               
-                                       "biodiversityHigh biodiversity" = "n",
-                                       "price" = "n"),
-                              panel = TRUE, R = 100, mlogit_data)
-AIC(mixed_logit_model_e)
+AIC(m3, m3a, m3b, m3c, m3d, m3e, m3f, m3g) %>% arrange(AIC)
 
+summary(m3)
 
+mixed_logit_model_final <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
+             rpar = c( "waterInsufficient water" = "n", 
+                      "price" = "n"),
+             panel = TRUE, R = 100, mlogit_data)
 
-mixed_logit_model_1 <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
-                              rpar = c("waterInsufficient water" = "n", 
-                                       "detritusBoth left" = "n", "detritusGarbage removed" = "n", 
-                                       "congestionCrowded" = "n", "congestionNot crowded" = "n", 
-                                       "biodiversityHigh biodiversity" = "n", "biodiversityNo biodiversity" = "n", 
-                                       "price" = "n"),
-                              panel = TRUE, R = 100, mlogit_data)
+AIC(mixed_logit_model_final)
 
-mixed_logit_model_2 <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
-                              rpar = c("waterInsufficient water" = "n", 
-                                       "detritusBoth left" = "n", "detritusGarbage removed" = "n", 
-                                       "congestionCrowded" = "n", 
-                                       "biodiversityHigh biodiversity" = "n", "biodiversityNo biodiversity" = "n", 
-                                       "price" = "n"),
-                              panel = TRUE, R = 100, mlogit_data)
+summary(mixed_logit_model_final)
 
-mixed_logit_model_3 <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
-                              rpar = c("waterInsufficient water" = "n", 
-                                       "detritusBoth left" = "n",
-                                       "congestionCrowded" = "n", 
-                                       "biodiversityHigh biodiversity" = "n", "biodiversityNo biodiversity" = "n", 
-                                       "price" = "n"),
-                              panel = TRUE, R = 100, mlogit_data)
-
-mixed_logit_model_4 <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
-                              rpar = c("waterInsufficient water" = "n", 
-                                       "detritusBoth left" = "n",
-                                       "congestionCrowded" = "n", 
-                                       "biodiversityHigh biodiversity" = "n", 
-                                       "price" = "n"),
-                              panel = TRUE, R = 100, mlogit_data)
-
-mixed_logit_model_5 <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
-                              rpar = c("waterInsufficient water" = "n", 
-                                       "detritusBoth left" = "n",
-                                       "congestionCrowded" = "n", 
-                                       "price" = "n"),
-                              panel = TRUE, R = 100, mlogit_data)
-
-mixed_logit_model_6 <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
-                              rpar = c("waterInsufficient water" = "n", 
-                                       "detritusBoth left" = "n",
-                                       "price" = "n"),
-                              panel = TRUE, R = 100, mlogit_data)
-
-mixed_logit_model_7 <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
-                              rpar = c("waterInsufficient water" = "n", 
-                                       "price" = "n"),
-                              panel = TRUE, R = 100, mlogit_data)
-
-summary(mixed_logit_model_all)
-summary(mixed_logit_model_1)
-summary(mixed_logit_model_2)
-summary(mixed_logit_model_3)
-summary(mixed_logit_model_4)
-summary(mixed_logit_model_5)
-summary(mixed_logit_model_6)
-summary(mixed_logit_model_7)
-
-AIC(mixed_logit_model_all)
-AIC(mixed_logit_model_1)
-AIC(mixed_logit_model_2)
-AIC(mixed_logit_model_3)
-AIC(mixed_logit_model_4)
-AIC(mixed_logit_model_5)
-AIC(mixed_logit_model_6)
-AIC(mixed_logit_model_7)
-
-# Plot final model 
+### Plot model 
 
 mixed_logit_model_final <- mlogit(choice ~ 0 + water + detritus + congestion + biodiversity + price, 
                               rpar = c("waterInsufficient water" = "n", 

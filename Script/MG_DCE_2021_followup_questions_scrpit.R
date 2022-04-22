@@ -115,7 +115,7 @@ save_plot <- function(plot_name, # first put the plot object name
                       file_name = "plot",  #give it a title 
                       width = 14, # set the width, heigh and dpi
                       height = 10, 
-                      dpi = 150) {
+                      dpi = 250) {
   
   ggsave(
     paste0(file_name, ".png"), plot_name, width = width,  # save as png
