@@ -61,11 +61,11 @@ theme_diss <- function(){            # creating a new theme function
     coord_flip(clip = "off") +
     theme_diss()) # apply the theme that we created earlier 
 
-save_plot <- function(plot_name, # first put the plot object name
+save_plot2 <- function(plot_name, # first put the plot object name
                       file_name = "plot",  #give it a title 
                       width = 20, # set the width, heigh and dpi
                       height = 14, 
-                      dpi = 150) {
+                      dpi = 250) {
   
   ggsave(
     paste0(file_name, ".png"), plot_name, width = width,  # save as png
@@ -77,4 +77,4 @@ save_plot <- function(plot_name, # first put the plot object name
   )
 }
 
-save_plot(lit_barplot, file_name = "Figures/lit-review-plot")
+save_plot2(lit_barplot, file_name = "Figures/lit-review-plot")
